@@ -1,78 +1,60 @@
-\documentclass[review]{elsarticle}
-\usepackage{lineno,hyperref}
-%\usepackage{apacite}
+\documentclass[preprint,12pt, authoryear, review]{elsarticle}
+\usepackage[american]{babel}
+\usepackage{lineno, csquotes, tipa, amsmath, caption, afterpage}
+\usepackage{hyperref}
 \modulolinenumbers[5]
-%\usepackage{natbib}
 
 \journal{Neuropsychologia}
 
-%%%%%%%%%%%%%%%%%%%%%%%
-%% Elsevier bibliography styles
-%%%%%%%%%%%%%%%%%%%%%%%
-%% To change the style, put a % in front of the second line of the current style and
-%% remove the % from the second line of the style you would like to use.
-%%%%%%%%%%%%%%%%%%%%%%%
-
-%% Numbered
-%\bibliographystyle{model1-num-names}
-
-%% Numbered without titles
-%\bibliographystyle{model1a-num-names}
-
-%% Harvard
-%\bibliographystyle{model2-names.bst}\biboptions{authoryear}
-
-%% Vancouver numbered
-%\usepackage{numcompress}\bibliographystyle{model3-num-names}
-
-%% Vancouver name/year
-%\usepackage{numcompress}\bibliographystyle{model4-names}\biboptions{authoryear}
-
-%% APA style
- \bibliographystyle{model5-names}\biboptions{authoryear}
-
-%% AMA style
-%\usepackage{numcompress}\bibliographystyle{model6-num-names}
-
-%% `Elsevier LaTeX' style
-% \bibliographystyle{elsarticle-num}
-%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 	
-\begin{frontmatter}
+	\begin{frontmatter}
 
 %\title{Elsevier \LaTeX\ template\tnoteref{mytitlenote}}
 %\tnotetext[mytitlenote]{Fully documented templates are available in the elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
 
-\title{Differential patterns of brain activity are correlated with sensitivity to morphological structure}
+	\title{Differential patterns of brain activity are correlated with sensitivity to morphological structure}
 
-%%% Group authors per affiliation:
-%\author{Elsevier\fnref{myfootnote}}
-%\address{Radarweg 29, Amsterdam}
-%\fntext[myfootnote]{Since 1880.}
+	%%% Group authors per affiliation:
+	%\author{Elsevier\fnref{myfootnote}}
+	%\address{Radarweg 29, Amsterdam}
+	%\fntext[myfootnote]{Since 1880.}
 
-%% or include affiliations in footnotes:
-\author[mymainaddress]{Joanna Morris\corref{mycorrespondingauthor}}
-\cortext[mycorrespondingauthor]{Corresponding author}
-\ead{jmorris6@providence.edu}
+	%	% Author list with affiliations and footnotes
+	\author[pc]{Joanna Morris\corref{cor1}}
+	\author[usc]{Emma Kealey\fnref{fn-pc}}
+	\author[columbia]{Tess Rooney\fnref{fn-pc}\fnref{equal}}
+	\author[brown]{Joemari Pulido\fnref{fn-pc}\fnref{equal}}
+	\author[pc]{Natalia Alzate\fnref{equal}}
+	\author[pc]{Ethan Moore\fnref{equal}}
+	\author[pc]{Crismar Ramos-Marte\fnref{equal}}
+	\author[ohsu]{Frankie Greene\fnref{fn-hc}}
+	
+	% Affiliation blocks
+	\address[pc]{Department of Psychology, Providence College, Providence, RI, USA}
+	\address[usc]{Department of Linguistics, University of Southern California, Los Angeles, CA, USA}
+	\address[columbia]{Columbia University School of Nursing, New York, NY, USA}
+	\address[brown]{Department of Cognitive, Linguistic \& Psychological Sciences, Brown University, Providence, RI, USA}
+	\address[ohsu]{Oregon Health \& Science University and Portland State University School of Public Health, Portland, OR, USA}
+	
+	% Footnotes
+	\cortext[cor1]{Corresponding author: Joanna Morris, jmorris6@providence.edu}
+	\fntext[fn-pc]{Work conducted while affiliated with the Department of Psychology, Providence College, Providence, RI, USA}
+	\fntext[fn-hc]{Work conducted while affiliated with the School of Cognitive Science, Hampshire College, Amherst, MA, USA}
+	\fntext[equal]{These authors contributed equally to this work.}
 
-\author[mymainaddress]{Emma Kealey}
-\ead{ekealey@providence.edu}
 
-\address[mymainaddress]{Department of Psychology, Providence College, Providence, RI, USA}
-
-
-\begin{abstract}
-Skilled reading requires us to rapidly retrieve a word's meaning from memory based on a brief exposure to a sequence of arbitrary, abstract visual symbols. Within the lexicon, the mapping from form to meaning takes place at the level of morphology, and rapid semantic retrieval is facilitated by lexical representations that are precise, specific, redundant and flexible. Given that both lexical quality and sensitivity to morphological structure are key components of reading success, can we identify patterns of brain activity that reflect individual differences in these characteristics? To answer this question, we collected event-related potential and response time data from participants as they completed a lexical decision task featuring complex words that varied in the frequency of their morphological components. These data allowed us to determine individual differences in sensitivity to morphological structure. We also quantified individual differences in lexical quality (LQ) via estimates of vocabulary size and spelling performance, both of which are correlated with the precision and stability of lexical representations. We found differences between high LQ and low LQ participants in the N250 ERP component which has been hypothesised to reflect the processing sub-lexical orthographic units. These findings suggest that individual differences in lexical quality and sensitivity to morphological structure are reflected in distinct patterns of brain activity, and opens the avenue for further work to investigate the perceptual and cognitive processes that underlie these differences.
-\end{abstract}
-
-
-%%Each keyword shall be separated by a \sep command. msc classifications shall be provided in the keyword  environment with the commands \MSC. \MSC accepts an optional argument to accommodate future revisions. eg., \MSC[2008]. The default is 2000.
-
-\begin{keyword}
- morphology\sep event-related potentials\sep visual statistical learning \sep individual differences
-\end{keyword}
+	\begin{abstract}
+	Skilled reading requires us to rapidly retrieve a word's meaning from memory based on a brief exposure to a sequence of arbitrary, abstract visual symbols. Within the lexicon, the mapping from form to meaning takes place at the level of morphology, and rapid semantic retrieval is facilitated by lexical representations that are precise, specific, redundant and flexible. Given that both lexical quality and sensitivity to morphological structure are key components of reading success, can we identify patterns of brain activity that reflect individual differences in these characteristics? To answer this question, we collected event-related potential and response time data from participants as they completed a lexical decision task featuring complex words that varied in the frequency of their morphological components. These data allowed us to determine individual differences in sensitivity to morphological structure. We also quantified individual differences in lexical quality (LQ) via estimates of vocabulary size and spelling performance, both of which are correlated with the precision and stability of lexical representations. We found differences between high LQ and low LQ participants in the N250 ERP component which has been hypothesised to reflect the processing sub-lexical orthographic units. These findings suggest that individual differences in lexical quality and sensitivity to morphological structure are reflected in distinct patterns of brain activity, and opens the avenue for further work to investigate the perceptual and cognitive processes that underlie these differences.
+	\end{abstract}
+	
+	
+	%%Each keyword shall be separated by a \sep command. msc classifications shall be provided in the keyword  environment with the commands \MSC. \MSC accepts an optional argument to accommodate future revisions. eg., \MSC[2008]. The default is 2000.
+	
+	\begin{keyword}
+	 morphology\sep event-related potentials\sep visual statistical learning \sep individual differences
+	\end{keyword}
 
 \end{frontmatter}
 
@@ -80,7 +62,9 @@ Skilled reading requires us to rapidly retrieve a word's meaning from memory bas
 
 \section{Introduction}
 
-Reading can be defined as `the process of gaining meaning from print' \citep[][p. 34]{raynerHowPsychologicalScience2001}. Words are the primary means by which language conveys meaning, hence learning to decode printed words is an important part of learning to read \citep[e.g.,][]{castlesEndingReadingWars2018}.  Although all writing systems consist of abstract visual symbols that are mapped onto spoken language units, orthographies differ with respect to \textit{which} spoken unit is mapped to a visual symbol; alphabetic systems map symbols to phonemes, syllabaries  map them to syllables, and logographies to words or morphemes \footnote{Chinese is typically cited as the canonical example of a logographic system, but although it may have originated as a logography, in its current incarnation it is more accurately classified as a morpho-syllabic system \citep{raynerHowPsychologicalScience2001}}.  The choice of spoken linguistic unit has consequences for how reading proceeds. 
+Reading can be defined as `the process of gaining meaning from print' \citep[][p. 34]{raynerHowPsychologicalScience2001}. Words are the primary means by which language conveys meaning, hence learning to decode printed words is an important part of learning to read \citep[e.g.,][]{castlesEndingReadingWars2018}.  Of course, we recognize that reading for comprehension involves much more than word recognition. Our knowledge of syntax tells us that ``the man bit the dog" is newsworthy while ``the dog bit the man" is less so.  Our understanding of social norms allows us to interpret the question ``can you pass the salt?" as a request to do so, not a query about our physical capabilities.  That said, skill in reading comprehension rests to a considerable extent on knowledge of words.
+
+Although all writing systems consist of abstract visual symbols that are mapped onto spoken language units, orthographies differ with respect to \textit{which} spoken unit is mapped to a visual symbol; alphabetic systems map symbols to phonemes, syllabaries  map them to syllables, and logographies to words or morphemes \footnote{Chinese is typically cited as the canonical example of a logographic system, but although it may have originated as a logography, in its current incarnation it is more accurately classified as a morpho-syllabic system \citep{raynerHowPsychologicalScience2001}}.  The choice of spoken linguistic unit has consequences for how reading proceeds. 
 
 Because alphabets map visual symbols to individual speech sounds rather than to units of meaning,  learning the relationship between letters and sounds is necessary and nonnegotiable for beginning readers of any alphabetic writing system.  However, learning this mapping can be difficult because languages that are written using alphabets differ in terms of orthographic depth, or the consistency of the mapping between letters and sounds. In a strictly alphabetic or ‘shallow’ orthography, one grapheme corresponds to one phoneme, but in a ‘deep’ orthography the mappings between graphemes and phonemes  are many-to-many rather than one-to-one. 
 
@@ -90,11 +74,9 @@ In addition to having a deep orthography, the English writing system also exhibi
 
 Because of the complexity of English orthography, English-speaking children must acquire a rapid and flexible word recognition system that can accommodate mappings from symbols to phonemes, to syllables and sub-syllabic units such as onsets and rimes, as well as to units of meaning such as morphemes.  The context-sensitive, multi-representational character of the English writing system means that  phonological awareness, syllabic awareness and sensitivity to morphological structure impact reading ability as children progress through school \citep{mahonyReadingAbilitySensitivity2000}.  
 
-Children are rarely explicitly taught all of the relationships between graphemes, phonemes, syllables and morphemes that they must know in order to become skilled readers; some of this knowledge must be acquired implicitly via the process of  statistical learning (SL), the mechanism by which we extract repeated patterns from our environment. SL enables the detection of probabilistic correspondences between letters and phonemes as well as the detection of regularities that exist among letters. For example, an orthographic unit, such as a word (e.g. `bird') or affix (e.g. `-er'), is defined by higher transitional probabilities between letters within a unit than between letters spanning two distinct units. Sensitivity to probabilistic orthography-to-phonology mappings follows a developmental trajectory throughout the elementary and middle school years \citep{treimanSpellingStatisticalLearning2006} and  it is  a significant predictor of reading ability. However, there is substantial variation in SL performance among both children and adults \citep{arciuliStatisticalLearningRelated2012}.   Do these differences in SL contribute to individual differences in  reading skill?
+Children are rarely explicitly taught all of the relationships between graphemes, phonemes, syllables and morphemes that they must know in order to become skilled readers; some of this knowledge must be acquired implicitly via the process of  statistical learning (SL), the mechanism by which we extract repeated patterns from our environment. SL enables the detection of probabilistic correspondences between letters and phonemes as well as the detection of regularities that exist among letters. For example, an orthographic unit, such as a word (e.g. `bird') or affix (e.g. `-er'), is defined by higher transitional probabilities between letters within a unit than between letters spanning two distinct units. Sensitivity to probabilistic orthography-to-phonology mappings follows a developmental trajectory throughout the elementary and middle school years \citep{treimanSpellingStatisticalLearning2006} and  it is  a significant predictor of reading ability. However, there is substantial variation in SL performance among both children and adults \citep{arciuliStatisticalLearningRelated2012}.  Do these differences in SL contribute to individual differences in  reading skill?
 
 \subsection{Lexical quality}
-
-Reading for comprehension involves more than merely recognizing words. It depends on knowledge of grammar; we know that ``the man bit the dog" is newsworthy while ``the dog bit the man" is less so.  It also requires an understanding of social norms such that we interpret a the question ``can you pass the salt?" as a request to do so, not a query about our physical capabilities.  That said, skill in reading comprehension rests to a considerable extent on knowledge of words.
 
 For literate speakers of a language, knowing a word means being familiar with three distinct word representations—a a word's sound, its meaning and its written form. For skilled readers,  all three representations are activated so quickly and seamlessly that they are perceived as a single entity. The rapid, automatic, and synchronous activation of a multi-component lexical representation is afforded by skilled readers having developed an `expert' mental lexicon characterized by high quality lexical representations.
 
@@ -142,9 +124,9 @@ In this study we chose to examine  non-word processing in order to manipulate th
 
 \section{Discussion}
 	
-% \section*{References}
+%	\section*{References}
+\bibliographystyle{elsarticle-harv}
+\bibliography{1_VSL_INDIFFS.bib}
 
-
-\bibliography{PCHPL}
 
 \end{document}
