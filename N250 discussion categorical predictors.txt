@@ -1,0 +1,91 @@
+LDT Categorial Predictors N250
+
+NON WORD DATA
+
+What the plot shows
+	•	High Orthographic Sensitivity:
+	•	Large family: Complex ≈ Simple (slight Complex > Simple).
+	•	Small family: Complex < Simple (reversal).
+	•	→ Here, complexity effects differ by family size.
+	•	Low Orthographic Sensitivity:
+	•	Large family: Complex ≈ Simple (slight Complex < Simple).
+	•	Small family: Complex ≈ Simple but shifted downward.
+	•	→ Family size × complexity effect is weaker, but direction shifts relative to high sensitivity.
+
+So the three-way interaction reflects different patterns of complexity × family size depending on sensitivity: in high-sensitivity participants, you see a cross-over (family size moderates the complexity effect); in low-sensitivity participants, the pattern flattens or even reverses.
+
+
+Does this make sense without main/two-way effects?
+
+Yes — this is exactly the kind of case where a higher-order effect can appear without lower-order ones:
+	•	Imagine averaging across sensitivity. The opposing patterns in high vs. low groups cancel, so no main/two-way effects emerge in the overall data.
+	•	Within sensitivity subgroups, though, the interaction structure differs (cross-over vs. flattening), so the omnibus test detects a three-way.
+	•	Statistically, this is consistent with the principle of marginality: you retain main and two-way terms in the model, but the true signal emerges only when you condition on the third variable.
+
+This is less common but not nonsensical — it’s a form of qualitative interaction: the effect of family size × complexity is present only for sensitive participants, and vanishes or reverses for insensitive ones.
+
+
+	•	“Although no main or two-way effects were observed, the three-way interaction indicates that the relationship between family size and morphological complexity depended critically on participants’ orthographic sensitivity. Among high-sensitivity participants, complexity effects differed for large vs. small families, whereas among low-sensitivity participants, these differences were absent or reversed. Thus, averaging across sensitivity concealed the pattern, which only emerges when the third factor is considered.”
+
+
+
+Mechanistic interpretation of the three-way interaction
+	1.	Orthographic sensitivity as a “gatekeeper.”
+	•	High-sensitivity participants appear to exploit orthographic regularities even for novel strings.
+	•	This allows them to recruit sublexical morphological parsing: they detect complexity in non-words differently depending on whether the orthographic family is large vs. small.
+	•	The N250 is thought to reflect mapping from orthography to form-based lexical/morphological representations. For sensitive readers, this mapping is engaged enough to produce a family size × complexity interaction.
+	2.	Low-sensitivity participants: no structure extraction.
+	•	For participants less tuned to orthographic structure, non-words do not elicit systematic complexity × family size differences.
+	•	Their processing remains largely at a surface orthographic level, without generating reliable sublexical parsing cues.
+	•	As a result, complexity effects either vanish or reverse, yielding flat lines in your plot.
+	3.	Why only a three-way effect (no main/two-way effects)?
+	•	When you collapse across sensitivity, the presence vs. absence of these sublexical effects in different groups cancels out, producing null main/two-way tests.
+	•	Only when you condition on sensitivity does the qualitative divergence emerge.
+	•	This is a textbook case of a moderated interaction: orthographic sensitivity moderates whether (and how) complexity × family size patterns manifest.
+	4.	Theoretical importance.
+	•	This suggests that sensitivity to orthographic structure enables readers to extend morphological parsing mechanisms to non-words.
+	•	Readers lacking that sensitivity do not engage the same parsing, so the N250 reflects little more than general orthographic mismatch.
+	•	The fact that such effects appear only when sensitivity is considered argues strongly for individual differences in the recruitment of morphological structure during early form processing.
+
+
+“Although no main or two-way effects were found, the significant three-way interaction demonstrates that the influence of morphological family size and complexity on N250 responses to non-words depends critically on orthographic sensitivity. For high-sensitivity participants, complexity effects differed by family size, consistent with engagement of sublexical morphological parsing mechanisms. In contrast, low-sensitivity participants showed no such pattern, suggesting reliance on surface orthographic cues without structured parsing. Thus, orthographic sensitivity appears to gate whether morphological structure is recruited in processing novel forms.”
+
+---
+
+Words (N250)
+	•	Empirical pattern:
+	•	No effect of orthographic sensitivity.
+	•	No main effects of family size or base frequency individually.
+	•	Strong family size × base frequency interaction: lexical structure (how large the family is, and how frequent the base word is) shapes N250 amplitude.
+	•	Mechanistic account:
+	•	For real words, readers rely primarily on lexical access.
+	•	The N250 reflects competition and activation dynamics among form-based representations.
+	•	Larger families and higher frequency bases strengthen lexical competition, producing the observed interaction.
+	•	Crucially, this happens regardless of individual sensitivity to orthographic regularities, because lexical entries anchor processing.
+
+
+
+Non-words (N250)
+	•	Empirical pattern:
+	•	No main effects, no two-way interactions.
+	•	A significant three-way interaction: complexity × family size × orthographic sensitivity.
+	•	For high-sensitivity participants, complexity effects differ by family size (cross-over).
+	•	For low-sensitivity participants, the pattern flattens or reverses.
+	•	Mechanistic account:
+	•	Without lexical entries, processing cannot rely on stored representations.
+	•	Instead, readers fall back on sublexical parsing strategies.
+	•	Only participants sensitive to orthographic structure recruit morphological parsing mechanisms for novel forms, leading to the gated family size × complexity effect.
+	•	Participants low in sensitivity process non-words more superficially, yielding no reliable pattern.
+
+
+
+Integrative interpretation
+	•	Words: Lexical structure dominates; sensitivity doesn’t matter.
+	•	Non-words: No lexical entries; sensitivity determines whether sublexical morphological parsing is engaged.
+	•	Theoretical implication: Orthographic sensitivity acts as a moderator of early morphological processing only when lexical memory cannot be relied upon. This highlights individual differences in how readers extend morphological parsing to novel forms.
+
+
+
+“Together, the word and non-word results suggest a division of labor between lexical and sublexical processes during the N250. For real words, the interaction of family size and base frequency drove N250 responses, reflecting competition among stored lexical representations, and this effect was robust across participants regardless of orthographic sensitivity. In contrast, for non-words, no lexical anchors were available, and the engagement of morphological parsing depended on individual sensitivity. High-sensitivity participants showed a family size × complexity interaction, whereas low-sensitivity participants did not. These findings imply that orthographic sensitivity gates sublexical morphological processing in the absence of lexical support, underscoring the role of individual differences in shaping early stages of word recognition.”
+
+
