@@ -1,0 +1,20 @@
+Effects of Orthographic Sensitivity (Nonwords Grouped by Base Frequency)
+
+Response times to nonword stimuli were analyzed using a mixed-effects model with fixed factors Complexity (simple vs. complex), Base Frequency (high vs. low), and Orthographic Sensitivity (high vs. low), including by-subject and by-item random intercepts. Model comparison confirmed that random intercepts for both participants and items significantly improved model fit, χ²(1) = 1662.17 and 122.89, respectively, ps < .001. The model explained a moderate proportion of variance (conditional R² = .46; marginal R² = .05).
+
+Main Effects
+A robust main effect of Complexity was observed, F(1, 4534) = 127.54, p < .001, η²ₚ = .03, with faster responses to simple nonwords (M = 701 ms, SE = 10.9) than to complex nonwords (M = 737 ms, SE = 11.0).
+There was also a reliable main effect of Base Frequency, F(1, 95.95) = 12.99, p < .001, η²ₚ = .12, with high-frequency nonwords recognized more slowly (M = 730 ms, SE = 11.2) than low-frequency nonwords (M = 708 ms, SE = 11.2).
+Participants with high Orthographic Sensitivity responded overall faster (M = 695 ms, SE = 14.5) than low-sensitivity participants (M = 743 ms, SE = 15.7), F(1, 63.6) = 5.32, p = .024, η²ₚ = .08.
+
+Interactions
+A small but significant Complexity × Base Frequency interaction emerged, F(1, 4535) = 4.26, p = .039, η²ₚ ≈ .001. Pairwise contrasts indicated that the complexity effect (complex > simple) was larger for high-frequency items (Δ = 42 ms, 95% CI [33, 51], d = 0.41) than for low-frequency items (Δ = 29 ms, 95% CI [21, 38], d = 0.29). Likewise, the base-frequency effect (high > low) was more pronounced for complex nonwords (Δ = 28 ms, 95% CI [14, 42], d = 0.27) than for simple nonwords (Δ = 15 ms, 95% CI [2, 28], d = 0.15). The interaction contrast (ΔΔ = 13 ms, 95% CI [1, 26]) confirmed this modest increase in the complexity effect at higher base frequencies.
+
+No other interactions reached significance (all ps > .35).
+
+Summary
+Taken together, response times were slower for morphologically complex relative to simple nonwords, particularly when those nonwords were derived from high-frequency bases. Participants higher in orthographic sensitivity showed generally faster and more efficient responses across conditions, but this did not interact with the complexity or base-frequency manipulations.
+
+⸻
+
+Would you like the Semantic Sensitivity (SS) version written in the same format next (so that the two can appear in parallel subsections of your results section)?

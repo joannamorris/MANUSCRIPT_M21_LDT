@@ -1,0 +1,246 @@
+\documentclass[preprint,12pt, authoryear, review]{elsarticle}
+\usepackage[american]{babel}
+\usepackage{lineno, csquotes, tipa, amsmath, caption, afterpage}
+\usepackage{hyperref}
+\modulolinenumbers[5]
+
+\journal{Neuropsychologia}
+
+
+\begin{document}
+	
+	\begin{frontmatter}
+
+%\title{Elsevier \LaTeX\ template\tnoteref{mytitlenote}}
+%\tnotetext[mytitlenote]{Fully documented templates are available in the elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
+
+	\title{Differential patterns of brain activity are correlated with sensitivity to morphological structure}
+
+	%%% Group authors per affiliation:
+	%\author{Elsevier\fnref{myfootnote}}
+	%\address{Radarweg 29, Amsterdam}
+	%\fntext[myfootnote]{Since 1880.}
+
+	%	% Author list with affiliations and footnotes
+	\author[pc]{Joanna Morris\corref{cor1}}
+	\author[usc]{Emma Kealey\fnref{fn-pc}}
+	\author[columbia]{Tess Rooney\fnref{fn-pc}\fnref{equal}}
+	\author[brown]{Joemari Pulido\fnref{fn-pc}\fnref{equal}}
+	\author[pc]{Natalia Alzate\fnref{equal}}
+	\author[pc]{Ethan Moore\fnref{equal}}
+	\author[pc]{Crismar Ramos-Marte\fnref{equal}}
+	\author[ohsu]{Frankie Greene\fnref{fn-hc}}
+	
+	% Affiliation blocks
+	\address[pc]{Department of Psychology, Providence College, Providence, RI, USA}
+	\address[usc]{Department of Linguistics, University of Southern California, Los Angeles, CA, USA}
+	\address[columbia]{Columbia University School of Nursing, New York, NY, USA}
+	\address[brown]{Department of Cognitive, Linguistic \& Psychological Sciences, Brown University, Providence, RI, USA}
+	\address[ohsu]{Oregon Health \& Science University and Portland State University School of Public Health, Portland, OR, USA}
+	
+	% Footnotes
+	\cortext[cor1]{Corresponding author: Joanna Morris, jmorris6@providence.edu}
+	\fntext[fn-pc]{Work conducted while affiliated with the Department of Psychology, Providence College, Providence, RI, USA}
+	\fntext[fn-hc]{Work conducted while affiliated with the School of Cognitive Science, Hampshire College, Amherst, MA, USA}
+	\fntext[equal]{These authors contributed equally to this work.}
+
+
+	\begin{abstract}
+	Skilled reading requires us to rapidly retrieve a word's meaning from memory based on a brief exposure to a sequence of arbitrary, abstract visual symbols. Within the lexicon, the mapping from form to meaning takes place at the level of morphology, and rapid semantic retrieval is facilitated by lexical representations that are precise, specific, redundant and flexible. Given that both lexical quality and sensitivity to morphological structure are key components of reading success, can we identify patterns of brain activity that reflect individual differences in these characteristics? To answer this question, we collected event-related potential and response time data from participants as they performed a lexical decision task designed to examine the effects of base frequency and morphological family size on processing both words and non-words. These data allowed us to determine individual differences in sensitivity to morphological structure. We also quantified individual differences in lexical quality (LQ) via estimates of vocabulary size and spelling performance, both of which are correlated with the precision and stability of lexical representations. We found differences between high LQ and low LQ participants in the N250 ERP component which has been hypothesised to reflect the processing sub-lexical orthographic units as well as in the N400. These findings suggest that individual differences in lexical quality and sensitivity to morphological structure are reflected in distinct patterns of brain activity, and opens the avenue for further work to investigate the perceptual and cognitive processes that underlie these differences.
+	\end{abstract}
+	
+	
+	%%Each keyword shall be separated by a \sep command. msc classifications shall be provided in the keyword  environment with the commands \MSC. \MSC accepts an optional argument to accommodate future revisions. eg., \MSC[2008]. The default is 2000.
+	
+	\begin{keyword}
+	 morphology\sep event-related potentials\sep visual statistical learning \sep individual differences
+	\end{keyword}
+
+\end{frontmatter}
+
+\linenumbers
+
+\section{Introduction}
+
+Reading can be defined as “the process of gaining meaning from print” \citep[][p. 34]{raynerHowPsychologicalScience2001}. Because words are the primary vehicle for conveying meaning in language, learning to decode them is central to reading acquisition \citep[e.g.,][]{castlesEndingReadingWars2018}. Of course, we recognize that reading for comprehension involves much more than word recognition; it requires constructing meaning across sentences, making inferences, and integrating information with prior knowledge. That said, skill in reading comprehension rests to a considerable extent on our ability to access the meanings of words.
+
+Although all writing systems consist of abstract visual symbols that are mapped onto spoken language units, orthographies differ in terms of which spoken unit is mapped to a visual symbol: alphabetic systems map symbols to phonemes, syllabaries to syllables, and logographies to words or morphemes.\footnote{Chinese is typically cited as the canonical example of a logographic system. Although it may have originated as such, in its current form it is more accurately classified as a morpho-syllabic system \citep{raynerHowPsychologicalScience2001}.} The linguistic unit targeted by a writing system has important consequences for how reading is acquired and processed.
+
+Because alphabetic systems map visual symbols to individual speech sounds rather than to units of meaning, learning the relationships between letters and sounds is necessary---and nonnegotiable---for beginning readers of any alphabetic script. However, the ease with which these mappings are learned depends on the orthographic depth of the language—that is, the consistency of the letter-to-sound correspondences. In a shallow orthography, one grapheme corresponds to one phoneme, whereas in a deep orthography, the mappings are many-to-many rather than one-to-one.
+
+English employs a deep orthography, in which grapheme-to-phoneme mappings are highly context-sensitive. They can vary based on letter position and the identity of neighboring graphemes. For example, at the syllabic level, post-vocalic consonants influence vowel pronunciation: the $\langle a\rangle$ in hat is pronounced differently from the $\langle a\rangle$ in hate due to the addition of a final e—an example of a non-adjacent dependency. As a result, English spelling appears irregular at the level of individual graphemes and phonemes but shows greater regularity at the level of orthographic rimes,\footnote{A rime is the part of a syllable consisting of its vowel and any consonant sounds that follow.} where common patterns can guide pronunciation \citep{treimanSpecialRoleRimes1995}. Because both graphemes and rimes are important for decoding, beginning readers must learn to recognize and associate both types of written units with their spoken counterparts.
+
+In addition to its deep orthography, English also sacrifices phonological consistency in the service of morphological transparency for both stems and affixes. Stems often retain their spelling across derivations (e.g., heal $\rightarrow$ health), and affixes contribute consistently to word meaning (e.g., help‑less, home‑less, worth‑less, where ‑less = “without”). This prioritization of morphemic consistency introduces grapheme-to-morpheme regularities even when phonological mappings are irregular \citep{zieglerReadingAcquisitionDevelopmental2005,rastlePlaceMorphologyLearning2019}.
+
+To become skilled readers of English, children must therefore develop a flexible word recognition system that accommodates mappings from symbols to phonemes, syllables, rimes, and morphemes. The context-sensitive, multi-level nature of English orthography means that phonological awareness, syllabic awareness, and morphological sensitivity each contribute to reading development \citep{mahonyReadingAbilitySensitivity2000}.
+
+Many of the relationships between graphemes, phonemes, syllables, and morphemes are not explicitly taught. Instead, readers must acquire this knowledge implicitly through statistical learning (SL)—the domain-general mechanism by which humans detect recurring patterns in the environment. SL allows readers to internalize probabilistic correspondences between letters and sounds, as well as regularities among letters themselves. For example, orthographic units such as words (e.g., bird) or affixes (e.g., ‑er) are often defined by higher transitional probabilities between letters within a unit than between letters that span unit boundaries. The ability to detect and use such regularities—hereafter referred to as orthographic sensitivity—is crucial for fluent word recognition and may emerge from SL mechanisms. Orthographic sensitivity follows a developmental trajectory throughout the elementary and middle school years \citep{treimanSpellingStatisticalLearning2006} and is a robust predictor of reading ability. However, there is considerable individual variation in SL performance among both children and adults \citep{arciuliStatisticalLearningRelated2012}, and it remains unclear to what extent these differences contribute to variation in reading skill. Understanding how readers come to represent words in terms of their orthographic, phonological, and semantic components requires a closer look at the nature of lexical representations themselves.
+
+\subsection{Lexical representation and lexical quality}
+
+For literate speakers of a language, knowing a word involves familiarity with three distinct types of representation: a word’s sound, its meaning, and its written form. For skilled readers, all three are activated so quickly and seamlessly that they are perceived as a unified entity. This rapid, automatic, and synchronous activation reflects the development of an “expert” mental lexicon—one characterized by high-quality lexical representations.
+
+\citet{perfettiReadingAbilityLexical2007} defines lexical quality as “the extent to which the reader’s knowledge of a given word represents the word’s form and meaning constituents and knowledge of word use that combines meaning with pragmatic features” (p. 359). High-quality representations are precise, specific, and flexible \citep{perfettiReadingAbilityLexical2007}. They include fully specified orthographic forms; phonological information that is both stored and recoverable from spelling; context-sensitive semantic representations; a complete morpho-syntactic specification; and strong integration across these components \citep{perfettiLexicalQualityHypothesis2002, perfettiReadingAbilityLexical2007, perfettiLexicalQualityRevisited2017}
+  
+Even among skilled readers, substantial variability exists in both written language proficiency and in experimental measures of word recognition, such as response times and error rates in lexical decision tasks \citep{andrewsIndividualDifferencesSkilled2012}. These differences may reflect variation in the precision of lexical representations. Andrews and colleagues \citep{andrewsLexicalExpertiseReading2009, andrewsLexicalPrecisionSkilled2010, andrewsIndividualDifferencesSkilled2012, andrewsMorphologicalPrimingStronger2013} argue that lexical expertise is marked by precise representations that support rapid word identification with minimal activation of competing candidates. This efficiency reduces the need for attentional control and conserves cognitive resources for higher-level processes such as inference and discourse comprehension.
+
+Spelling ability is a particularly sensitive index of lexical quality, as it requires detailed and specific knowledge of a word’s orthographic form \citep{perfettiRepresentationProblemReading1992}. In contrast, many reading tasks can be accomplished with only partial or approximate knowledge of how a word looks. As a result, it is not uncommon to find skilled readers who struggle with spelling. This mismatch—fluent reading despite weak spelling—suggests a reliance on broad visual patterns and contextual guessing rather than detailed attention to orthographic structure \citep{frithSurfaceDevelopmentalDyslexia2017}. While such a strategy can support fluent decoding, it may fail to foster the robust, fully specified representations required for accurate written recall. Fine-tuning lexical precision requires more than general reading experience; it depends on repeated exposure to specific words and a sensitivity to the regularities that link spelling to sound \citep{sharePhonologicalRecodingSelfteaching1995}.
+
+Lexical precision can be indexed experimentally using the masked form priming paradigm, in which responses to a word target (e.g., calm) are influenced by a briefly presented prime that shares orthographic similarity (e.g., clam). Such priming effects occur only for word targets; nonword targets do not benefit from formally similar primes under the same conditions, suggesting that the effect reflects pre-activation of lexical representations \citep{andrewsLexicalPrecisionSkilled2010, forsterRepetitionPrimingFrequency1984}. Importantly, the size of the priming effect varies with lexical precision. Readers with highly specified orthographic representations (e.g., for trail and trial) are less susceptible to activation by similar but mismatching primes \citep{forsterBodiesAntibodiesNeighborhooddensity1994}. Consequently, smaller priming effects are taken as a marker of greater lexical precision \citep{andrewsLexicalPrecisionSkilled2010}. If lexical quality hinges on the precision of orthographic representations, then individual differences in orthographic sensitivity—particularly in response to complex or morphologically rich words—may play a critical role in determining the efficiency of word recognition.
+
+
+\subsection{Individual differences in complex word recognition}
+
+Psychologists who study reading work within an experimental tradition in which they develop models based on the average responses of a sample of individuals to a manipulation of environmental variables \citep{cronbachTwoDisciplinesScientific1957}.This approach rests on the implicit assumption that the cognitive architecture of the reading system is uniform across skilled readers. But if readers differ in the quality of their lexical representations, and if these differences lead to differences in the perceptual and cognitive processes underlying word reading, this assumption may not hold.
+
+{\renewcommand\&{and}\citet{andrewsMorphologicalPrimingStronger2013}} argue that although this assumption has been useful  in  establishing the general principles of word reading, further progress requires us to consider the role of individual differences.  This approach has already been shown to bear fruit in terms of providing clarity on a  phenomenon that has generated  considerable discussion, morpho-orthographic priming.  Studies of morphological priming have consistently shown that morphologically complex words facilitate lexical decision responses to their stem morphemes across a range of languages, suggesting that morpheme representations shared by primes and targets are activated early in the process of word recognition.  In the masked priming paradigm, a number of studies have found that priming is not limited to primes that overlap in meaning (e.g. `\textit{payment}'-`\textit{pay}'), but also extend to pseudo-complex words (e.g. `\textit{corner}'-`\textit{corn}').  This evidence has been taken as support for `morpho-orthographic decomposition’ accounts of morphological processing \citep{rastleBrothMyBrother2004, rastleMorphologicalDecompositionBased2008} which assume an early orthographically-driven segmentation process that parses complex words into affixes and stems.
+
+However, these findings are at odds with a  meta-analysis of 16 studies comparing masked priming for transparent and opaque words showed significantly stronger priming effect for transparent than opaque words \citep{feldmanEarlyMorphologicalProcessing2009}. Moreover, equivalence in the degree of priming between semantically transparent morphological relatives versus those that are share a semantically opaque or even pseudo-morphological relationship poses a problem for lexical models that rely on statistical learning \citep{plautAreNonsemanticMorphological2000, baayenAmorphousModelMorphological2011}. These models capture sensitivity to morphological structure through learned associations between orthography and meaning; morphological relationships emerge as a consequence of these associations, and  produce graded effects of morphological structure such that transparent pairs, which share both orthographic and semantic features yield stronger priming than opaque pairs that share only orthography.    
+
+By examining individual differences between readers, {\renewcommand\&{and}\citet{andrewsMorphologicalPrimingStronger2013}}  were able to shed light on these discrepancies in the literature.  If morphology represents a learned sensitivity to the systematic relationships among the surface forms of words and their meanings, differences between English readers in their sensitivity to orthographic units and to the semantic structure of words could  yield differences in the extent to which their lexicons become morphologically structured.  {\renewcommand\&{and}\citet{andrewsMorphologicalPrimingStronger2013}} found that individual differences in in orthographic and semantic processing (indexed by scores on spelling and vocabulary tests respectively) were associated with systematic differences in participants' responses to morphological priming.  Individuals with higher vocabulary than spelling scores (`semantic' profile) showed strong priming for transparent pairs but minimal priming for opaque pairs. In contrast, individuals with higher spelling than vocabulary scores (‘orthographic profile’ indicating precise orthographic representations of words), showed equivalent priming for opaque and transparent pairs \citep{andrewsMorphologicalPrimingStronger2013}.
+
+{\renewcommand\&{and}\citet{andrewsMorphologicalPrimingStronger2013}} argue that a `semantic' reading profile may reflect a holistic and contextually-driven reading strategy with greater sensitivity to conceptual and semantic representations than to orthographic patterns.  In contrast, an `orthographic' profile may be associated with a bottom-up reading strategy focused on extracting  frequently occurring orthographic patterns such as common affixes, regardless of their morphological status a process that has come to be known as morpho-orthographic decomposition. 
+ 
+{\renewcommand\&{and}\citet{rastleMorphologicalDecompositionBased2008}} have proposed that among developing readers, morpho-orthographic decomposition is driven by statistical learning, i.e., sensitivity to the statistical structure of letter sequences.  In particular, readers learn to  mark low probability sequences as containing boundaries and to group high-probability sequences into single units.  If so, individual differences in sensitivity to statistical patterns may lead to differences in the strength and precision of morphemic representations,  sensitivity to the morphological structure of words, and the use of such structures in word recognition.
+
+
+Although it has been shown that individual differences in the capacity for statistical learning are linked with variability in word reading accuracy \citep{arciuliReadingStatisticalLearning2018, arciuliStatisticalLearningRelated2012} we still do not have a clear understanding of the mechanisms that give rise to these associations. What role do domain-general mechanisms of implicit statistical learning play in extracting morphological structure and establishing sub-lexical morpho-orthogrphic to lexico-semantic mappings?  To what extent do individual differences in implicit statistical learning impact this process? The first steps in answering these questions are to determine the extent to which differences in readers’ sensitivity to the internal structure of words is reflected in differences in the patterns of brain responses to words that differ in morphological structure. 
+
+\subsection{The role of frequency in complex word processing}
+
+The frequency with which a word appears in the language is one of the most robust determinants of its recognition latency.  But “frequency” can mean several different things depending on the level of linguistic representation upon which the frequency counts are based, and different types of frequency measures capture different aspects of lexical experience.  Surface frequency is the frequency with which the whole complex word form (e.g., teacher) appears in language corpora. High surface frequency leads to faster recognition reflecting whole-word lexical access. Base (or stem) frequency is the summed frequency of the base morpheme (e.g., "teach") across all its occurrences, whether in isolation ("I teach...") or within derived (e.g. "My teacher..." ) or inflected ("He is teaching...") forms. Base frequency represents the overall exposure to that morpheme across all contexts — how entrenched or accessible the base representation is in memory. Words with high base frequency are processed more quickly, even when the complex form itself is rare.  Morphological family size refers to the number or type frequency of all derivationally related words sharing the same base (e.g., "teach", "teaches", "teaching", "taught", "teacher", "teachable", "retaught").  It reflects network breadth or connectivity of the morphological family — how many distinct lexical entries are associated with the same base.
+
+Complex words whose morphemic constituents are both frequent and formally consistent—that is, sequences of letters that reliably signal the same morpheme across words—are recognized more easily than words whose constituents are infrequent or ambiguous.  Evidence that complex words are recognized via their constituents comes from  morphological priming studies as well as those that show transposed letter priming within morphemes but not across morpheme boundaries. The process by which a complex word is parsed into its constituents is a matter of debate, with original arguments for an affix-stripping mechanism now superceded by arguments for a mechanism that proceeds via stem-alignment. But whatever the means by which decomposition is achieved, the frequency anad lexical connectivity of the consituents themselves affect the speed and efficiency of recognition.
+
+Words with high base frequency are responded to faster and more accurately than words with low base frequency when surface frequency is controlled (e.g., Taft, 1979; Colé, Beauvillain, \& Segui, 1989; Schreuder \& Baayen, 1997; Baayen, Dijkstra, \& Schreuder, 1997; Bertram,
+Schreuder, \& Baayen, 2000).  Vannest et al. (2011) has argued that the base frequency effect may reflects co-activation of morphological families during lexical access, or a graded effect of phonological and semantic similarity of the derived form and base, rather than the presence or absence of a decomposition process. 
+
+
+\subsection{Family Size}
+
+The morphological family size of a given word is the number of morphologically complex words in which the word or its stem occurs as a constituent (Schreuder \& Baayen, 1997).
+
+The goal of the study was to examine the extent to which  individual differences in sensitivity to the internal structure of words is reflected in differences in  patterns of brain responses. To examine potential differences in sensitivity to morphological structure, we manipulated the cumulative root frequency, morphological family size and morphological complexity of non-word targets, and measured the amplitude of the N250 component as participants completed a lexical decision task.  
+
+Complex word recognition is influenced by many different kinds of lexical and sub-lexical frequency  information, and morpheme frequency effects have often been used to test whether derived words activate morphemic representations; three type of frequency information have been shown to be particularly important—surface frequency, cumulative root or cumulative root frequency and family size. Surface frequency refers to the frequency of the whole-word string, family size refers to the type count of morphologically related words, and cumulative root frequency, is the cumulative token frequency of all morphologically related family members. 
+
+The cumulative root frequency effect refers to the finding that words with high cumulative root frequency are responded to faster and more accurately than words with low cumulative root frequency when surface frequency is controlled \citep{taftRecognitionAffixedWords1979}  Taft (1979).  The family size effects refers to the finding that  lexical decision response times to words with larger family sizes (i.e., appearing as a constituent in larger numbers of derived words and compounds) are faster than for words with smaller family sizes. The cumulative root frequency effect only occurs in words with productive affixes, whereas the family size effect occurs regardless of affix productivity. Semantically transparent family members drove family size effects and the family size effect was largely absent or attenuated in semantically opaque family members. Both family size and  cumulative root frequency reflect sensitivity to mophological structure, but  there is not consensus in the field regarding their relationship.  The family size effect has hypothesized to reflect the activation of semantic representations as it sensitive to semantic transparency.  In contrast, the cumulative root frequency effect is affected by affix productivity, hence it has been hypothesized to the activation of morphological form representations.
+
+In this study we chose to examine  non-word processing in order to manipulate the orthographic properties of stimuli with greater precision than is possible using real words.  We examined the effect of morphological structure on non-word recognition via the morpheme interference effect, or non-word complexity effect.  This effect occurs when non-words that are created by combining existing morphemes (e.g., GASFUL) are rejected more slowly in a lexical decision task than words that do not have lexical structure (e.g., GASFIL).  We hypothesized that the amplitude of the N250 component to  these non-words would be modulated by participant reading style, as well as by morphological family size, and/or cumulative root frequency, and specifically that  this modulation of the n250 response by morphological structure would be greater for readers with greater sensitivity to the morphological structure of words, or better `lexical quality'.  Our dependent measure was the magnitude N250 response.  The N250 is a negative-going wave that starts as early as 110 milliseconds and peaks around 250 milliseconds. {\renewcommand\&{and}\citet{holcombTimeCourseVisual2006}}  suggest that the N250 reflects the process that maps sub-lexical orthographic and phonological representations onto whole word representations.  
+
+In masked morphological priming studies, the N250 has been found to be affected by semantic transparency, with unrelated items in transparent conditions showing significantly more negative responses than related items (Morris et al., 2007) 
+
+\subsection{The current study}
+
+The study was designed to test the hypothesis that skilled readers engage in morpho-orthographic decomposition when processing visually presented non-words that resemble real morphologically complex words. Specifically, we predicted that ERP responses would reflect early decomposition processes for non-words that contain both a real stem and a real affix (e.g., gasful), but not for structurally similar non-words that contain a real stem and a non-affix (e.g., gasfil). These morphologically complex and simple non-words were matched in surface form but differed in whether they conformed to the structure of real morphologically derived words. If readers are sensitive to morpho-orthographic structure, we expected this contrast to elicit differences in ERP amplitude, particularly in the N250 time window, which has been linked to early form-based morphological processing. We further predicted that sensitivity to morpho-orthographic structure would be modulated by morphological family size—that is, the number of real words sharing the same stem. Because stems with large morphological families occur in more derived forms and thus provide stronger cues for decomposition, we expected an additive effect such that complex non-words with large-family stems would elicit the strongest evidence of decomposition. In contrast, simple non-words and items with small-family stems were expected to show reduced or absent decomposition effects. Finally, we predicted that individual differences in lexical quality—indexed by spelling and vocabulary measures—would modulate these effects, with stronger and more reliable decomposition effects observed in participants with higher sensitivity to orthographic structure.
+
+\section{Methods}
+
+\subsection{Statistical Analysis}
+Reaction times (RTs) for correct word trials were analyzed using linear mixed-effects modeling with the \texttt{afex::mixed} function in R (version 4.x) employing the Satterthwaite (S) method for denominator degrees of freedom. The dependent variable was response time (in ms). Fixed factors were Base Frequency (High vs. Low), Morphological Family Size (Large vs. Small), and either Orthographic Sensitivity or Semantic Sensitivity (between-subject variables, Median Split).
+The full model took the form:
+
+\texttt{{\scriptsize Response Time ~ Base Frequency * Family Size * Sensitivity + (1 | SubjID) + (1 | STRING)}}
+
+Random intercepts were included for subjects (SubjID) and lexical items (STRING) to account for individual and item-level variance.
+Model comparisons using likelihood-ratio tests (ranova) confirmed that both random effects significantly improved model fit ($\chi^2 > 170$,$ p < 2 \times 10^{16}$).
+Model fit was summarized using marginal (fixed-effects) and conditional (fixed + random) $R^2$ values as computed by the \texttt{performance::r2} function.
+
+\section{Results}
+
+\subsection{Response Time Data}
+
+\subsubsection{Words grouped by Base Frequency and Family Size}
+
+Reaction times (RTs) to words showed clear main effects of Base Frequency and Morphological Family Size, with no evidence that either Orthographic Sensitivity or Semantic Sensitivity moderated these effects.
+
+\paragraph{Orthographic Sensitivity model} 
+
+We found a significant main effect of Base Frequency in that participants responded more quickly to words derived from high-frequency bases, ($M = 603$ ms, $SE = 14$) than to those from low-frequency bases ($M = 622$ ms, $SE = 14$), $F(1, 92.45) = 10.29$, $p = .002$, $\eta_p^2 = .10$—an average facilitation of about 19 ms. A separate main effect of Morphological Family Size was also observed,$ F(1, 92.44) = 9.41$, $p = .003$, $\eta_p^2 = .09$, reflecting faster responses to words from large morphological families ($M = 603$ ms, $SE = 14$) than to words from small families ($M = 622$ ms, $SE = 14$). These two effects were additive; the Base Frequency × Family Size interaction was not significant, $F(1, 92.45) = 1.08$, $p = .30$, $\eta_p^2 = .01$. Orthographic Sensitivity showed only a nonsignificant trend toward faster RTs for higher-sensitivity participants, $F(1, 64.87) = 3.83$, $p = .055,$ $\eta_p^2 = .06$. High-OS participants averaged 595 ms ($SE = 14$), whereas Low-OS participants averaged 630 ms ($SE = 15$). No higher-order interactions approached significance. The model explained 36\% of the total variance when both fixed and random effects were included (Conditional $R^2 = .36$), though fixed effects alone accounted for about 3\% (Marginal $R^2 = .03$), consistent with typical lexical-decision data in which between-subject and item variability dominate. At the cell level, the shortest RTs occurred for High-Frequency × Large-Family words in High-OS participants ($M = 579$ ms, $SE = 13.8$), and the longest for Low-Frequency × Small-Family words in Low-OS participants ($M = 653 ms$, $SE = 14.6$). Together these means illustrate robust, additive facilitation from both base frequency and family size.
+
+\paragraph{Semantic Sensitivity model} 
+
+An identical pattern emerged when participants were grouped by Semantic Sensitivity.
+Words with high-frequency bases elicited faster responses ($F(1, 92.29) = 10.15$, $p = .002$, $\eta_p^2 = .10$) than words with low-frequency bases ($M_{high} = 605$ ms ($SE = 15$) vs. $M_{low} 621$ ms ($SE = 15$)), and words from larger morphological families were recognized more rapidly ($F(1, 92.30) = 9.28$, $p = .003$, $\eta_p^2 = .09$;$ M_{large} = 602$ ms ($SE = 15$),$ M_{small} = 621$ ms ($SE = 15$)).  No effects or interactions involving Semantic Sensitivity reached significance, all $p$s $> .30$ Mean RTs for high- and low-sensitivity participants were nearly identical ($M$s $\approx 610$ ms). Model fit was again strong (Conditional$ R^2 = .36$; Marginal $R^2 = .01$). Across all conditions, RTs ranged from 595 ms ($SE \; \approx \; 14.5$) for High-Frequency × Large-Family items to 636 ms ($SE \approx 14.3$) for Low-Frequency × Small-Family items, underscoring parallel facilitation by frequency and family size.
+
+
+\paragraph{Summary}
+
+Across both models, higher base frequency and larger morphological family size independently accelerated word recognition, producing medium effect sizes ($\eta_p^2 \; \approx \; .09–.10$). Neither orthographic nor semantic sensitivity moderated these effects, indicating that the facilitatory influence of morphological structure on lexical decision times was broadly consistent across individuals.
+
+
+\subsubsection{Nonwords Grouped by Base Frequency}
+
+\paragraph{Effects of Orthographic Sensitivity} 
+
+Response times to nonword stimuli were analyzed using a linear mixed-effects model with fixed factors of Complexity (Simple vs. Complex), Base Frequency (High vs. Low), and Orthographic Sensitivity (High vs. Low). The model included by-subject and by-item random intercepts. Model comparison confirmed that both random effects contributed significantly to model fit (both $p$s < .001).
+
+
+The ANOVA revealed significant main effects of Complexity,$ F(1, 4534.35) = 127.54$, $p < .001$, $\eta_p^2 = .027$, and Base Frequency, $F(1, 95.95) = 12.99,$ $p < .001$, $\eta_p^2 = .120,$ as well as  Orthographic Sensitivity, $F(1, 63.60) = 5.32, p = .024$, $\eta_p^2 = .077$. Complex nonwords were recognized more slowly ($M = 737$ ms, $SE = 8.1$) than Simple nonwords ($M = 702$ ms, $SE = 8.0$), and nonwords derived from low-frequency bases (M = 709 ms, SE = 8.1) elicited longer response times than those from high-frequency bases (M = 730 ms, SE = 8.0). Participants with higher Orthographic Sensitivity responded overall more quickly than those with lower sensitivity.
+
+Two-way interactions
+The Complexity × Base Frequency interaction was significant, F(1, 4535.47) = 4.26, p = .039, \eta_p^2 = .006, indicating that the complexity effect was somewhat larger for high-frequency than for low-frequency nonwords. No other interactions involving Orthographic Sensitivity reached significance (ps > .35).
+
+Follow-up EMM comparisons showed robust complexity effects at both frequency levels:
+•	For high-frequency nonwords, Complex items were slower than Simple items by 42 ms, 95% CI [33, 51], d = 0.41.
+•	For low-frequency nonwords, the same pattern held but with a smaller magnitude (29 ms, 95% CI [21, 38], d = 0.29).
+
+Base-frequency effects were also reliable within each complexity level:
+•	For Complex nonwords, high-frequency items were 28 ms faster than low-frequency ones, 95% CI [14, 42], d = 0.27.
+•	For Simple nonwords, this advantage was smaller (15 ms, 95% CI [2, 28], d = 0.15).
+
+The Complexity × Base Frequency interaction contrast (High – Low) was modest but significant (13 ms, 95% CI [1, 26], p = .039).
+
+Summary
+Together, these findings show that nonword response times increased for more morphologically complex forms and for items derived from lower-frequency bases, with additive rather than interactive effects of Orthographic Sensitivity. Readers with stronger orthographic skills responded overall faster, but the structure of their effects paralleled that of less-sensitive readers.
+
+
+
+Effects of Semantic Sensitivity: Nonwords Grouped by Base Frequency
+
+Response times to nonword stimuli were analyzed using a linear mixed-effects model with fixed factors of Complexity (Simple vs. Complex), Base Frequency (High vs. Low), and Semantic Sensitivity (High vs. Low). The model included by-subject and by-item random intercepts. Likelihood-ratio tests confirmed that both random effects significantly improved model fit (both ps < .001).
+
+Main effects
+Significant main effects were found for Complexity, F(1, 4533.26) = 125.15, p < .001, \eta_p^2 = .027, and Base Frequency, F(1, 95.24) = 12.70, p < .001, \eta_p^2 = .118. The main effect of Semantic Sensitivity was not significant, F(1, 63.45) = 0.00, p = .968.
+On average, Complex nonwords elicited slower responses (mean = 734 ms, SE = 8.3) than Simple nonwords (mean = 700 ms, SE = 8.2), and nonwords derived from low-frequency bases (mean = 707 ms, SE = 8.3) were slower than those from high-frequency bases (mean = 728 ms, SE = 8.2). Participants’ Semantic Sensitivity scores did not modulate overall speed.
+
+Two-way interactions
+The Complexity × Base Frequency interaction was significant, F(1, 4535.00) = 3.92, p = .048, \eta_p^2 = .006, while no other two- or three-way interactions reached significance (ps > .10).
+Follow-up estimated marginal means revealed robust complexity effects at both frequency levels:
+•	High-frequency nonwords: Complex > Simple by 41 ms, 95% CI [32, 50], d = 0.41.
+•	Low-frequency nonwords: Complex > Simple by 29 ms, 95% CI [21, 37], d = 0.28.
+
+Base-frequency effects were similarly reliable within each complexity level:
+•	Complex nonwords: High < Low by 27 ms, 95% CI [14, 41], d = 0.27.
+•	Simple nonwords: High < Low by 15 ms, 95% CI [2, 28], d = 0.15.
+
+The interaction contrast (Complex – Simple for High – Low) was modest but significant, 13 ms, 95% CI [0, 25], p = .048.
+
+Summary
+Nonword response times were longer for morphologically complex than simple forms and for stimuli derived from low-frequency bases, replicating the general pattern observed when participants were grouped by Orthographic Sensitivity. Semantic Sensitivity did not significantly affect either overall speed or the magnitude of these effects, indicating that nonword processing was driven primarily by structural and frequency-based properties rather than by differences in meaning-based linguistic skill.
+
+
+Comparison of Orthographic and Semantic Sensitivity Groupings
+Across both grouping schemes, the pattern of results was highly consistent. Nonword response times were reliably slower for morphologically complex forms and for stimuli derived from low-frequency bases, with a modest interaction indicating that the complexity effect was slightly larger at higher base frequencies. Grouping participants by Orthographic Sensitivity yielded an overall main effect, suggesting that readers with stronger orthographic skills responded more efficiently across conditions. In contrast, grouping by Semantic Sensitivity produced no main or interaction effects, indicating that meaning-based individual differences did not influence nonword processing. Together, these analyses show that nonword performance was primarily shaped by structural and frequency-based factors and, to a lesser extent, by orthographic—but not semantic—individual differences.
+
+
+\section{Discussion}
+
+For cohort 1  the crossover patterns in the N250 window suggest that participants with higher orthographic sensitivity exhibit distinct neural processing patterns consistent with early sensitivity to morpho-orthographic structure. For participants with a high sensitivity to morpho-orthographic stucture, complex items evoked more negative amplitudes than simple items. For participants with low sensitivity, the direction reversed: complex items were somewhat less negative than simple items. With respect to morphological family size, for participants with low sensitivity to morpho-orthographic structure, items from large morphological families elicited more negative amplitudes  than items from small families, but for high sensitivity participants, the direction reversed, with large family items evoking less negative amplitudes than small family items. 
+
+For cohort 2, ERP amplitudes were overall significantly less negative for complex items than for simple items. For items with small morphological families, simple non-words elicited significantly more negative ERP amplitudes than complex ones. Addtionally for simple non-words, items with a small morpholgical family size evoked more negative amplitudes than those with large family size.
+
+
+The N250 is associated with early form-based processing, so these effects suggest that morphological decomposition or structured form recognition is more active in high-sensitivity participants, whereas low-sensitivity participants show less structured engagement. 
+
+ 
+
+These results provide partial support for the hypothesis that ERP responses reflect sensitivity to morpho-orthographic structure. As predicted, morphological complexity modulated ERP amplitudes, particularly in the N250 time window associated with early form-based processing. In both cohorts, complex pseudowords—which contained real stems and real affixes—elicited distinct neural responses compared to simple pseudowords with real stems and non-affixes, especially when morphological family size was small. This pattern is consistent with the notion that readers engage in morphological decomposition when presented with orthographically structured non-words that resemble real morphological combinations. Importantly, in Cohort 1, these effects were observed only in interaction with individual differences in orthographic sensitivity, suggesting that decomposition processes are more likely to be engaged by readers with higher-quality lexical representations. In Cohort 2, the effects of complexity and family size were more robust and less dependent on individual differences, but still aligned with the view that decomposition is more likely when the constituent stem belongs to a large morphological family. Critically, the N400 results in Cohort 2 further support this interpretation: greater negativity was observed for simple items with small family size, suggesting increased processing demands when decomposition cues were weak or misleading. The convergence of complexity and family size effects, especially in the N250 window, supports an additive model of decomposition, whereby items that are both morphologically complex and drawn from large families are more readily parsed. Together, these findings suggest that morpho-orthographic decomposition is an early, pre-lexical process that is modulated both by the structural properties of the stimulus and by reader-specific lexical knowledge.
+
+
+%	\section*{References}
+\bibliographystyle{elsarticle-harv}
+\bibliography{1_VSL_INDIFFS.bib}
+
+
+\end{document}
