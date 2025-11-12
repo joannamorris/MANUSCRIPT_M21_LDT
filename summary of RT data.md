@@ -155,21 +155,22 @@ Both studies operate within a framework that sees **morphological processing as 
 
 ## 🔍 Key Parallels and Connections
 
-| Dimension                       ¦ Your Study                                                                                            ¦ Andrews & Lo (2013)                                                                  ¦ Integration                                                                                                    |
-|---------------------------------¦-------------------------------------------------------------------------------------------------------¦--------------------------------------------------------------------------------------¦----------------------------------------------------------------------------------------------------------------|
-| Task                            ¦ Lexical decision with real and nonwords                                                               ¦ Masked priming lexical decision with word-word priming                               ¦ Different paradigms, but both probe early morphological decomposition                                          |
-| Morphological Complexity        ¦ Complex nonwords (with real morphemes) elicited slower rejections                                     ¦ Morphologically related primes (transparent/opaque) facilitated recognition          ¦ Both show automatic activation of morphemes, even in pseudo or opaque contexts                                 |
-| Lexical Variables               ¦ Base frequency and family size influenced real words, but had limited or reversed effects in nonwords ¦ Stem frequency and affix overlap are controlled, focus is on transparency vs opacity ¦ Your work extends to nonwords, where lexical-semantic influences are less expected but still subtly emerge     |
-| Individual Differences Measured ¦ Orthographic sensitivity and language proficiency                                                     ¦ Spelling (orthography) and vocabulary (semantics)                                    ¦ Both studies show orthographic skill enhances form-based effects, semantic skill enhances meaning-based effects|
-| Key Finding on Transparency     ¦ Not tested directly, but complex nonwords (morphologically structured) delayed rejections             ¦ Transparent > Opaque > Form priming effects (on average)                             ¦ Morphological structure is processed automatically, but its effects vary by reader profile                     |
-|                                 ¦                                                                                                       ¦ but moderated by individual profiles                                                 ¦                                                                                                                |
-| Interaction with Reader Skill   ¦ High sensitivity/proficiency magnified complexity cost in nonwords (especially for large families)    ¦ Semantic profile → stronger transparent priming;                                     ¦ Your nonword results parallel their masked priming effects:                                                    |
-|                                 ¦                                                                                                       ¦ Orthographic profile → strong opaque/form priming                                    ¦ individual differences shape sensitivity to structure                                                          |
-| Overall Theoretical Support     ¦ Strong support for early, form-driven morphological decomposition, modulated by lexical/reader factors¦ Evidence against purely morpho-orthographic models;                                  ¦ Both argue against a one-size-fits-all model:                                                                  |
-|                                 ¦                                                                                                       ¦ supports dual-route or distributed processing models                                 ¦ Breader-specific profiles dynamically shape processing strategy                                                |
+| Dimension                       | Your Study                                                                                            | Andrews & Lo (2013)                                                                  | Integration                                                                                                    |
+|---------------------------------|-------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+| Task                            | Lexical decision with real and nonwords                                                               | Masked priming lexical decision with word-word priming                               | Different paradigms, but both probe early morphological decomposition                                          |
+| Morphological Complexity        | Complex nonwords (with real morphemes) elicited slower rejections                                     | Morphologically related primes (transparent/opaque) facilitated recognition          | Both show automatic activation of morphemes, even in pseudo or opaque contexts                                 |
+| Lexical Variables               | Base frequency and family size influenced real words, but had limited or reversed effects in nonwords | Stem frequency and affix overlap are controlled, focus is on transparency vs opacity | Your work extends to nonwords, where lexical-semantic influences are less expected but still subtly emerge     |
+| Individual Differences Measured | Orthographic sensitivity and language proficiency                                                     | Spelling (orthography) and vocabulary (semantics)                                    | Both studies show orthographic skill enhances form-based effects, semantic skill enhances meaning-based effects|
+| Key Finding on Transparency     | Not tested directly, but complex nonwords (morphologically structured) delayed rejections             | Transparent > Opaque > Form priming effects (on average)                             | Morphological structure is processed automatically, but its effects vary by reader profile                     |
+|                                 |                                                                                                       | but moderated by individual profiles                                                 |                                                                                                                |
+| Interaction with Reader Skill   | High sensitivity/proficiency magnified complexity cost in nonwords (especially for large families)    | Semantic profile → stronger transparent priming;                                     | Your nonword results parallel their masked priming effects:                                                    |
+|                                 |                                                                                                       | Orthographic profile → strong opaque/form priming                                    | individual differences shape sensitivity to structure                                                          |
+| Overall Theoretical Support     | Strong support for early, form-driven morphological decomposition, modulated by lexical/reader factors| Evidence against purely morpho-orthographic models;                                  | Both argue against a one-size-fits-all model:                                                                  |
+|                                 |                                                                                                       | supports dual-route or distributed processing models                                 | Breader-specific profiles dynamically shape processing strategy                                                |
+
 ---
 
-## 🔬 Theoretical Implications from Both Studies
+## Theoretical Implications from Both Studies
 
 ### 1. **Morphological Structure is Accessed Automatically**
 
@@ -199,18 +200,18 @@ Both studies operate within a framework that sees **morphological processing as 
 
 ---
 
-## 🔗 How Your Work Extends Andrews & Lo (2013)
+## How Your Work Extends Andrews & Lo (2013)
 
-| Contribution                                               ¦ Description                                                                                                 |
-|------------------------------------------------------------¦-------------------------------------------------------------------------------------------------------------|
-| **Nonword Extension**                                      ¦ You show morphological effects even **without lexical entries**, reinforcing the power of form-based parsing |
-| **Complexity × Proficiency Interaction**                   ¦ You add that **proficient readers experience more interference** from morphologically rich nonwords        |
-| **Processing Cost vs Facilitation**                        ¦ While A&L measure facilitation via priming, your work highlights **costs of parsing** in nonword rejection |
-| **Item-Level Morphological Measures**                      ¦ You demonstrate **differential effects of base frequency and family size**, especially in nonwords         |
+| Contribution                                               | Description                                                                                                 |
+|------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| **Nonword Extension**                                      | You show morphological effects even **without lexical entries**, reinforcing the power of form-based parsing |
+| **Complexity × Proficiency Interaction**                   | You add that **proficient readers experience more interference** from morphologically rich nonwords        |
+| **Processing Cost vs Facilitation**                        | While A&L measure facilitation via priming, your work highlights **costs of parsing** in nonword rejection |
+| **Item-Level Morphological Measures**                      | You demonstrate **differential effects of base frequency and family size**, especially in nonwords         |
 
 ---
 
-## 🧠 Takeaway
+## Takeaway
 
 Together, your study and Andrews & Lo (2013) show that:
 
