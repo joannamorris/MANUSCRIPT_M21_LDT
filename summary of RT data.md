@@ -27,7 +27,7 @@ Across both words and nonwords, participants with high and low language proficie
 INTERPRETATION
 
 
-##  **Theoretical Interpretation of the Morpheme Interference Effect**
+## 🔍 **Theoretical Interpretation of the Morpheme Interference Effect**
 
 ### 1. **Core Finding: Morphological Structure Slows Rejection of Complex Nonwords**
 
@@ -76,7 +76,7 @@ For real words, you found **independent and additive facilitation** from:
 
 ---
 
-##  Theoretical Implications
+## 🧠 Theoretical Implications
 
 | Domain                    | Word Findings                  | Nonword Findings                                                | Interpretation                                                                 |
 |---------------------------|--------------------------------|-----------------------------------------------------------------|--------------------------------------------------------------------------------|
@@ -95,7 +95,7 @@ For real words, you found **independent and additive facilitation** from:
 | Orthographic Sensitivity | Faster overall RTs              | Faster overall RTs; trend toward complexity sensitivity | Enhances processing fluency, possibly deeper engagement with structure |
 | Language Proficiency     | No modulation of lexical effects| Magnifies complexity cost for large-family nonwords     | Proficient readers engage in deeper morphological parsing              |
 
-###  **Theoretical Alignment**
+### 📚 **Theoretical Alignment**
 
 Your results strongly align with models of **obligatory morphological decomposition** in visual word recognition (e.g., *Rastle et al., 2004*) and with the view that **morphological structure automatically triggers lexical access**, even in nonwords. The interference in rejecting complex nonwords suggests that familiar morphemes automatically activate candidate entries, slowing rejection when no match is found.
 
@@ -153,7 +153,7 @@ Both studies operate within a framework that sees **morphological processing as 
 
 ---
 
-##  Key Parallels and Connections
+## 🔍 Key Parallels and Connections
 
 | Dimension                       | Your Study                                                                                            | Andrews & Lo (2013)                                                                  | Integration                                                                                                    |
 |---------------------------------|-------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
