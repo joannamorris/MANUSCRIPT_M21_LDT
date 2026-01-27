@@ -1,5 +1,5 @@
 *.eps
-*.pages
+.pages
 *.acn
 *.acr
 *.alg
@@ -31,7 +31,7 @@
 *.nlo
 *.nls
 *.out
-*.pdf
+.pdf
 *.pyg
 *.run.xml
 *.snm
