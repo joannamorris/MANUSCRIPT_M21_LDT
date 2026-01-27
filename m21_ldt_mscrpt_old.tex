@@ -104,23 +104,36 @@ The present design is guided by a dual-pathway view of skilled reading in which 
 According to this framework, skilled reading depends on the coordination of these two pathways: rapid morpho-orthographic decoding provides access to candidate word forms, while language proficiency determines how deeply those forms are interpreted and integrated. Readers with high orthographic sensitivity should thus show faster and more efficient early processing, whereas those with high language proficiency should show more differentiated neural responses to semantic and morphological relationships. The present study tests these predictions by examining how individual differences along both dimensions shape behavioral and electrophysiological responses to morphologically structured stimuli.
 
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=.85\textwidth]{dual_pathway_model.pdf}
-	\caption{\textbf{Dual-pathway model of morphological processing in skilled reading.} 
-		The model proposes two partially independent but interacting routes that jointly support morphological processing during visual word recognition. 
-		The \textit{form-decoding pathway}, driven by \textit{Orthographic Sensitivity}, operates early and bottom-up, supporting rapid parsing of letter strings into familiar sublexical units such as stems and affixes. This pathway is associated with faster reaction times and modulations of the \textit{N250} component, reflecting morpho-orthographic decomposition. 
-		The \textit{semantic-integration pathway}, governed by \textit{Language Proficiency}, operates later and top-down, supporting the integration of morphological, lexical, and contextual information to derive meaning. This pathway is indexed by the \textit{N400} component, reflecting the depth and flexibility of semantic processing. 
-		Efficient reading depends on the coordination of both pathways: form-level decoding provides rapid access to candidate lexical representations, while semantic proficiency determines how deeply those representations are interpreted and integrated.}
-	\label{fig:dual_pathway_model}
-\end{figure}
+%\begin{figure}[htbp]
+%	\centering
+%	\includegraphics[width=.85\textwidth]{dual_pathway_model.pdf}
+%	\caption{\textbf{Dual-pathway model of morphological processing in skilled reading.} 
+%		The model proposes two partially independent but interacting routes that jointly support morphological processing during visual word recognition. 
+%		The \textit{form-decoding pathway}, driven by \textit{Orthographic Sensitivity}, operates early and bottom-up, supporting rapid parsing of letter strings into familiar sublexical units such as stems and affixes. This pathway is associated with faster reaction times and modulations of the \textit{N250} component, reflecting morpho-orthographic decomposition. 
+%		The \textit{semantic-integration pathway}, governed by \textit{Language Proficiency}, operates later and top-down, supporting the integration of morphological, lexical, and contextual information to derive meaning. This pathway is indexed by the \textit{N400} component, reflecting the depth and flexibility of semantic processing. 
+%		Efficient reading depends on the coordination of both pathways: form-level decoding provides rapid access to candidate lexical representations, while semantic proficiency determines how deeply those representations are interpreted and integrated.}
+%	\label{fig:dual_pathway_model}
+%\end{figure}
 
 
 \section{Methods}
 
+\section{Materials}
+
+The experimental stimulus set contained two sets of 100 nonwords. In the complex nonword condition, existing basewords (e.g. "gas") were combined with existing suffixes (e.g, gasful). These combinations were syntactically legal. Nonwords in this condition were constructed by using 16 different suffixes, each of which was attached to four different stems. In the simple nonword condition, the same basewords were combined with non-suffix endings that were orthoraphically similar to the suffixes used in the complex condition. Non-affix endings were created by changing the central letter of each of the suffixes (e.g., gasful-- gasfil). Since the same bases were used in both the simple and complex conditions, the experimental nonwords were distributed over two different lists, so the participants did not see the same stem twice.  Stimuli aslo included 100 monomorphemic fillers, 50 real words and 50 nonwords.
+
+Estimates of cumulative root (base) frequency, derived word form (surface) frequency and morphological family size were taken from the CELEX database. Morphologcial family size was calculated by identifying all words that were morphologically related words to the target (e.g., calculate --> calculate, calculable, calculation, calculator). Compounds (e.g., WATCHTOWER) and hyphenated compounds (e.g., CHECK-IN) were also included (de Jong et al., 2001; de Jong et al., 2003).  Base Frequency numbers were then calculated by summing the lemma frequencies of each confirmed family member. 
+
+
+
+For the response time data, we treated all proficiency and lexical variables as continuous to preserve information and maximize power. Because ERP amplitudes were computed from condition-averaged waveforms to improve signal-to-noise ratio, item-level predictors such as base frequency and family size were operationalized as categorical condition factors rather than continuous trial-level covariates. Reaction time analyses, by contrast, were conducted at the trial level and therefore modeled lexical variables continuously.
+
+
+
+
 \subsection{Individual Differences and Grouping Variables}
 
-To quantify individual differences in linguistic experience and orthographic knowledge, participants completed three standardized measures: a vocabulary test, a spelling test, and the Author Recognition Test (ART; Stanovich \& West, 1989). Scores on these measures were moderately correlated (\textit{r}s = .29–.51, all $p < .02$), indicating partially overlapping but distinct sources of variance in lexical experience.
+To quantify individual differences in linguistic experience and orthographic knowledge, participants completed three standardized measures: Nelson-Denny Vocabulary Test (Nelson, M. J., Brown, J. I., \& Denny, M. J., 1960), a spelling task adapted from Sawi (2016), and the Author Recognition Test (ART; Stanovich \& West, 1989). Scores on these measures were moderately correlated (\textit{r}s = .29–.51, all $p < .02$), indicating partially overlapping but distinct sources of variance in lexical experience.
 
 A principal components analysis (PCA) was conducted on standardized (z-scored) vocabulary, spelling, and ART scores. Two components had eigenvalues greater than~1, jointly accounting for 83.5\% of the total variance (58.0\% for Dimension~1 and 25.5\% for Dimension~2). Component loadings (Table~\ref{tab:pca_loadings}) showed that Dimension~1 loaded most strongly on vocabulary and print exposure (ART), whereas Dimension~2 loaded most strongly on spelling accuracy:
 
@@ -131,7 +144,6 @@ A principal components analysis (PCA) was conducted on standardized (z-scored) v
 
 These results indicate that the first component captures general language proficiency—encompassing vocabulary knowledge and print exposure—while the second component reflects sensitivity to orthographic form. The two components were statistically independent ($r \approx 0$), supporting their interpretation as orthogonal individual-difference dimensions.
 
-Participants were classified as \textit{High} or \textit{Low} on each component based on whether their standardized PCA score was above or below zero. Following this procedure, two independent grouping variables were derived: (1) \textit{Language Proficiency} (High vs.\ Low) and (2) \textit{Orthographic Sensitivity} (High vs.\ Low). All behavioral and ERP analyses were conducted twice—once grouping participants by Orthographic Sensitivity and once by Language Proficiency—using the same underlying dataset. This approach allows separate examination of whether morphological and lexical effects are modulated by spelling-based versus language-experience–based proficiency.
 
 \begin{table}[ht]
 	\centering
@@ -151,52 +163,34 @@ Participants were classified as \textit{High} or \textit{Low} on each component 
 	\end{tabular}
 \end{table}
 
-\subsection{Statistical Analyses}
+\section{Statistical Analyses}
 
-Analyses were conducted separately for three dependent measures: (1) response times (RTs) for correct lexical decisions, (2) mean N250 amplitudes, and (3) mean N400 amplitudes. All models were implemented in \textbf{R} (version~4.x) using the \texttt{afex}, \texttt{lme4}, and \texttt{emmeans} packages.
-	
-\paragraph{Reaction Time Analyses}
+\subsection{Behavioral Data (Reaction Times)}
 
-RTs for correct word trials were analyzed using linear mixed-effects models implemented in \texttt{afex::mixed}, employing the Satterthwaite (S) method for denominator degrees of freedom. Fixed effects included base frequency (“high” vs. “low”), morphological family size (“large” vs. “small”), and a between-subjects factor indexing reading ability, either orthographic sensitivity or language proficiency (median split). Each model was run twice, once for each grouping variable. The final model included by-subject random slopes for base frequency and morphological family size and took the form:
+Reaction time (RT) analyses were conducted on correct responses only. RTs were log-transformed to reduce positive skew and to better meet model assumptions of normality and homoscedasticity. Separate analyses were conducted for word and nonword trials, reflecting differences in the availability and interpretation of morphological predictors across lexicality.
 
-\begin{quote}
-	{\scriptsize
-		\texttt{ResponseTime ~ Base Frequency * Family Size * Sensitivity + (1 + Base Frequency + Family Size | SubjID) + (1 | ItemID)}
-	}
-\end{quote}
+RTs were analyzed using linear mixed-effects models fit with the lme4 package in R. All models included random intercepts for participants and items, and random slopes for within-participant predictors where supported by the data. Continuous lexical predictors (log base frequency and log family size) were mean-centered and scaled prior to analysis. Individual-difference measures—Orthographic Sensitivity and Language Proficiency—were entered as continuous predictors corresponding to standardized PCA scores.
 
-Random intercepts for subjects and lexical items, as well as by-subject random slopes, were included to account for individual and item-level variability. Likelihood-ratio tests (\texttt{ranova}) confirmed that both random effects significantly improved model fit ($\chi^2 > 170$, $p < 2 \times 10^{-16}$).
-Effect sizes were computed as $\eta_p^2$ using \texttt{effectsize::eta\_squared}, and model fit was summarized by marginal (fixed-effects) and conditional (fixed + random-effects) $R^2$ values obtained with \texttt{performance::r2}. RTs for non-word trials were analyzed separately because non-words varied by morphological complexity (“simple” vs. “complex”) and could be classified either by base frequency (“high” vs. “low”) or by family size (“large” vs. “small”), but not both simultaneously. Accordingly, two parallel models were run for each participant grouping variable (orthographic sensitivity and language proficiency), yielding four non-word RT analyses in total. These models followed the general form:
+For word trials, models tested the effects of base frequency, family size, Orthographic Sensitivity, and Language Proficiency, as well as interactions between orthographic sensitivity and lexical familiarity measures. For nonword trials, models additionally included morphological complexity (simple vs. complex) as a categorical predictor and tested whether complexity effects were modulated by individual differences. Treatment (reference) coding was used for categorical predictors in RT analyses. Model significance was assessed using Type III tests with Satterthwaite-approximated degrees of freedom. Fixed-effect estimates are reported alongside model-based estimated marginal means where relevant.
 
-\begin{quote}
-	{\scriptsize
-		\texttt{ResponseTime ~ Complexity * Frequency or FamilySize * Sensitivity + (1 + Complexity | SubjID) + (1 | ItemID)}
-	}
-\end{quote}
+\subsection{ERP Data}
 
-\paragraph{ERP Analyses}
+ERP analyses were conducted on mean amplitudes computed from condition-averaged waveforms. Separate datasets were constructed for words and nonwords, and analyses were conducted independently for the N250 and N400 time windows. Because ERP amplitudes were derived from condition-level averages rather than trial-level data, morphological predictors in ERP analyses were treated as categorical condition factors rather than continuous covariates.
 
-Mean ERP amplitudes were analyzed separately for the N250 (150–250~ms) and N400 (300–500~ms) time windows and for word and non-word datasets. For each combination of time window and lexicality, the same model structure was applied twice—once incorporating orthographic sensitivity and once language proficiency as the between-subjects factor—yielding parallel models for each ERP component and lexicality. Each model predicted mean amplitude as a function of sensitivity or proficiency, morphological complexity (for non-words only), and either family size or base Frequency, including all interactions.
+ERP amplitudes were analyzed using linear mixed-effects models with fixed effects of morphological structure (family size for words; complexity and family size for nonwords), Orthographic Sensitivity, and Language Proficiency, as well as their interactions. Models included random intercepts for participants and for electrode site nested within participant, allowing baseline amplitude differences across electrodes to be modeled while preserving the spatial structure of the data.
 
-Random effects included by-subject intercepts and slopes for within-subject factors and random intercepts for electrode site (\texttt{chlabel}) nested within subject. The general model form was:
+Categorical predictors in ERP analyses were effect-coded (sum-to-zero coding), such that model intercepts represent grand mean amplitudes and main effects reflect average effects across conditions. Orthographic Sensitivity and Language Proficiency were entered as continuous, mean-centered predictors. Time window was not included as a factor in the models; instead, separate models were fit for the N250 and N400 to preserve component-specific interpretation.
+
+Statistical significance of fixed effects was assessed using Type III F-tests with Satterthwaite-approximated degrees of freedom. Where higher-order interactions involving individual-difference measures were significant, follow-up analyses were conducted using estimated marginal means (emmeans). In particular, interactions involving Language Proficiency were probed by estimating contrasts at ±1 SD of the proficiency distribution, allowing direct tests of whether morphological effects differed as a function of proficiency.
+
+\subsection{Model Estimation and Inference}
+
+All mixed-effects models were fit using restricted maximum likelihood estimation. To ensure stable convergence, models were estimated using the BOBYQA optimizer. Continuous predictors were centered to facilitate interpretation of interaction terms and model intercepts. For predictors with one degree of freedom, F-tests from the analysis-of-variance tables are mathematically equivalent to squared t-tests from model summaries; all inferential conclusions are therefore invariant to the choice of reporting format.
+
+Across all analyses, inferential emphasis was placed on theoretically motivated interactions rather than exhaustive post hoc comparisons. Follow-up contrasts were conducted only where warranted by significant interactions and were limited to tests directly addressing the study’s hypotheses.
 
 
-	{\scriptsize \texttt{Amplitude ~ Sensitivity * Family Size * Complexity + (1 + Family Size + Complexity | SubjID) + (1 | SubjID:chlabel)}}
-
-
-Degrees of freedom and $p$-values were computed using the Kenward–Roger approximation (\texttt{afex}). Significant interactions were followed up with estimated marginal means (EMMs) and pairwise contrasts (\texttt{emmeans}).
-
-\paragraph{Statistical Justification}
-
-Linear mixed-effects modeling was chosen because it allows simultaneous estimation of both subject- and item-level variability, providing a more generalizable assessment of fixed effects than traditional repeated-measures ANOVA (Baayen, Davidson, \& Bates, 2008; Barr et al., 2013). By including random intercepts for participants and lexical items, as well as by-subject random slopes for within-subject factors where appropriate, these models account for the hierarchical structure of the data and reduce the risk of inflated Type~I error due to nonindependent observations. The use of the Satterthwaite and Kenward–Roger approximations for denominator degrees of freedom yields valid inferential tests under realistic unbalanced designs common in EEG and psycholinguistic data.
-
-
-\paragraph{Reporting Structure}
-
-The results are presented in two parts. We first report the reaction time (RT) analyses, which assess behavioral sensitivity to morphological and lexical variables, followed by the ERP analyses, which examine how these effects unfold over time in the N250 and N400 components. Within each domain, analyses are reported separately for words and non-words and, in turn, for models incorporating orthographic sensitivity and general language proficiency as between-subject factors. These parallel analyses provide complementary perspectives on how reading skill modulates both behavioral and neural measures of morphological processing.
-
-
-\section{Results}
+\section{Results old}
 
 We first report the reaction time (RT) analyses, which assess behavioral sensitivity to morphological and lexical variables, followed by the ERP analyses, which examine how these effects unfold over time in the N250 and N400 components. Within each domain, results are shown separately for words and non-words and for models incorporating orthographic sensitivity and general language proficiency as between-subject factors. These parallel analyses provide complementary perspectives on how reading skill modulates both behavioral and neural measures of morphological processing.
 
@@ -346,6 +340,27 @@ At the N250, high-proficiency readers displayed more efficient, selective early 
 At the N400, proficiency effects emerged more robustly: for words, high-proficiency participants exhibited stronger integration of Family Size and Base Frequency, while for nonwords, they suppressed complexity effects that remained pronounced in low-proficiency readers.
 Together, these findings indicate that greater language proficiency modulates both early and late stages of morphological processing—attenuating morpho-orthographic demands (N250) and facilitating semantic integration (N400).
 
+\section{Results New}
+
+	\subsection{Behavioral Results: Reaction Times}
+
+		\paragraph*{Words}
+
+		\paragraph*{Nonwords}
+
+	\subsection{Behavioral Data Summary}
+
+	\subsection{ERP Results: Neural Indices of Morphological Processing}
+
+		\subsubsection{N250: Early morpho-orthographic processing}
+
+			\paragraph*{Words (N250)}
+
+			\paragraph*{Nonwords (N250)}
+
+		\subsubsection{N250 summary (one paragraph)}
+		
+		
 		
 \section{Discussion}
 
