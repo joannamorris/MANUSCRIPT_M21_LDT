@@ -1,0 +1,269 @@
+\documentclass[preprint,12pt, authoryear, review]{elsarticle}
+\usepackage[american]{babel}
+\usepackage{lineno, csquotes, tipa, amsmath, caption, afterpage, booktabs}
+\usepackage{hyperref}
+\modulolinenumbers[5]
+
+\journal{Neuropsychologia}
+
+
+\begin{document}
+	
+\begin{frontmatter}
+
+%\title{Elsevier \LaTeX\ template\tnoteref{mytitlenote}}
+%\tnotetext[mytitlenote]{Fully documented templates are available in the elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
+
+	\title{Differential patterns of brain activity are correlated with sensitivity to morphological structure}
+
+	%%% Group authors per affiliation:
+	%\author{Elsevier\fnref{myfootnote}}
+	%\address{Radarweg 29, Amsterdam}
+	%\fntext[myfootnote]{Since 1880.}
+
+	%	% Author list with affiliations and footnotes
+	\author[pc]{Joanna Morris\corref{cor1}}
+	\author[usc]{Emma Kealey\fnref{fn-pc}}
+	\author[columbia]{Tess Rooney\fnref{fn-pc,equal}}
+	\author[brown]{Joemari Pulido\fnref{fn-pc,equal}}
+	\author[pc]{Natalia Alzate\fnref{equal}}
+	\author[pc]{Ethan Moore\fnref{equal}}
+	\author[pc]{Crismar Ramos-Marte\fnref{equal}}
+	\author[ohsu]{Frankie Greene\fnref{fn-hc}}
+	
+	% Affiliation blocks
+	\address[pc]{Department of Psychology, Providence College, Providence, RI, USA}
+	\address[usc]{Department of Linguistics, University of Southern California, Los Angeles, CA, USA}
+	\address[columbia]{Columbia University School of Nursing, New York, NY, USA}
+	\address[brown]{Department of Cognitive, Linguistic \& Psychological Sciences, Brown University, Providence, RI, USA}
+	\address[ohsu]{Oregon Health \& Science University and Portland State University School of Public Health, Portland, OR, USA}
+	
+	% Footnotes
+	\cortext[cor1]{Corresponding author: Joanna Morris, jmorris6@providence.edu}
+	\fntext[fn-pc]{Work conducted while affiliated with the Department of Psychology, Providence College, Providence, RI, USA}
+	\fntext[fn-hc]{Work conducted while affiliated with the School of Cognitive Science, Hampshire College, Amherst, MA, USA}
+	\fntext[equal]{These authors contributed equally to this work.}
+
+
+	\begin{abstract}
+	Skilled reading requires us to rapidly retrieve a word's meaning from memory based on a brief exposure to a sequence of arbitrary, abstract visual symbols. Within the lexicon, the mapping from form to meaning takes place at the level of morphology, and rapid semantic retrieval is facilitated by lexical representations that are precise, specific, redundant and flexible. Given that both lexical quality and sensitivity to morphological structure are key components of reading success, can we identify patterns of brain activity that reflect individual differences in these characteristics? To answer this question, we collected event-related potential and response time data from participants as they performed a lexical decision task designed to examine the effects of base frequency and morphological family size on processing both words and non-words. These data allowed us to determine individual differences in sensitivity to morphological structure. We also quantified individual differences in lexical quality (LQ) via estimates of vocabulary size and spelling performance, both of which are correlated with the precision and stability of lexical representations. We found differences between high LQ and low LQ participants in the N250 ERP component which has been hypothesised to reflect the processing sub-lexical orthographic units as well as in the N400. These findings suggest that individual differences in lexical quality and sensitivity to morphological structure are reflected in distinct patterns of brain activity, and opens the avenue for further work to investigate the perceptual and cognitive processes that underlie these differences.
+	\end{abstract}
+	
+	
+	%%Each keyword shall be separated by a \sep command. msc classifications shall be provided in the keyword  environment with the commands \MSC. \MSC accepts an optional argument to accommodate future revisions. eg., \MSC[2008]. The default is 2000.
+	
+	\begin{keyword}
+	 morphology\sep event-related potentials\sep visual statistical learning \sep individual differences
+	\end{keyword}
+
+\end{frontmatter}
+
+\linenumbers
+
+\section{Introduction}
+
+Reading is often described as “the process of gaining meaning from print” \citep[][p.~34]{raynerHowPsychologicalScience2001}. Although comprehension ultimately depends on sentence- and discourse-level integration, efficient access to individual word forms and meanings remains a foundational component of skilled reading. A central challenge for readers is therefore to extract structure from written words rapidly and flexibly, using information distributed across orthography, morphology, and semantics.
+
+In languages such as English, this challenge is amplified by the properties of the writing system itself. English exhibits irregular and context-sensitive grapheme–phoneme mappings, rendering phonological decoding alone an insufficient basis for fluent word recognition. At the same time, English preserves regularities at higher representational levels, particularly in its morphological structure. Words that share a stem or affix often exhibit consistent orthographic patterns and systematic semantic relationships (e.g., \textit{heal}–\textit{health}, \textit{teach}–\textit{teacher}). As a result, skilled reading in English requires sensitivity not only to phonological correspondences but also to recurring morphological structure that links form and meaning.
+
+\subsection{Morphological Structure and Lexical Familiarity in Word Recognition}
+
+A substantial body of research demonstrates that morphological structure influences visual word recognition. Words derived from high-frequency bases are recognized more quickly than those derived from lower-frequency bases \citep{taftRecognitionAffixedWords1979}, and words belonging to larger morphological families are processed more efficiently than those with fewer derivational relatives \citep{schreuderHowComplexSimplex1997}. These effects are often grouped under the umbrella of morphological familiarity, but they reflect distinct sources of information. \textit{Base Frequency} indexes the strength and accessibility of a stem representation across lexical contexts, whereas \textit{Family Size} reflects the degree of semantic and morphological connectivity among related forms.
+
+Critically, these familiarity effects are not limited to real words. Morphologically structured nonwords (e.g., \textit{gasful}) are reliably processed differently from unstructured controls (e.g., \textit{gasfil}), even though they lack lexical entries and stable meanings. Such findings suggest that readers engage morphological parsing processes automatically, based on surface form cues, extending decomposition beyond the lexicon to novel letter strings. At the same time, nonwords lack semantic support, making them a particularly useful test case for dissociating form-based processing from meaning-based integration.
+
+\subsection{Behavioral Sensitivity Versus Neural Sensitivity}
+
+Behavioral measures such as reaction time provide a sensitive index of processing efficiency, but they offer limited insight into the temporal dynamics of how morphological information is computed. Two readers may arrive at the same lexical decision with similar speed while relying on different intermediate representations or processing strategies. Consequently, the absence of behavioral interactions does not imply the absence of underlying processing differences.
+
+Event-related potentials (ERPs) provide a complementary window into these dynamics by isolating distinct stages of word recognition. Of particular relevance to morphological processing are the N250 and N400 components. The N250 has been linked to early orthographic and morpho-orthographic processing, reflecting the segmentation and mapping of letter strings onto sublexical units such as stems and affixes. The N400, by contrast, is associated with lexical-semantic activation and integration, indexing how efficiently a stimulus is incorporated into an emerging representation of meaning.
+
+By examining both behavioral responses and ERPs, it is therefore possible to distinguish effects that reflect general processing efficiency from those that reveal differences in how and when morphological structure influences word recognition.
+
+\subsection{Individual Differences and the Timing of Morphological Processing}
+
+Traditional models of skilled reading often assume a uniform cognitive architecture, treating individual variability as noise around a shared processing system \citep{cronbachTwoDisciplinesScientific1957}. Increasingly, however, evidence suggests that readers differ systematically in how they weight form-based and meaning-based information during word recognition. These differences may not manifest as gross behavioral dissociations but may instead shape the temporal profile of neural responses.
+
+Two dimensions of reading-related skill are particularly relevant in this context. \textit{Orthographic Sensitivity} refers to the ability to detect and exploit regularities in letter strings, including knowledge of permissible letter sequences, affix patterns, and morpho-orthographic cues. This sensitivity is thought to emerge through statistical learning over print exposure and contributes to fluent decoding and spelling accuracy. \textit{Language Proficiency}, by contrast, reflects broader lexical and semantic knowledge, including vocabulary depth and the ability to integrate form with meaning.
+
+Rather than constituting alternative “routes” to reading, these dimensions may differentially modulate processing at distinct stages. Orthographic Sensitivity is likely to exert its strongest influence during early, form-based stages of processing, facilitating rapid parsing of letter strings into candidate morphological units. Language Proficiency, in contrast, may play a more prominent role during later stages, regulating how morphological and semantic information is integrated and determining whether form-based activation is reinforced or suppressed.
+
+\subsection{Words Versus Nonwords as Diagnostic Cases}
+
+The distinction between words and nonwords provides a powerful framework for examining these stage-specific influences. For familiar words, morphological structure can be retrieved from existing lexical representations, allowing both form-based and meaning-based information to converge on a stable interpretation. Under these conditions, individual differences may have relatively subtle effects, particularly in behavior.
+
+For nonwords, however, morphological structure must be constructed online from surface cues in the absence of semantic grounding. This places greater demands on early morpho-orthographic parsing and on later regulatory mechanisms that determine whether activation is treated as meaningful or rejected as spurious. As a result, nonwords offer a particularly sensitive test of how individual differences shape the balance between automatic decomposition and controlled semantic evaluation.
+
+\subsection{The Present Study}
+
+The present study examined how individual differences in reading-related skill shape sensitivity to morphological structure during visual word recognition. Participants completed a lexical decision task involving both words and morphologically structured nonwords while EEG was recorded. Morphological variables—including \textit{Base Frequency}, \textit{Family Size}, and \textit{Morphological Complexity}—were manipulated orthogonally, allowing us to dissociate stem-level familiarity, family-level connectivity, and form-based structure. Individual differences were assessed along two dimensions: \textit{Orthographic Sensitivity}, indexed by spelling ability, and \textit{Language Proficiency}, indexed by vocabulary knowledge.
+
+Our primary goal was to determine whether these individual differences modulate the timing and nature of morphological processing, even when behavioral responses appear similar across readers. We predicted that Orthographic Sensitivity would primarily influence early processing efficiency, reflected in faster response times and modulation of the N250, particularly for morphologically structured nonwords. In contrast, we predicted that Language Proficiency would exert its strongest influence during later stages of processing, modulating N400 responses associated with semantic integration and the regulation of morphological activation.
+
+By jointly examining behavioral and electrophysiological measures across words and nonwords, the present study aims to clarify when morphological structure is engaged during reading and how individual differences shape the neural dynamics of that engagement. In doing so, it advances a view of morphological processing as a flexible, multi-stage system in which form-based and meaning-based information are differentially weighted as a function of both stimulus properties and reader skill.
+
+The Results are organized to reflect this temporal and functional progression. We first report behavioral reaction-time data to establish how item-level lexical familiarity and morphological structure influence overall processing efficiency for words and nonwords. We then turn to ERP analyses, beginning with the N250 to examine early morpho-orthographic processing and its modulation by individual differences when morphological structure must be retrieved or constructed. Finally, we analyze N400 responses to assess how morphological information is integrated at later, semantic stages of processing, with particular attention to how language proficiency shapes complexity and family-size effects for novel forms. This organization allows us to distinguish effects that are apparent in overt behavior from those that emerge only in the neural dynamics of word recognition.
+
+\section{Methods}
+
+\subsection{Materials}
+The experimental stimulus set contained two sets of 100 nonwords. In the complex nonword condition, existing basewords (e.g. "gas") were combined with existing suffixes (e.g, gasful). These combinations were syntactically legal. Nonwords in this condition were constructed by using 16 different suffixes, each of which was attached to four different stems. In the simple nonword condition, the same basewords were combined with non-suffix endings that were orthoraphically similar to the suffixes used in the complex condition. Non-affix endings were created by changing the central letter of each of the suffixes (e.g., gasful-- gasfil). Since the same bases were used in both the simple and complex conditions, the experimental nonwords were distributed over two different lists, so the participants did not see the same stem twice.  Stimuli aslo included 100 monomorphemic fillers, 50 real words and 50 nonwords.
+
+Estimates of cumulative root (base) frequency, derived word form (surface) frequency and morphological family size were taken from the CELEX database. Morphologcial family size was calculated by identifying all words that were morphologically related words to the target (e.g., calculate --> calculate, calculable, calculation, calculator). Compounds (e.g., WATCHTOWER) and hyphenated compounds (e.g., CHECK-IN) were also included (de Jong et al., 2001; de Jong et al., 2003).  Base Frequency numbers were then calculated by summing the lemma frequencies of each confirmed family member. 
+
+
+For the response time data, we treated all proficiency and lexical variables as continuous to preserve information and maximize power. Because ERP amplitudes were computed from condition-averaged waveforms to improve signal-to-noise ratio, item-level predictors such as base frequency and family size were operationalized as categorical condition factors rather than continuous trial-level covariates. Reaction time analyses, by contrast, were conducted at the trial level and therefore modeled lexical variables continuously.
+
+\subsection{Individual Differences and Grouping Variables}
+To quantify individual differences in linguistic experience and orthographic knowledge, participants completed three standardized measures: Nelson-Denny Vocabulary Test (Nelson, M. J., Brown, J. I., \& Denny, M. J., 1960), a spelling task adapted from Sawi (2016), and the Author Recognition Test (ART; Stanovich \& West, 1989). Scores on these measures were moderately correlated (\textit{r}s = .29–.51, all $p < .02$), indicating partially overlapping but distinct sources of variance in lexical experience.
+
+A principal components analysis (PCA) was conducted on standardized (z-scored) vocabulary, spelling, and ART scores. Two components had eigenvalues greater than~1, jointly accounting for 83.5\% of the total variance (58.0\% for Dimension~1 and 25.5\% for Dimension~2). Component loadings (Table~\ref{tab:pca_loadings}) showed that Dimension~1 loaded most strongly on vocabulary and print exposure (ART), whereas Dimension~2 loaded most strongly on spelling accuracy:
+
+\begin{itemize}
+	\item[-] \textit{Dimension~1 (Language Proficiency)}: vocabulary (.82), ART (.81), spelling (.65)
+	\item[-] \textit{Dimension~2 (Orthographic Sensitivity)}: spelling (.76), vocabulary ($-.29$), ART ($-.32$)
+\end{itemize}
+
+These results indicate that the first component captures general language proficiency—encompassing vocabulary knowledge and print exposure—while the second component reflects sensitivity to orthographic form. The two components were statistically independent ($r \approx 0$), supporting their interpretation as orthogonal individual-difference dimensions.
+
+
+\begin{table}[ht]
+	\centering
+	\caption{PCA loadings and variance explained for the three lexical-experience measures.}
+	\label{tab:pca_loadings}
+	\begin{tabular}{lcc}
+		\toprule
+		\textbf{Measure} & \textbf{Dimension~1 (Language Proficiency)} & \textbf{Dimension~2 (Orthographic Sensitivity)} \\
+		\midrule
+		Vocabulary (z\_vcb) & 0.82 & $-0.29$ \\
+		Spelling (z\_spl) & 0.65 & 0.76 \\
+		Author Recognition Test (z\_art) & 0.81 & $-0.32$ \\
+		\midrule
+		\textit{Eigenvalue} & 1.74 & 0.76 \\
+		\textit{Variance explained (\%)} & 58.0 & 25.5 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\section{Statistical Analyses}
+
+	\subsection{Behavioral Data (Reaction Times)}
+	Reaction time (RT) analyses were conducted on correct responses only. RTs were log-transformed to reduce positive skew and to better meet model assumptions of normality and homoscedasticity. Separate analyses were conducted for word and nonword trials, reflecting differences in the availability and interpretation of morphological predictors across lexicality.
+	
+	RTs were analyzed using linear mixed-effects models fit with the lme4 package in R. All models included random intercepts for participants and items, and random slopes for within-participant predictors where supported by the data. Continuous lexical predictors (log base frequency and log family size) were mean-centered and scaled prior to analysis. Individual-difference measures—Orthographic Sensitivity and Language Proficiency—were entered as continuous predictors corresponding to standardized PCA scores.
+	
+	For word trials, models tested the effects of base frequency, family size, Orthographic Sensitivity, and Language Proficiency, as well as interactions between orthographic sensitivity and lexical familiarity measures. For nonword trials, models additionally included morphological complexity (simple vs. complex) as a categorical predictor and tested whether complexity effects were modulated by individual differences. Treatment (reference) coding was used for categorical predictors in RT analyses. Model significance was assessed using Type III tests with Satterthwaite-approximated degrees of freedom. Fixed-effect estimates are reported alongside model-based estimated marginal means where relevant.
+	
+	\subsection{ERP Data}
+	ERP analyses were conducted on mean amplitudes computed from condition-averaged waveforms. Separate datasets were constructed for words and nonwords, and analyses were conducted independently for the N250 and N400 time windows. Because ERP amplitudes were derived from condition-level averages rather than trial-level data, morphological predictors in ERP analyses were treated as categorical condition factors rather than continuous covariates.
+	
+	ERP amplitudes were analyzed using linear mixed-effects models with fixed effects of morphological structure (family size for words; complexity and family size for nonwords), Orthographic Sensitivity, and Language Proficiency, as well as their interactions. Models included random intercepts for participants and for electrode site nested within participant, allowing baseline amplitude differences across electrodes to be modeled while preserving the spatial structure of the data.
+	
+	Categorical predictors in ERP analyses were effect-coded (sum-to-zero coding), such that model intercepts represent grand mean amplitudes and main effects reflect average effects across conditions. Orthographic Sensitivity and Language Proficiency were entered as continuous, mean-centered predictors. Time window was not included as a factor in the models; instead, separate models were fit for the N250 and N400 to preserve component-specific interpretation.
+	
+	Statistical significance of fixed effects was assessed using Type III F-tests with Satterthwaite-approximated degrees of freedom. Where higher-order interactions involving individual-difference measures were significant, follow-up analyses were conducted using estimated marginal means (emmeans). In particular, interactions involving Language Proficiency were probed by estimating contrasts at ±1 SD of the proficiency distribution, allowing direct tests of whether morphological effects differed as a function of proficiency.
+	
+	\subsection{Model Estimation and Inference}
+	All mixed-effects models were fit using restricted maximum likelihood estimation. To ensure stable convergence, models were estimated using the BOBYQA optimizer. Continuous predictors were centered to facilitate interpretation of interaction terms and model intercepts. For predictors with one degree of freedom, F-tests from the analysis-of-variance tables are mathematically equivalent to squared t-tests from model summaries; all inferential conclusions are therefore invariant to the choice of reporting format.
+	
+	Across all analyses, inferential emphasis was placed on theoretically motivated interactions rather than exhaustive post hoc comparisons. Follow-up contrasts were conducted only where warranted by significant interactions and were limited to tests directly addressing the study’s hypotheses.
+
+\section{Results}
+
+	\subsection{Behavioral Results: Reaction Times}
+
+	\paragraph*{Words}
+	Reaction times (RTs) for correct lexical decisions to word stimuli were analyzed using a linear mixed-effects model with fixed effects of Base Frequency, Family Size, Orthographic Sensitivity (OS), and Language Proficiency (LP), as well as interactions between OS and Base Frequency and Family Size. The model included random intercepts for participants and items, as well as by-participant random slopes for Base Frequency and Family Size. The analysis revealed robust main effects of item-level lexical familiarity (Base Frequency and Family Size). Words derived from higher-frequency bases were recognized more quickly than those derived from lower-frequency bases, $\beta = -0.018$, $SE = 0.005$, $t(101.85) = -3.69$, $p < .001$. Similarly, words from larger morphological families elicited faster responses than those from smaller families, $\beta = -0.013$, $SE = 0.005$, $t(93.20) = -2.60$, $p = .011$. These effects were independent: neither the Base Frequency × Orthographic Sensitivity interaction, $\beta = -0.002$, $SE = 0.003$, $t(191.85) = -0.93$, $p = .355$, nor the Family Size × Orthographic Sensitivity interaction, $\beta = 0.001$, $SE = 0.003$, $t(78.22) = 0.44$, $p = .66$, approached significance. Orthographic Sensitivity showed a marginal trend toward faster overall response times, $\beta = -0.035$, $SE = 0.019$, $t(63.88) = -1.85$, $p = .069$, whereas Language Proficiency did not exert a main effect on RTs, $\beta = 0.013$, $SE = 0.012$, $t(63.97) = 1.05$, $p = .30$. Importantly, neither individual-difference measure selectively modulated the effects of Base Frequecy or Family Size on response speed. Together, these results indicate that response times to words are driven primarily by iBase Frequency and Family Size, with only weak evidence that individual differences influence overall efficiency. There was no evidence that Orthographic Sensitivity or Language Proficiency alters the structure of morphological effects on word recognition speed.
+
+	\paragraph*{Nonwords}
+	Reaction times (RTs) for correct lexical decisions to nonwords were analyzed using a linear mixed-effects model with fixed effects of Morphological Complexity (simple vs.\ complex), Base Frequency, Family Size, Orthographic Sensitivity (OS), and Language Proficiency (LP), as well as the theoretically motivated Complexity × Orthographic Sensitivity interaction. The model included random intercepts for participants and items and by-participant random slopes for Complexity. The analysis revealed a strong main effect of Morphological Complexity: complex nonwords elicited significantly slower responses than simple nonwords, $\beta = -0.049$, $SE = 0.005$, $t(61.58) = -9.09$, $p < .001$. In addition, Base Frequency exerted a reliable inhibitory effect, such that nonwords derived from higher-frequency bases were responded to more slowly than those derived from lower-frequency bases, $\beta = 0.015$, $SE = 0.005$, $t(98.23) = 3.05$, $p = .003$. Family Size did not significantly influence response times, $\beta = -0.006$, $SE = 0.005$, $t(96.65) = -1.24$, $p = .22$. Orthographic Sensitivity showed a significant main effect, with higher-sensitivity participants responding more quickly overall, $\beta = -0.042$, $SE = 0.019$, $t(61.52) = -2.25$, $p = .028$. In contrast, Language Proficiency did not yield a main effect on nonword RTs, $\beta = 0.003$, $SE = 0.012$, $t(62.91) = 0.27$, $p = .79$. Critically, Orthographic Sensitivity did not interact with Morphological Complexity, $\beta = 0.002$, $SE = 0.006$, $t(59.95) = 0.37$, $p = .71$, indicating that greater orthographic skill did not selectively reduce the processing cost associated with morphologically complex nonwords. Taken together, these results indicate that nonword decision latencies are strongly shaped by morphological complexity and item-level lexical familiarity, particularly base frequency, while individual differences primarily affect overall response efficiency. There was no evidence that orthographic or language proficiency alters the magnitude of morphological complexity effects in behavioral responses to novel forms.
+
+	\subsection{Behavioral Data Summary}
+	Across both word and nonword stimuli, reaction times were robustly influenced by item-level lexical familiarity (Base Frequency and Family Size) and morphological structure. Words were recognized more quickly when derived from high-frequency bases and large morphological families, whereas nonwords showed substantial processing costs associated with morphological complexity and, for high-frequency bases, inhibitory familiarity effects. Individual differences in orthographic sensitivity primarily affected overall response speed, with more orthographically sensitive participants responding more quickly across conditions. Critically, however, neither orthographic sensitivity nor language proficiency selectively modulated the magnitude of morphological effects on response times. Together, these results indicate that behavioral responses primarily index processing efficiency and item-level lexical familiarity (Base Frequency and Family Size), rather than differences in the structure or timing of morphological processing across individuals.
+
+	\subsection{ERP Results: Neural Indices of Morphological Processing}
+	While reaction times provide a sensitive measure of overall processing efficiency, they do not reveal how morphological information is represented and integrated over time. To examine whether individual differences modulate the temporal dynamics of morphological processing—beyond what is evident in behavioral responses—we next analyzed event-related potentials (ERPs), focusing on the N250 and N400 components as indices of early morpho-orthographic parsing and later semantic integration, respectively. Separate models were fit for words and nonwords to account for differences in lexical status and available morphological cues. We tested whether morphological structure interacts with Orthographic Sensitivity and Language Proficiency at each processing stage, allowing individual differences to influence early parsing, later integration, or both.
+	
+	\subsubsection{N250: Early morpho-orthographic processing}
+
+	\paragraph*{Words (N250)}
+	Mean N250 amplitudes for word stimuli were analyzed using a linear mixed-effects model with fixed effects of Family Size, Orthographic Sensitivity (OS), and Language Proficiency (LP), including interactions between Family Size and each individual-difference measure. The model included random intercepts for participants and for electrode site nested within participant. The analysis revealed a robust main effect of Family Size, such that words from larger morphological families elicited more positive N250 amplitudes than words from smaller families, $\beta = 0.160$, $SE = 0.029$, $t(1617) = 5.48$, $p < .001$. Neither Orthographic Sensitivity, $\beta = 0.261$, $SE = 0.256$, $t(57) = 1.02$, $p = .31$, nor Language Proficiency, $\beta = -0.279$, $SE = 0.186$, $t(57) = -1.50$, $p = .14$, yielded significant main effects. Interactions between Family Size and individual-difference measures were not reliable. Neither the Family Size × Orthographic Sensitivity interaction, $\beta = 0.055$, $SE = 0.033$, $t(1617) = 1.67$, $p = .095$, nor the Family Size × Language Proficiency interaction were significant, $\beta = -0.036$, $SE = 0.024$, $t(1617) = -1.53$, $p = .13$. Together, these results indicate that morphological family structure modulates early morpho-orthographic processing for words at the N250, with limited evidence that individual differences shape this effect at this processing stage.
+			
+	\paragraph*{Nonwords (N250)}
+	Mean N250 amplitudes for nonwords were analyzed using a linear mixed-effects model with fixed effects of Morphological Complexity (simple vs.\ complex), Family Size, Orthographic Sensitivity (OS), and Language Proficiency (LP), including all theoretically motivated interactions. Random intercepts were included for participants and for electrode site nested within participant. The analysis revealed significant main effects of both Morphological Complexity and Family Size. Complex nonwords elicited larger N250 amplitudes than simple nonwords, $\beta = 0.116$, $SE = 0.025$, $t(4851) = 4.64$, $p < .001$, and nonwords derived from larger morphological families elicited larger N250 amplitudes than those from smaller families, $\beta = 0.089$, $SE = 0.025$, $t(4851) = 3.53$, $p < .001$. Critically, early morphological processing was strongly modulated by individual differences. Morphological Complexity interacted robustly with Orthographic Sensitivity, $\beta = -0.196$, $SE = 0.028$, $t(4851) = -6.98$, $p < .001$, and with Language Proficiency, $\beta = -0.179$, $SE = 0.020$, $t(4851) = -8.76$, $p < .001$, indicating that the magnitude of the complexity effect at the N250 varied substantially as a function of reader skill. In addition, the Complexity × Family Size × Orthographic Sensitivity interaction was significant, $\beta = -0.065$, $SE = 0.028$, $t(4851) = -2.32$, $p = .021$, suggesting that the influence of morphological family structure on early processing of complex nonwords depended on orthographic sensitivity. No corresponding three-way interaction involving Language Proficiency was observed. Together, these results indicate that early morpho-orthographic parsing of novel forms is highly sensitive to individual differences, with both orthographic sensitivity and language proficiency systematically shaping complexity-related processing costs at the N250.
+			
+	To clarify the significant Morphological Complexity × Orthographic Sensitivity interaction at the N250 for nonwords, we examined estimated marginal means of complexity at three levels of orthographic sensitivity (−1, 0, +1 SD), averaged over family size. For participants with low orthographic sensitivity (−1 SD), complex nonwords elicited substantially more positive N250 amplitudes than simple nonwords, $\Delta = 0.64,\mu V$, $SE = 0.08$, $z = 8.34$, $p < .0001$. A similar but attenuated complexity effect was observed at mean orthographic sensitivity (0 SD), $\Delta = 0.25,\mu V$, $SE = 0.05$, $z = 4.98$, $p < .0001$. In contrast, for participants with high orthographic sensitivity (+1 SD), the complexity effect was reversed in direction and did not reach significance, $\Delta = -0.14,\mu V$, $SE = 0.07$, $z = -1.93$, $p = .053$. Thus, increasing orthographic sensitivity was associated with a progressive reduction—and eventual elimination—of the early processing cost associated with morphological complexity. This pattern indicates that early morpho-orthographic parsing of novel forms is most effortful for readers with lower orthographic sensitivity and becomes increasingly efficient as orthographic sensitivity increases.
+			
+	We conducted parallel follow-up analyses to characterize the significant Morphological Complexity × Language Proficiency interaction at the N250, again examining estimated marginal means of complexity at −1, 0, and +1 SD of language proficiency, averaged over family size. For participants with low language proficiency (−1 SD), complex nonwords elicited markedly more positive N250 amplitudes than simple nonwords, $\Delta = 0.57,\mu V$, $SE = 0.06$, $z = 9.05$, $p < .0001$. This complexity effect was reduced but remained reliable at mean language proficiency (0 SD), $\Delta = 0.22,\mu V$, $SE = 0.05$, $z = 4.31$, $p < .0001$. At high language proficiency (+1 SD), the complexity effect reversed in direction and reached significance, with simple nonwords eliciting more positive N250 amplitudes than complex nonwords, $\Delta = -0.14,\mu V$, $SE = 0.07$, $z = -2.15$, $p = .032$. These results indicate that increasing language proficiency is associated with a qualitative shift in early processing of morphologically complex nonwords, from enhanced complexity-related costs in lower-proficiency readers to attenuated or reversed effects in higher-proficiency readers.
+			
+	\subsubsection{N250 summary (one paragraph)}
+	Across analyses, the N250 component showed robust sensitivity to morphological structure, consistent with its role in early morpho-orthographic processing. For words, family size reliably modulated N250 amplitudes, indicating early access to stored morphological representations, with limited evidence that individual differences substantially altered this effect. In contrast, for nonwords, morphological complexity strongly modulated N250 amplitudes, and this effect was systematically shaped by individual differences in both orthographic sensitivity and language proficiency. Readers with lower skill exhibited pronounced early complexity-related costs, whereas higher-skill readers showed attenuated or reversed complexity effects, suggesting more efficient early parsing of novel morphological structure. These findings indicate that individual differences exert their strongest influence at the N250 when morphological structure must be constructed online, rather than retrieved from existing lexical representations. We next turn to the N400 to examine whether these early differences in parsing efficiency carry forward to later stages of semantic integration.
+	
+	\subsection{N400: semantic integration}	
+	
+	\paragraph*{Words}
+	Mean N400 amplitudes for word stimuli were analyzed using a linear mixed-effects model with fixed effects of Family Size, Orthographic Sensitivity (OS), and Language Proficiency (LP), including interactions between Family Size and each individual-difference measure. Random intercepts were included for participants and for electrode site nested within participant. The analysis revealed a robust main effect of Family Size, such that words from larger morphological families elicited less negative N400 amplitudes than words from smaller families, $\beta = 0.224$, $SE = 0.032$, $t(1617) = 7.01$, $p < .001$. This effect indicates facilitated semantic integration for words supported by richer morphological families. In addition, a significant main effect of Orthographic Sensitivity was observed, $\beta = 0.677$, $SE = 0.318$, $t(57) = 2.13$, $p = .038$, reflecting overall differences in N400 amplitude as a function of spelling-based reading skill. In contrast, Language Proficiency did not yield a main effect, $\beta = 0.001$, $SE = 0.231$, $t(57) = 0.01$, $p = .996$. Critically, neither the Family Size × Orthographic Sensitivity interaction, $\beta = 0.044$, $SE = 0.036$, $t(1617) = 1.24$, $p = .214$, nor the Family Size × Language Proficiency interaction, $\beta = -0.035$, $SE = 0.026$, $t(1617) = -1.34$, $p = .180$, reached significance. Thus, while both morphological family structure and orthographic sensitivity independently influenced N400 amplitudes, there was limited evidence that individual differences modulated the magnitude of family-size effects at this later stage of processing for familiar words.
+	
+	Whereas N400 responses to words were primarily shaped by item-level morphological structure, with limited modulation by individual differences, the following analyses examine whether reader skill more strongly shapes semantic integration when processing novel, morphologically structured nonwords.
+	
+	\paragraph*{Nonwords}
+	Mean N400 amplitudes for nonword stimuli were analyzed using a linear mixed-effects model with fixed effects of Morphological Complexity, Family Size, Orthographic Sensitivity (OS), and Language Proficiency (LP), including all interactions among these factors. Random intercepts were included for participants and for electrode site nested within participant. The analysis revealed a robust main effect of Morphological Complexity, such that complex nonwords elicited more positive (less negative) N400 amplitudes than simple nonwords, $\beta = 0.235$, $SE = 0.031$, $t(4851) = 7.64$, $p < .001$. There was no reliable main effect of Family Size, $\beta = 0.042$, $SE = 0.031$, $t(4851) = 1.38$, $p = .17$, nor of Language Proficiency or Orthographic Sensitivity (both $p > .28$). Critically, Morphological Complexity interacted with both individual-difference measures. The Complexity × Language Proficiency interaction was significant, $\beta = -0.127$, $SE = 0.025$, $t(4851) = -5.08$, $p < .001$, as was the Complexity × Orthographic Sensitivity interaction, $\beta = -0.120$, $SE = 0.034$, $t(4851) = -3.49$, $p < .001$, indicating that the magnitude and direction of N400 complexity effects varied systematically as a function of reader skill. In addition, Morphological Complexity interacted with Family Size, $\beta = 0.111$, $SE = 0.031$, $t(4851) = 3.63$, $p < .001$. This interaction was further modulated by Language Proficiency, yielding a significant Complexity × Family Size × Language Proficiency interaction, $\beta = -0.057$, $SE = 0.025$, $t(4851) = -2.29$, $p = .022$. The corresponding three-way interaction involving Orthographic Sensitivity was not significant, $p = .30$.
+	
+	Follow-up analyses examined estimated marginal means to characterize the Complexity × Language Proficiency interaction. For readers with low language proficiency (−1 SD), complex nonwords elicited substantially more positive N400 amplitudes than simple nonwords, particularly for items from large morphological families, consistent with strong semantic co-activation. At mean proficiency, this complexity effect was attenuated, and at high language proficiency (+1 SD), the complexity effect was markedly reduced or absent across family sizes. Direct contrasts confirmed that the joint influence of complexity and family size was strongest for low-proficiency readers (Complex − Simple × Large − Small: $\Delta = 0.67,\mu V$, $SE = 0.16$, $z = 4.31$, $p < .0001$) and substantially weaker and non-significant for high-proficiency readers ($\Delta = 0.21,\mu V$, $SE = 0.16$, $z = 1.31$, $p = .19$).
+	
+	Parallel follow-up analyses for Orthographic Sensitivity revealed a similar but less pronounced pattern. Readers with low orthographic sensitivity showed large N400 complexity effects, particularly for nonwords derived from large families, whereas these effects were attenuated at mean sensitivity and minimal at high sensitivity. Unlike Language Proficiency, however, Orthographic Sensitivity did not reliably modulate the joint influence of complexity and family size at the three-way level, indicating that spelling-based skill primarily affected overall sensitivity to complexity rather than the structure of semantic integration.
+	
+	\subsection{Results Summary}
+	Across behavioral and electrophysiological measures, the present results reveal a clear dissociation between item-level morphological structure and individual differences in reading-related skill. Behavioral response times were primarily driven by item-level lexical familiarity (Base Frequency and Family Size) and morphological complexity, with limited evidence that orthographic sensitivity or language proficiency selectively altered the structure of morphological effects. In contrast, ERP measures revealed robust modulation by individual differences, particularly for novel forms. Early morpho-orthographic processing indexed by the N250 was strongly shaped by both orthographic sensitivity and language proficiency when morphological structure had to be constructed online, whereas later semantic integration indexed by the N400 showed differential sensitivity to language proficiency, especially in the joint influence of complexity and family size. Together, these findings indicate that individual differences exert their strongest influence on the neural dynamics of morphological processing, even when behavioral responses appear relatively uniform across readers. In the Discussion, we consider how this dissociation between behavioral and neural sensitivity constrains dual-pathway accounts of morphological processing and the role of individual differences in early parsing versus later integration.
+	
+	
+\section{Discussion}
+
+\subsection{Overview of Findings}
+The present study examined how morphological structure and item-level lexical familiarity shape visual word recognition, and how these effects are modulated by individual differences in reading-related skill. By combining behavioral measures with time-resolved electrophysiological indices, we were able to distinguish effects that reflect overall processing efficiency from those that reveal how morphological information is constructed and integrated over time. Across analyses, a clear dissociation emerged: reaction times were driven primarily by item-level lexical familiarity and morphological complexity, whereas ERPs revealed robust, stage-specific modulation by Orthographic Sensitivity and Language Proficiency, particularly for novel forms. These findings suggest that individual differences exert their strongest influence not on whether morphology is engaged, but on how and when morphological structure is parsed and regulated during lexical processing.
+
+\subsection{Behavioral Evidence: Efficiency Without Structural Modulation}
+Behavioral response times showed robust and theoretically coherent effects of item-level lexical familiarity (Base Frequency and Family Size) and morphological complexity. For words, higher base frequency and larger family size independently facilitated lexical decisions, consistent with prior evidence that stem familiarity and morphological connectivity contribute additively to recognition speed. For nonwords, morphological complexity reliably slowed responses, and higher base frequency produced further interference, indicating that morphological parsing is at least partially automatic and can hinder decision-making when lexical legitimacy is absent.
+
+Critically, however, individual differences did not selectively modulate these structural effects. Orthographic Sensitivity predicted faster responses overall, reflecting greater efficiency in decoding and form-based processing, but did not alter the magnitude of morphological effects. Language Proficiency likewise showed little impact on response speed. Together, these findings indicate that behavioral measures primarily index processing efficiency and familiarity, rather than differences in the structure or timing of morphological computation across readers. This absence of behavioral modulation contrasts sharply with the ERP results and underscores the importance of neural measures for revealing latent differences in processing dynamics.
+
+ubsection{Neural Evidence for Stage-Specific Modulation by Individual Differences}
+
+\subsubsection{Early Parsing (N250): Skill-Dependent Construction of Morphological Structure}
+The N250 component, associated with early morpho-orthographic parsing, revealed a striking divergence between words and nonwords. For words, N250 amplitudes were reliably modulated by Family Size, indicating early access to stored morphological representations. Importantly, this effect showed little sensitivity to individual differences, suggesting that when morphological structure is lexically entrenched, early parsing proceeds in a relatively uniform manner across readers.
+
+In contrast, N250 responses to nonwords were strongly shaped by both Orthographic Sensitivity and Language Proficiency. Morphological complexity elicited large early processing costs in lower-skill readers, whereas these effects were attenuated or reversed in higher-skill readers. This pattern suggests that when morphological structure must be constructed online—as is the case for novel forms—early parsing is highly sensitive to reader skill. More skilled readers appear able to segment and evaluate morphological structure efficiently, minimizing early processing costs, whereas less skilled readers engage in broader or less selective decomposition that amplifies complexity-related effects.
+
+\subsubsection{Later Integration (N400): Proficiency-Dependent Semantic Regulation}
+At the N400, which indexes semantic integration, individual differences exerted even more differentiated effects. For words, N400 amplitudes were primarily shaped by Family Size, consistent with facilitated integration for items embedded in richer morphological networks. Orthographic Sensitivity exerted an independent main effect, but neither individual-difference measure reliably modulated family-size effects, indicating that semantic integration of familiar words is relatively stable across readers.
+
+For nonwords, however, Language Proficiency played a central role. Morphological complexity interacted robustly with Language Proficiency, and this interaction was further qualified by Family Size. Low-proficiency readers exhibited strong N400 complexity effects, particularly for nonwords derived from large families, suggesting heightened semantic co-activation that may be difficult to regulate when meaning fails to materialize. In contrast, high-proficiency readers showed attenuated or absent complexity effects, indicating more effective suppression of misleading morphological activation. Orthographic Sensitivity showed a parallel but weaker pattern, influencing overall sensitivity to complexity without reliably modulating the joint influence of complexity and family structure.
+
+Together, these findings indicate that Language Proficiency is particularly critical for regulating semantic activation during later stages of processing, especially when morphological structure is suggestive but semantically unlicensed.
+
+\subsection{Dissociable Roles of Orthographic Sensitivity and Language Proficiency}
+
+The present results clarify the complementary but distinct contributions of Orthographic Sensitivity and Language Proficiency to morphological processing. Orthographic Sensitivity primarily reflects efficiency in decoding and form-based analysis, conferring global speed advantages in behavior and attenuating early complexity costs in the N250. Its influence is strongest when readers must rapidly parse unfamiliar strings into plausible sublexical units.
+
+Language Proficiency, by contrast, exerts minimal influence on overt response speed but profoundly shapes neural responses, particularly at later stages of processing. High-proficiency readers appear better able to regulate semantic activation, enhancing integration when morphological structure aligns with meaning and suppressing it when structure is misleading. This dissociation explains why Language Proficiency yields robust ERP effects in the absence of corresponding behavioral modulation: lexical decision tasks do not require deep semantic resolution, but neural measures reveal differences in how meaning is evaluated and controlled.
+
+\subsection{Implications for Models of Morphological Processing}
+
+These findings support an interactive, multi-stage view of morphological processing in which decomposition is obligatory but its consequences are dynamically regulated. Item-level lexical familiarity drives efficient access and integration, producing additive behavioral effects, whereas individual differences tune the balance between automatic parsing and controlled semantic evaluation. The strong modulation of nonword ERPs by reader skill highlights the importance of considering individual variability when modeling morphological processing, particularly in contexts where structure must be inferred rather than retrieved.
+
+Rather than reflecting fixed processing strategies, morphological effects emerge from the interaction between stimulus structure and reader skill, with early parsing and later integration differentially sensitive to orthographic and linguistic experience.
+
+\subsection{Limitations and Future Directions}
+
+The present study focused on visual word recognition in skilled adult readers; future work could extend these findings by examining developmental populations or by manipulating semantic transparency to further dissociate form-based and meaning-based contributions. Longitudinal or training studies may also clarify how orthographic sensitivity and language proficiency jointly evolve and reshape the temporal dynamics of morphological processing
+
+\subsection{Conclusion}
+
+In sum, the present findings demonstrate that individual differences in reading skill do not primarily alter whether morphology is engaged, but rather shape how morphological structure is constructed and regulated over time. Behavioral measures reflect efficiency and familiarity, whereas neural measures reveal dynamic, skill-dependent modulation of early parsing and later integration. These results underscore the value of combining behavioral and electrophysiological approaches to capture the adaptive nature of morphological processing in skilled reading.
+
+%	\section*{References}
+\bibliographystyle{elsarticle-harv}
+\bibliography{1_VSL_INDIFFS.bib}
+
+
+\end{document}
