@@ -60,7 +60,7 @@
 
 
 \tiny
- \keyFont{ \section{Keywords:} keyword, keyword, keyword, keyword, keyword, keyword, keyword, keyword} %All article types: you may provide up to 8 keywords; at least 5 are mandatory.
+ \keyFont{ \section{Keywords:} morphological processing, individual differences, event-related potentials, N250, N400, lexical decision} %All article types: you may provide up to 8 keywords; at least 5 are mandatory.
 \end{abstract}
 
 \section{Introduction}
@@ -71,9 +71,16 @@ In languages such as English, this challenge is amplified by the properties of t
 
 \subsection{Morphological Structure and Lexical Familiarity in Word Recognition}
 
-A substantial body of research demonstrates that morphological structure influences visual word recognition. Words derived from high-frequency bases are recognized more quickly than those derived from lower-frequency bases \citep{taftRecognitionAffixedWords1979}, and words belonging to larger morphological families are processed more efficiently than those with fewer derivational relatives \citep{schreuderHowComplexSimplex1997}. These effects are often grouped under the umbrella of morphological familiarity, but they reflect distinct sources of information. \textit{Base Frequency} indexes the strength and accessibility of a stem representation across lexical contexts, whereas \textit{Family Size} reflects the degree of semantic and morphological connectivity among related forms.
+A substantial body of research demonstrates that morphological structure influences visual word recognition.
+
+ Words derived from high-frequency bases are recognized more quickly than those derived from lower-frequency bases \citep{taftRecognitionAffixedWords1979}, and words belonging to larger morphological families are processed more efficiently than those with fewer derivational relatives \citep{schreuderHowComplexSimplex1997}. These effects are often grouped under the umbrella of morphological familiarity, but they reflect distinct sources of information. \textit{Base Frequency} indexes the strength and accessibility of a stem representation across lexical contexts, whereas \textit{Family Size} reflects the degree of semantic and morphological connectivity among related forms.
 
 Critically, these familiarity effects are not limited to real words. Morphologically structured nonwords (e.g., \textit{gasful}) are reliably processed differently from unstructured controls (e.g., \textit{gasfil}), even though they lack lexical entries and stable meanings. Such findings suggest that readers engage morphological parsing processes automatically, based on surface form cues, extending decomposition beyond the lexicon to novel letter strings. At the same time, nonwords lack semantic support, making them a particularly useful test case for dissociating form-based processing from meaning-based integration.
+
+Whether these effects reflect explicit morpheme representations or emergent statistical sensitivity to regularities among word forms remains contested \citep{stevensPlaut2022}, and current methods are unlikely to fully resolve this debate. The present study therefore remains agnostic on this theoretical question, focusing instead on whether the processes underlying morphological sensitivity vary systematically with reader skill — a question that is meaningful under either account.
+
+Yet despite robust evidence that morphological structure shapes word recognition, relatively little is known about whether and how these effects vary across readers. If morphological sensitivity is graded — emerging from learned statistical regularities rather than fixed representational primitives — then individual differences in the depth or efficiency of that learning should modulate the morphological effects described above, and may do so differently depending on the type of linguistic knowledge involved.
+
 
 \subsection{Behavioral Sensitivity Versus Neural Sensitivity}
 
@@ -111,11 +118,11 @@ The Results are organized to reflect this temporal and functional progression. W
 
 \subsection{Materials}
 
-The experimental stimulus set included two sets of 100 nonwords, constructed to manipulate morphological structure while controlling surface form. In the \textit{complex nonword} condition, existing English base words (e.g., \textit{gas}) were combined with existing derivational suffixes (e.g., \textit{gasful}), yielding morphologically plausible but unattested forms. These combinations were syntactically legal and reflected common English derivational patterns. A total of 16 suffixes were used, each attached to four different stems.
+The experimental stimulus set included 200 nonwords, constructed to manipulate morphological structure while controlling surface form. In the \textit{complex nonword} condition, we combined existing English base words (e.g., \textit{gas}) with existing derivational suffixes (e.g., \textit{gasful}), to yield 100 morphologically plausible complex nonwords. Each combination was syntactically legal and reflected common English derivational patterns. A total of 16 suffixes were used, each attached to four different stems.
 
-In the \textit{simple nonword} condition, the same base words were combined with non-suffix endings that were orthographically similar to the real suffixes used in the complex condition but did not constitute valid morphemes. These non-affix endings were created by altering the central letter of each suffix (e.g., \textit{gasful}–\textit{gasfil}), preserving length and orthographic neighborhood characteristics while eliminating morphological structure.
+In the \textit{simple nonword} condition, we cobmined thesame base words as in the complex non-word condition  with non-suffix endings that were orthographically similar to the real suffixes used in the complex condition but did not constitute valid morphemes, to yield 100 orthographically plausible simple non-words. These non-affix endings were created by changing the central letter of each suffix (e.g., \textit{gasful}–\textit{gasfil}), preserving length and orthographic neighborhood characteristics while eliminating morphological structure.  Thus each complex non-word had an orthographically matched simple counterpart.
 
-Because the same base words appeared in both the simple and complex conditions, the experimental nonwords were distributed across two lists such that no participant encountered the same stem more than once. In addition to the experimental nonwords, the stimulus set included 100 monomorphemic fillers (50 real words and 50 nonwords) to balance lexical status and reduce predictability.
+Because the same base words appeared in both the simple and complex conditions, the experimental nonwords were distributed across two lists such that no participant encountered the same base more than once. In addition to the experimental nonwords, the stimulus set included 100 monomorphemic fillers (50 real words and 50 nonwords) to balance lexical status and reduce predictability.
 
 Estimates of cumulative base (root) frequency, surface frequency, and morphological family size were obtained from the CELEX lexical database. Morphological family size was calculated by identifying all morphologically related forms sharing the same base (e.g., \textit{calculate}, \textit{calculable}, \textit{calculation}, \textit{calculator}). Following prior work \citep[e.g.,][]{deJong2001, deJong2003}, both compounds (e.g., \textit{WATCHTOWER}) and hyphenated compounds (e.g., \textit{CHECK-IN}) were included, as they contribute to morphological connectivity within the lexicon. Base frequency was computed by summing the lemma frequencies of all confirmed family members.
 
