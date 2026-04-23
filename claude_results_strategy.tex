@@ -1,0 +1,208 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{microtype}
+\usepackage{hyperref}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
+\titleformat{\subsubsection}{\normalsize\itshape}{}{0em}{}
+
+\title{\textbf{Revised Analytic Strategy}}
+\date{}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{Orienting Principle}
+	
+	The three-question structure maps cleanly onto the introduction's theoretical argument. Reaction times establish \textit{who is faster} --- they are a measure of efficiency, not morphological architecture. The N250 asks whether early form-based parsing is modulated by orthographic skill. The N400 asks whether later semantic integration is modulated by lexical-semantic knowledge. Individual differences are the diagnostic tool throughout, but their role shifts across questions: Orthographic Sensitivity (OS) is foregrounded in Questions~1 and~2, Language Proficiency (LP) is foregrounded in Question~3. This asymmetry should be explicit in how the models are structured and reported.
+	
+	% ---------------------------------------------------------------
+	\section{Handling Base Frequency and Family Size}
+	
+	This needs to be resolved before the models are specified, because the choice affects every analysis.
+	
+	\subsection{The Problem}
+	
+	Base Frequency and Family Size are moderately correlated at the item level, they appear together in multiple models, and the results suggest they do different things: Base Frequency drives RT effects for both words and nonwords, while Family Size drives ERP effects. Carrying both as independent predictors throughout every model produces multicollinearity and dilutes the theoretical signal.
+	
+	\subsection{Recommended Solution: Assign Variables to Questions}
+	
+	Rather than collapsing them into a composite, each variable should be assigned its primary analytic home based on what the data and theory suggest it indexes.
+	
+	\begin{itemize}
+		\item \textbf{Base Frequency} is the primary lexical familiarity index for \textbf{RT models} --- it drives the behavioral effects and is interpretable as overall lexical availability. Family Size can be included as a covariate in RT models but should not be foregrounded.
+		\item \textbf{Family Size} is the primary morphological structure index for \textbf{ERP models} --- it drives the N250 and N400 effects and is interpretable as the richness of morphological family representation. Base Frequency can be included as a covariate in ERP models but should not be foregrounded.
+	\end{itemize}
+	
+	This is not arbitrary: it is theoretically motivated by the distinction between token-level familiarity (Base Frequency) and type-level morphological structure (Family Size), and it is empirically supported by the pattern of results. It also eliminates the high-order interactions that are currently making the models difficult to interpret. If a reviewer pushes back, the composite PCA approach is the fallback --- but the separation should be tried first, because it preserves the theoretical distinction the introduction is built around.
+	
+	% ---------------------------------------------------------------
+	\section{Core Question 1: Does Orthographic Sensitivity Influence Overall Lexical Decision Efficiency?}
+	
+	\subsection{Theoretical Framing}
+	
+	Reaction times index processing speed and overall efficiency. The finding that OS predicts overall RT but does not modulate the structure of morphological effects is theoretically meaningful --- it suggests that orthographic skill affects how fast the system operates without changing what it does. This is consistent with discriminative learning accounts in which OS indexes the precision of sublexical cue weights, which would speed all form-based processing rather than selectively facilitating morphologically structured items.
+	
+	\subsection{Model Structure}
+	
+	\subsubsection{Words}
+	
+	\begin{verbatim}
+		RT ~ Base Frequency + Orthographic Sensitivity
+		+ (1 + Base Frequency | participant) + (1 | item)
+	\end{verbatim}
+	
+	\begin{itemize}
+		\item Base Frequency as the primary lexical familiarity predictor
+		\item Family Size included as a covariate but not interacted or foregrounded
+		\item LP included once and reported as null --- do not interact
+		\item \textit{Report:} main effect of Base Frequency, main effect of OS, null LP
+	\end{itemize}
+	
+	\subsubsection{Nonwords}
+	
+	\begin{verbatim}
+		RT ~ Complexity + Base Frequency + Orthographic Sensitivity
+		+ (1 + Complexity | participant) + (1 | item)
+	\end{verbatim}
+	
+	\begin{itemize}
+		\item Complexity as the primary morphological contrast
+		\item Base Frequency as lexical familiarity covariate
+		\item LP included once and reported as null
+		\item \textit{Report:} main effect of Complexity, inhibitory effect of Base Frequency, main effect of OS, null LP
+	\end{itemize}
+	
+	\subsection{What to Claim}
+	
+	OS predicts overall efficiency across both lexical categories. The absence of OS $\times$ morphological structure interactions in RTs means behavioral responses do not differentiate readers by how they use morphological information --- only by how fast they process it overall. This sets up the ERP results as the place where individual differences in morphological processing architecture become visible.
+	
+	% ---------------------------------------------------------------
+	\section{Core Question 2: Does Orthographic Sensitivity Modulate Early Morpho-Orthographic Parsing (N250)?}
+	
+	\subsection{Theoretical Framing}
+	
+	The N250 indexes early form-based processing at the morpho-orthographic level. The prediction is that OS --- which indexes sensitivity to sublexical orthographic structure --- should modulate the N250 response to morphological structure, particularly for nonwords where form-based cues must be evaluated without recourse to a stored whole-word representation. LP is included as a covariate to control for shared variance with OS but is not the primary predictor here. Where LP also emerges at the N250 for nonwords, this should be reported honestly and addressed in the Discussion as evidence that early parsing efficiency reflects accumulated lexical experience more broadly rather than orthographic skill specifically.
+	
+	\subsection{Model Structure}
+	
+	\subsubsection{Words (N250)}
+	
+	\begin{verbatim}
+		N250 ~ Family Size * Orthographic Sensitivity + Language Proficiency
+		+ (1 | participant:electrode) + (1 | item)
+	\end{verbatim}
+	
+	\begin{itemize}
+		\item Family Size as the primary morphological predictor
+		\item OS as the primary individual difference moderator
+		\item LP included as a main effect covariate, not interacted
+		\item \textit{Report:} main effect of Family Size, Family Size $\times$ OS interaction, LP as covariate
+	\end{itemize}
+	
+	\subsubsection{Nonwords (N250)}
+	
+	\begin{verbatim}
+		N250 ~ Complexity * Orthographic Sensitivity
+		+ Complexity * Language Proficiency + Family Size
+		+ (1 | participant:electrode) + (1 | item)
+	\end{verbatim}
+	
+	\begin{itemize}
+		\item Complexity as the primary morphological contrast
+		\item OS as the primary moderator, LP as secondary
+		\item Family Size included as a covariate --- do not foreground the three-way unless specifically arguing for it
+		\item \textit{Report:} main effect of Complexity, Complexity $\times$ OS interaction, Complexity $\times$ LP interaction; acknowledge both and address in Discussion
+	\end{itemize}
+	
+	\subsection{What to Claim}
+	
+	Early morpho-orthographic parsing is modulated by orthographic skill, particularly for novel forms. The additional modulation by LP should be acknowledged rather than suppressed --- it qualifies the predicted dissociation and suggests that early parsing efficiency reflects broad lexical expertise rather than a purely form-based individual difference. This is an honest and theoretically interesting finding, not a failure of the prediction.
+	
+	% ---------------------------------------------------------------
+	\section{Core Question 3: Does Language Proficiency Shape Semantic Integration of Morphological Information (N400)?}
+	
+	\subsection{Theoretical Framing}
+	
+	The N400 indexes semantic integration. The prediction is that LP --- which indexes depth and breadth of lexical-semantic knowledge --- should modulate the N400 response to morphological family structure, particularly for nonwords where semantic co-activation from family members must be generated from stem-level cues alone. OS is included as a covariate. The key finding is the three-way Complexity $\times$ Family Size $\times$ LP interaction for nonwords, which provides the clearest evidence for the predicted role of LP in morphological family activation during semantic integration.
+	
+	\subsection{Model Structure}
+	
+	\subsubsection{Words (N400)}
+	
+	\begin{verbatim}
+		N400 ~ Family Size * Language Proficiency + Orthographic Sensitivity
+		+ (1 | participant:electrode) + (1 | item)
+	\end{verbatim}
+	
+	\begin{itemize}
+		\item Family Size as the primary morphological predictor
+		\item LP as the primary individual difference moderator
+		\item OS included as a main effect covariate --- report the main effect but do not interact
+		\item \textit{Report:} main effect of Family Size, Family Size $\times$ LP interaction, OS main effect
+	\end{itemize}
+	
+	\subsubsection{Nonwords (N400)}
+	
+	\begin{verbatim}
+		N400 ~ Complexity * Family Size * Language Proficiency
+		+ Orthographic Sensitivity
+		+ (1 | participant:electrode) + (1 | item)
+	\end{verbatim}
+	
+	\begin{itemize}
+		\item Three-way as the primary test --- this is the strongest finding and should be the focus
+		\item OS included as a main effect covariate only --- the Complexity $\times$ OS interaction can be reported but should not be foregrounded
+		\item \textit{Report:} main effect of Complexity, Complexity $\times$ Family Size $\times$ LP interaction, OS as covariate
+	\end{itemize}
+	
+	\subsection{What to Claim}
+	
+	Language Proficiency specifically shapes how morphological family structure is recruited during semantic integration of novel forms. The three-way interaction --- where LP moderates the joint influence of complexity and family size at the N400 --- is the clearest evidence that depth of lexical-semantic knowledge determines whether morphological family co-activation facilitates or complicates semantic processing. The absence of a corresponding three-way for OS at the N400, combined with the presence of the three-way for LP, is the closest the data come to the predicted clean dissociation between the two individual difference dimensions.
+	
+	% ---------------------------------------------------------------
+	\section{Summary of Model Structure}
+	
+	\begin{table}[h!]
+		\centering
+		\renewcommand{\arraystretch}{1.4}
+		\begin{tabular}{p{2cm} p{2.2cm} p{3cm} p{2.8cm} p{3cm}}
+			\toprule
+			\textbf{Question} & \textbf{Measure} & \textbf{Primary predictor} & \textbf{Primary moderator} & \textbf{Secondary (covariate)} \\
+			\midrule
+			Q1 Efficiency & RT Words       & Base Frequency              & OS                          & LP (null) \\
+			Q1 Efficiency & RT Nonwords    & Complexity + Base Frequency & OS                          & LP (null) \\
+			Q2 Early parsing & N250 Words  & Family Size                 & OS                          & LP \\
+			Q2 Early parsing & N250 Nonwords & Complexity                & OS (primary), LP (secondary) & Family Size \\
+			Q3 Semantic integration & N400 Words & Family Size            & LP                          & OS \\
+			Q3 Semantic integration & N400 Nonwords & Complexity $\times$ Family Size & LP (three-way)   & OS \\
+			\bottomrule
+		\end{tabular}
+		\caption{Summary of model structure across the three core questions.}
+	\end{table}
+	
+	% ---------------------------------------------------------------
+	\section{What This Strategy Gains}
+	
+	The main advantage over the original analysis is that it replaces a symmetric design --- where both OS and LP were tested against both components equally --- with an asymmetric design that reflects the theoretical predictions. Where the predicted dissociation holds, it is foregrounded; where it does not hold cleanly, the departure is acknowledged and interpreted rather than obscured by equally-weighted parallel tests. The three-question structure also gives the results section a clear narrative spine that maps directly onto the aims, which will make the paper considerably easier to follow.
+	
+	% ---------------------------------------------------------------
+	\section{Recommended Order of Operations}
+	
+	\begin{enumerate}
+		\item Rerun the RT models with the lean structure: words and nonwords separately, Base Frequency and OS as primary predictors, LP included once as a null result.
+		\item Rerun the N250 models with OS as primary moderator: words and nonwords separately, LP as covariate.
+		\item Rerun the N400 models with LP as primary moderator: words and nonwords separately, OS as covariate, three-way for nonwords as the planned primary test.
+		\item Once new results are in hand, rewrite the results section around the three-question structure using the organizational logic discussed --- words together, nonwords together, RT then ERP within each.
+		\item Make minor adjustments to the aims section to ensure the OS/LP asymmetry is stated explicitly.
+	\end{enumerate}
+	
+	The introduction does not need to be rewritten again. The analyses need to be rerun, and the results section needs to be rewritten around the new analyses. That is the right order.
+	
+\end{document}
