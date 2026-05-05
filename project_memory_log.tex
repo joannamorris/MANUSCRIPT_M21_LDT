@@ -1,0 +1,574 @@
+\documentclass[11pt, a4paper]{article}
+
+% Packages
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{listings}
+\lstset{
+	basicstyle=\scriptsize\ttfamily,
+}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{microtype}
+\usepackage{amsmath}   % for \text{} in math mode
+\usepackage{amssymb}  % for checkmark
+
+% Hyperlink styling
+\hypersetup{
+  colorlinks = true,
+  linkcolor  = blue!60!black,
+  urlcolor   = blue!60!black,
+}
+
+% Code listing style (for R code blocks)
+\lstdefinestyle{Rstyle}{
+  language        = R,
+  basicstyle      = \ttfamily\small,
+  keywordstyle    = \color{blue!70!black}\bfseries,
+  commentstyle    = \color{green!50!black}\itshape,
+  stringstyle     = \color{orange!80!black},
+  backgroundcolor = \color{gray!8},
+  frame           = single,
+  framerule       = 0.4pt,
+  rulecolor       = \color{gray!40},
+  breaklines      = true,
+  breakatwhitespace = true,
+  showstringspaces = false,
+  tabsize         = 2,
+  captionpos      = b,
+  xleftmargin     = 6pt,
+  xrightmargin    = 6pt,
+  aboveskip       = 8pt,
+  belowskip       = 8pt,
+}
+
+\lstset{style=Rstyle}
+
+% Section formatting
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
+\titleformat{\subsubsection}{\normalsize\itshape\bfseries}{}{0em}{}
+
+% Checkmark command
+\newcommand{\done}{$\checkmark$}
+
+% -----------------------------------------------------------------------
+\begin{document}
+
+\scriptsize
+
+\begin{center}
+  {\Large\bfseries Project Memory Log: Morphological Processing ERP Paper}\\[4pt]
+  {\normalsize Conversation Summary and Continuity Document}
+\end{center}
+
+\medskip
+\hrule
+\bigskip
+
+% -----------------------------------------------------------------------
+\section{1.\ The Original Problem}
+
+The user is writing a specialist psycholinguistics journal paper examining individual differences in morphological processing using ERPs and reaction times. The study involves a lexical decision task (LDT) with:
+
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Participants:} 67 adults (60 with ERP data)
+  \item \textbf{Stimuli:} 100 words and 100 morphologically complex nonwords
+  \item \textbf{Nonword types:} Complex (real stem + real affix, e.g., \textit{gasful}) vs.\ Simple (real stem + pseudoaffix, e.g., \textit{gasfil})
+  \item \textbf{Measures:} Reaction times (RTs) and ERPs (N250 and N400 components)
+  \item \textbf{Individual differences:} Two orthogonal PCA dimensions derived from vocabulary knowledge, spelling ability, and print exposure:
+  \begin{itemize}
+    \item \textbf{Dim.1 = Language Proficiency (LP)} — depth/breadth of lexical-semantic knowledge
+    \item \textbf{Dim.2 = Orthographic Sensitivity (OS)} — sensitivity to sublexical orthographic structure
+  \end{itemize}
+\end{itemize}
+
+The user was struggling with: (a) theoretical framing of the introduction, (b) analytic strategy, (c) R code for mixed effects models, and (d) writing up results.
+
+% -----------------------------------------------------------------------
+\section{2.\ Key Theoretical Decisions}
+
+\subsection{The Core Prediction: Double Dissociation}
+
+The study tests whether OS and LP dissociably modulate morphological processing at distinct temporal stages:
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{OS $\to$ early form-based processing (N250):} OS should modulate stem/base frequency effects at the N250, reflecting sensitivity to sublexical orthographic structure.
+  \item \textbf{LP $\to$ later semantic integration (N400):} LP should modulate family size effects at the N400, reflecting depth of lexical-semantic knowledge.
+\end{itemize}
+
+This prediction follows from Andrews and colleagues' finding that orthographic and semantic profiles are dissociable axes of individual variation, combined with the theoretical distinction between stem frequency (form-level access) and family size (semantic representation richness).
+
+\subsection{The Three-Question Analytic Structure}
+
+The analyses are organised around three core questions:
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{Q1 (RT/Behavioral):} Does OS influence overall lexical decision efficiency?
+  \item \textbf{Q2 (N250/Early neural):} Does OS modulate early morpho-orthographic parsing?
+  \item \textbf{Q3 (N400/Late neural):} Does LP shape semantic integration of morphological information?
+\end{enumerate}
+
+\subsection{Key Theoretical Models Discussed}
+
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Baayen--Schreuder race model} (classical dual-route): stem frequency $\to$ decomposition route; family size $\to$ whole-form route
+  \item \textbf{Early automatic decomposition (Rastle \& Davis):} obligatory early form-based parse, then semantic filter
+  \item \textbf{Morpho-orthographic account (Grainger):} intermediate morpho-orthographic level
+  \item \textbf{NDL/LDL (Baayen et al.):} no morpheme representations; discriminative learning from distributional statistics; both effects emergent from learned weight structure
+\end{itemize}
+
+% -----------------------------------------------------------------------
+\section{3.\ Introduction — Current Status: Complete}
+
+\subsection{Structure}
+\begin{enumerate}[leftmargin=1.5em]
+  \item Opening paragraphs on reading and English morphology
+  \item Bridge paragraph planting individual differences logic
+  \item \textbf{Subsection: Stem Frequency and Morphological Family Size: Theoretical Interpretations Across Current Models} — covers classical, early decomposition, morpho-orthographic, and NDL/LDL accounts
+  \item \textbf{Subsection: Individual Differences in Morphological Processing} — Lexical Quality Hypothesis; Andrews et al.\ (2013) finding; OS/LP profiles mapped onto theoretical accounts
+  \item \textbf{Subsection: Aims and Predictions} — three analyses, double dissociation as central claim
+\end{enumerate}
+
+\subsection{Key Framing Decisions}
+
+\begin{itemize}[leftmargin=1.5em]
+  \item Words and nonwords framed as doing distinct theoretical work (words = time course of stored representations; nonwords = generalisation to novel forms)
+  \item RT models framed as efficiency measures (no morphological $\times$ ID interactions by design — stated explicitly in methods)
+  \item ERP models framed as architecture measures
+  \item The asymmetric interaction structure (OS at N250, LP at N400) is justified in both the aims section and the results section
+\end{itemize}
+
+% -----------------------------------------------------------------------
+\section{4.\ Analytic Strategy — Finalised}
+
+\subsection{RT Models}
+
+No morphological structure $\times$ individual difference interactions in RT models by design. Individual differences entered as main effects only.
+
+\textbf{Words RT:}
+\begin{lstlisting}
+m_rt_words <- lmer(
+  logRT ~ zLogBF + zLogFS + OS + LP +
+    (1 | SubjID) + (1 | Item),
+  data = rt_w,
+  control = lmerControl(optimizer = "bobyqa")
+)
+\end{lstlisting}
+
+\textbf{Nonwords RT:}
+\begin{lstlisting}
+m_rt_nw <- lmer(
+  logRT ~ complexity + zLogBF + zLogFS + OS + LP +
+    (1 + complexity | SubjID) + (1 | ItemID),
+  data = rt_nw,
+  control = lmerControl(optimizer = "bobyqa")
+)
+\end{lstlisting}
+
+\subsection{Contrast Coding}
+
+\begin{itemize}[leftmargin=1.5em]
+  \item \texttt{complexity}: sum coded \texttt{c(-0.5, 0.5)} with levels \texttt{c("Simple", "Complex")}
+  \item \texttt{family\_size}: sum coded \texttt{c(-0.5, 0.5)} with levels \texttt{c("Small", "Large")}
+  \item \texttt{base\_frequency}: sum coded \texttt{c(-0.5, 0.5)} with levels \texttt{c("Low", "High")}
+  \item OS and LP: PCA scores, already mean-centred by construction — no additional scaling needed
+\end{itemize}
+
+\subsection{ERP Models — Base Frequency Analyses (Primary for Words)}
+
+\textbf{Words N250 (Base Frequency $\times$ OS):}
+\begin{lstlisting}
+contrasts(erp_w$base_frequency) <- c(-0.5, 0.5)
+m_w_N250_bf <- lmer(
+  value ~ base_frequency * OS + LP +
+    (1 | SubjID) + (1 | SubjID:chlabel),
+  data = subset(erp_w, time_window == "N250"),
+  control = lmerControl(optimizer = "bobyqa")
+)
+\end{lstlisting}
+
+\textbf{Words N400 (Base Frequency $\times$ LP):}
+\begin{lstlisting}
+m_w_N400_bf <- lmer(
+  value ~ base_frequency * LP + OS +
+    (1 | SubjID) + (1 | SubjID:chlabel),
+  data = subset(erp_w, time_window == "N400"),
+  control = lmerControl(optimizer = "bobyqa")
+)
+\end{lstlisting}
+
+\subsection{ERP Models — Family Size Analyses}
+
+\textbf{Words N250 (Family Size $\times$ OS) — secondary:}
+\begin{lstlisting}
+contrasts(erp_w$family_size) <- c(-0.5, 0.5)
+m_w_N250_fs <- lmer(
+  value ~ family_size * OS + LP +
+    (1 | SubjID) + (1 | SubjID:chlabel),
+  data = subset(erp_w, time_window == "N250"),
+  control = lmerControl(optimizer = "bobyqa")
+)
+\end{lstlisting}
+
+\textbf{Words N400 (Family Size $\times$ LP) — secondary:}
+\begin{lstlisting}
+m_w_N400_fs <- lmer(
+  value ~ family_size * LP + OS +
+    (1 | SubjID) + (1 | SubjID:chlabel),
+  data = subset(erp_w, time_window == "N400"),
+  control = lmerControl(optimizer = "bobyqa")
+)
+\end{lstlisting}
+
+\textbf{Nonwords N250 (Complexity $\times$ OS and LP; \texttt{family\_size} as covariate — confirmed final):}
+\begin{lstlisting}
+contrasts(erp_nw$family_size) <- c(-0.5, 0.5)
+m_nw_N250 <- lmer(
+  value ~ complexity * OS + complexity * LP + family_size +
+    (1 | SubjID) + (1 | SubjID:chlabel),
+  data = subset(erp_nw, time_window == "N250"),
+  control = lmerControl(optimizer = "bobyqa")
+)
+\end{lstlisting}
+
+\textbf{Nonwords N400 (Complexity $\times$ Family Size $\times$ LP — centerpiece finding):}
+\begin{lstlisting}
+contrasts(erp_nw$complexity)  <- c(-0.5, 0.5)
+contrasts(erp_nw$family_size) <- c(-0.5, 0.5)
+m_nw_N400 <- lmer(
+  value ~ complexity * family_size * LP + OS +
+    (1 | SubjID) + (1 | SubjID:chlabel),
+  data = subset(erp_nw, time_window == "N400"),
+  control = lmerControl(optimizer = "bobyqa")
+)
+\end{lstlisting}
+
+\subsection{R Packages Used}
+
+\begin{lstlisting}
+library(lme4)
+library(lmerTest)    # Satterthwaite df -- load BEFORE lmerTest, BEFORE fitting models
+library(emmeans)     # follow-up contrasts; use emm_options(lmer.df = "kenward-roger")
+library(effectsize)  # eta_squared(model, partial = TRUE)
+library(performance) # r2_nakagawa(model) -- use this, NOT r2()
+library(MuMIn)       # r.squaredGLMM() as alternative if performance fails
+library(ggplot2)
+library(patchwork)   # load after ggplot2, before lmerTest
+\end{lstlisting}
+
+\subsection{Important Technical Notes}
+
+\begin{itemize}[leftmargin=1.5em]
+  \item Always load \texttt{ggplot2} and \texttt{patchwork} \textit{before} \texttt{lmerTest} to avoid namespace conflicts
+  \item Use \texttt{r2\_nakagawa()} not \texttt{r2()} — the latter has a bug with certain model structures
+  \item Set \texttt{emm\_options(lmer.df = "kenward-roger")} at start of \texttt{emmeans} session
+  \item For back-transforming log RT: use \texttt{tran = "log"} in \texttt{emmeans} or exponentiate manually
+  \item KR df hang with complex random effects — Satterthwaite is acceptable and standard
+  \item Nonword RT: \texttt{emmeans} crashed until \texttt{emm\_options(lmer.df = "satterthwaite")} was set globally
+\end{itemize}
+
+% -----------------------------------------------------------------------
+\section{5.\ Key Results — Summary}
+
+\subsection{RT Results}
+
+\textbf{Words RT:}
+\begin{itemize}[leftmargin=1.5em]
+  \item Base Frequency: $\beta = -0.017$, $t(100.97) = -3.66$, $p < .001$, $\eta^2_p = .12$
+  \item Family Size: $\beta = -0.013$, $t(93.59) = -2.64$, $p = .010$, $\eta^2_p = .07$
+  \item OS: marginal trend, $\beta = -0.035$, $t(63.84) = -1.85$, $p = .069$ — NOT robust to random effects changes
+  \item LP: null, $p = .35$
+  \item $R^2_\text{marginal} = .033$,\quad $R^2_\text{conditional} = .417$
+\end{itemize}
+
+\textbf{Nonwords RT:}
+\begin{itemize}[leftmargin=1.5em]
+  \item Complexity: $\beta = 0.049$, $t(62.68) = 9.13$, $p < .001$, $\eta^2_p = .57$;
+        $M_\text{complex} = 718.9$ ms [695.2, 743.4], $M_\text{simple} = 684.6$ ms [661.5, 708.5]; difference $\approx 34$ ms
+  \item Base Frequency: inhibitory effect, $\beta = 0.015$, $t(98.21) = 3.05$, $p = .003$, $\eta^2_p = .09$
+  \item Family Size: ns, $p = .22$
+  \item OS: significant, $\beta = -0.041$, $t(62.21) = -2.23$, $p = .030$, $\eta^2_p = .07$
+  \item LP: null, $p = .78$
+  \item $R^2_\text{marginal} = .050$,\quad $R^2_\text{conditional} = .494$
+\end{itemize}
+
+\subsection{N250 Results}
+
+\textbf{Words N250 — Base Frequency (primary, tests double dissociation):}
+\begin{itemize}[leftmargin=1.5em]
+  \item Base Frequency main effect: $\beta = -0.318$, $t(1618) = -3.18$, $p = .002$; High more negative than Low
+  \item \textbf{Base Frequency $\times$ OS: $\beta = -0.455$, $t(1618) = -4.06$, $p < .001$} \textit{[Key finding]}
+  \item Follow-ups: BF effect absent at low OS ($p = .374$), significant at mean OS ($\Delta = 0.318$, $p = .002$), large at high OS ($\Delta = 0.773$, $p < .001$)
+  \item LP: not interacted; main effect ns ($p = .162$)
+  \item $R^2_\text{marginal} = .018$,\quad $R^2_\text{conditional} = .801$
+\end{itemize}
+
+\textbf{Words N250 — Family Size (secondary):}
+\begin{itemize}[leftmargin=1.5em]
+  \item Family Size: $\beta = -0.324$, $t(1618) = -5.54$, $p < .001$;
+        $M_\text{large} = -0.57\,\mu$V [$-1.03$, $-0.11$], $M_\text{small} = -0.90\,\mu$V [$-1.36$, $-0.44$]
+  \item Family Size $\times$ OS: marginal trend, $\beta = -0.111$, $t(1618) = -1.70$, $p = .089$
+  \item LP: ns
+  \item $R^2_\text{marginal} = .019$,\quad $R^2_\text{conditional} = .738$
+\end{itemize}
+
+\textbf{Nonwords N250:}
+\begin{itemize}[leftmargin=1.5em]
+  \item Complexity: $\beta = -0.233$, $t(4856) = -4.63$, $p < .001$;
+        $M_\text{complex} = -0.759\,\mu$V, $M_\text{simple} = -0.526\,\mu$V
+  \item Family Size (covariate): $\beta = 0.182$, $t(4856) = 3.63$, $p < .001$
+  \item \textbf{Complexity $\times$ OS: $\beta = 0.392$, $t(4856) = 6.98$, $p < .001$} \textit{[Key finding]}
+  \item \textbf{Complexity $\times$ LP: $\beta = 0.358$, $t(4856) = 8.76$, $p < .001$} \textit{[Key finding]}
+  \item Both interactions show same pattern: large complexity cost at low skill $\to$ attenuated $\to$ reversed at high skill:
+  \begin{itemize}
+    \item OS: $\Delta = 0.642$ (low), $0.250$ (mean), $-0.142$ (high, $p = .053$)
+    \item LP: $\Delta = 0.574$ (low), $0.216$ (mean), $-0.141$ (high, $p = .032$)
+  \end{itemize}
+  \item Theoretical interpretation: N250 reflects processing cost not sensitivity; reversal = real suffix facilitates parsing for skilled readers; both dimensions converge on early processing (qualifies predicted OS-specific effect)
+\end{itemize}
+
+\subsection{N400 Results}
+
+\textbf{Words N400 — Base Frequency (primary, tests double dissociation):}
+\begin{itemize}[leftmargin=1.5em]
+  \item Base Frequency main effect: $\beta = 0.214$, $t(1618) = 2.01$, $p = .044$; High more positive than Low (facilitation)
+  \item \textbf{Base Frequency $\times$ LP: $\beta = 0.344$, $t(1618) = 3.98$, $p < .001$} \textit{[Key finding]}
+  \item Follow-ups: BF effect absent at low LP ($p = .333$), significant at mean LP ($\Delta = -0.214$, $p = .044$), large at high LP ($\Delta = -0.558$, $p < .001$)
+  \item OS: main effect significant $p = .049$ (overall amplitude, no interaction with BF)
+  \item $R^2_\text{marginal} = .026$,\quad $R^2_\text{conditional} = .825$
+\end{itemize}
+
+\textbf{Words N400 — Family Size (secondary):}
+\begin{itemize}[leftmargin=1.5em]
+  \item Family Size: $\beta = -0.452$, $t(1618) = -7.07$, $p < .001$;
+        $M_\text{large} = 0.518\,\mu$V [$-0.054$, $1.089$], $M_\text{small} = 0.062\,\mu$V [$-0.509$, $0.634$]
+  \item Family Size $\times$ LP: ns, $p = .172$
+  \item OS: main effect significant, $p = .038$
+\end{itemize}
+
+\textbf{Nonwords N400:}
+\begin{itemize}[leftmargin=1.5em]
+  \item Complexity: $\beta = -0.460$, $t(4854) = -7.48$, $p < .001$
+  \item \textbf{Complexity $\times$ Family Size $\times$ LP three-way: $\beta = 0.227$, $t(4854) = 2.27$, $p = .023$} \textit{[Centerpiece finding]}
+  \item Complexity $\times$ Family Size interaction by LP level:
+  \begin{itemize}
+    \item Low LP: $\Delta = -0.667$, $p < .001$ (large, significant)
+    \item Mean LP: $\Delta = -0.440$, $p = .0003$ (attenuated, significant)
+    \item High LP: $\Delta = -0.213$, $p = .188$ (absent)
+  \end{itemize}
+  \item Family size effect within complex nonwords disappears at high LP
+  \item Complexity $\times$ Base Frequency $\times$ LP three-way: NOT significant (confirms specificity — LP effect is about family richness, not stem familiarity)
+  \item Complexity $\times$ LP (averaged over FS): monotonic attenuation (unlike N250 reversal), significant at all LP levels
+\end{itemize}
+
+\subsection{The Double Dissociation — Confirmed}
+
+\begin{center}
+\begin{tabular}{lcc}
+  \toprule
+   & \textbf{N250 (early form-based)} & \textbf{N400 (later semantic)} \\
+  \midrule
+  \textbf{Base Frequency $\times$ OS} & \done\ Significant & OS main effect only \\
+  \textbf{Base Frequency $\times$ LP} & LP not interacted  & \done\ Significant \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\smallskip
+For nonwords: both OS and LP modulate N250 (partial qualification of predicted dissociation); LP selectively drives N400 three-way.
+
+% -----------------------------------------------------------------------
+\section{6.\ Results Section — Current Status}
+
+\subsection{Written and Approved Paragraphs}
+
+\textbf{Words section:}
+\begin{itemize}[leftmargin=1.5em]
+  \item[\done] Words RT — complete, verified against R output
+  \item[\done] Words N250 (family size version) — complete
+  \item[\done] Words N400 (family size version) — complete
+  \item[\done] Words N250 (base frequency version) — drafted in final exchange
+  \item[\done] Words N400 (base frequency version) — drafted in final exchange
+\end{itemize}
+
+\textbf{Nonwords section:}
+\begin{itemize}[leftmargin=1.5em]
+  \item[\done] Nonwords RT — complete, verified against R output
+  \item[\done] Nonwords N250 — complete with follow-up contrasts
+  \item[\done] Nonwords N400 — complete with three-way follow-up contrasts
+\end{itemize}
+
+\textbf{Summary section:}
+\begin{itemize}[leftmargin=1.5em]
+  \item[\done] Results Summary — drafted and approved, split so that the ``three key findings'' paragraph moves to open the Discussion
+\end{itemize}
+
+\subsection{Results Section Structure}
+
+\begin{lstlisting}[language={}, style=Rstyle, basicstyle=\ttfamily\small]
+\section{Results}
+  [Orienting paragraph]
+  [Table 1: Model summary]
+  [Asymmetric interaction explanation paragraph]
+
+\subsection{Words}
+  \paragraph{Words RT}
+  \paragraph{Words N250}   % <- base frequency version now primary
+  \paragraph{Words N400}   % <- base frequency version now primary
+
+\subsection{Nonwords}
+  \paragraph{Nonwords RT}
+  \paragraph{Nonwords N250}
+  \paragraph{Nonwords N400}
+
+\subsection{Results Summary}
+\end{lstlisting}
+
+\subsection{Key Writing Decisions}
+
+\begin{itemize}[leftmargin=1.5em]
+  \item Words and nonwords reported separately (not by component)
+  \item RT then ERP (N250 then N400) within each stimulus type
+  \item No claim that ``interactions were absent in RTs'' since they were not tested — instead state models were specified for efficiency only
+  \item ERP measures framed as ``designed to detect'' modulation that RT models were not designed to detect
+  \item N250 direction for base frequency: high frequency = MORE negative (opposite to family size effect) — to be explained in Discussion
+  \item Conditional $R^2$ values for ERP models are very high (0.738--0.825) due to large participant and electrode variance
+\end{itemize}
+
+% -----------------------------------------------------------------------
+\section{7.\ Outstanding Issues to Resolve}
+
+\subsection{Critical (resolve before opening new chat)}
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{Nonword N250 covariate} — \textbf{RESOLVED:} Final model uses \texttt{family\_size} as covariate.
+
+  \item \textbf{Integration of base frequency and family size analyses for words:} The words section now has two sets of ERP analyses — base frequency (primary, tests double dissociation) and family size (secondary). Need to decide:
+  \begin{itemize}
+    \item Report base frequency as primary, family size as secondary/supplementary?
+    \item Or report both in full within the words section?
+    \item \textit{Recommended:} base frequency primary in main text, family size results noted briefly or in supplementary.
+  \end{itemize}
+
+  \item \textbf{N250 direction for base frequency:} High frequency bases $\to$ MORE negative N250 (opposite of family size effect). This dissociation between BF and FS at N250 needs a sentence in Discussion. Likely explanation: BF = strength of form-level activation (more effort); FS = efficiency of pattern matching (less effort).
+\end{enumerate}
+
+\subsection{Important (address in new chat)}
+
+\begin{enumerate}[leftmargin=1.5em, start=4]
+  \item \textbf{Discussion — not yet started.} Structure agreed:
+  \begin{itemize}
+    \item Opening: three key findings paragraph (moved from Results Summary)
+    \item Section 1: N250 reversal at high skill (most unexpected finding)
+    \item Section 2: Behavioral/ERP dissociation
+    \item Section 3: N400 three-way and semantic integration (connect to theoretical frameworks)
+    \item Closing: theoretical implications and limitations
+  \end{itemize}
+
+  \item \textbf{Updated model summary table:} Table 1 needs updating to reflect base frequency as primary predictor for words ERP analyses (currently shows family size).
+
+  \item \textbf{Results orienting paragraph:} Needs minor update to reflect that base frequency analyses are primary for words.
+
+  \item \textbf{Nonword N400 base frequency analyses:} Null three-way (Complexity $\times$ BF $\times$ LP) should be reported as a cross-check confirming specificity of the family size finding — currently mentioned but not formally integrated into the results write-up.
+\end{enumerate}
+
+% -----------------------------------------------------------------------
+\section{8.\ Discussion — Planned Structure (not yet written)}
+
+\subsection{Opening Paragraph (moved from Results Summary)}
+
+The three key findings that structure the Discussion:
+\begin{enumerate}[leftmargin=1.5em]
+  \item Individual differences dissociate from behavioral responses but are visible in neural dynamics
+  \item LP selectively drives the N400 three-way (closest support for predicted dissociation)
+  \item N250 shows reversal at high skill; N400 shows attenuation without reversal — qualitatively different mechanisms
+\end{enumerate}
+
+\subsection{Section 1: Early Morphological Parsing and the N250 Reversal}
+\begin{itemize}[leftmargin=1.5em]
+  \item Processing cost vs.\ morphological sensitivity interpretation
+  \item Why the reversal indicates real suffix facilitates parsing for skilled readers
+  \item Why both OS and LP converge on early processing — broad lexical experience, not just orthographic skill
+  \item Marginal Family Size $\times$ OS for words — consistency with nonword pattern
+  \item Connect to morpho-orthographic and discriminative learning accounts
+\end{itemize}
+
+\subsection{Section 2: The Behavioral/ERP Dissociation}
+\begin{itemize}[leftmargin=1.5em]
+  \item Individual differences invisible in RTs but visible in ERPs
+  \item Implications for measuring individual differences in morphological processing
+  \item Lexical Quality Hypothesis — precision of representation vs.\ speed of response
+  \item Why OS predicts nonword RT but not morphological modulation in ERPs
+\end{itemize}
+
+\subsection{Section 3: N400 Three-Way and Semantic Integration}
+\begin{itemize}[leftmargin=1.5em]
+  \item What Complexity $\times$ Family Size $\times$ LP means
+  \item Attenuation without reversal — contrast with N250
+  \item LP selective at N400; OS not — closest to predicted dissociation
+  \item Connect to NDL/LDL: LP indexes depth of form-to-meaning mapping
+  \item Connect to multi-stage accounts
+  \item Null Family Size $\times$ LP for words — why LP does not modulate FS for familiar words
+  \item Base Frequency $\times$ LP at N400 for words — LP enhances semantic integration benefit of high frequency stems
+\end{itemize}
+
+\subsection{Closing: Theoretical Implications and Limitations}
+\begin{itemize}[leftmargin=1.5em]
+  \item Partial dissociation — what it means
+  \item Limitations: unmatched words, asymptotic CIs, generalisability
+  \item Future directions
+\end{itemize}
+
+% -----------------------------------------------------------------------
+\section{9.\ Key Terminology and Variable Names}
+
+\begin{center}
+\begin{tabular}{p{4.2cm} p{5.8cm} p{4.5cm}}
+  \toprule
+  \textbf{Concept} & \textbf{Variable name in R} & \textbf{Notes} \\
+  \midrule
+  Language Proficiency     & \texttt{LP}, \texttt{Dim.1}      & PCA dimension 1, already centred \\[2pt]
+  Orthographic Sensitivity & \texttt{OS}, \texttt{Dim.2}      & PCA dimension 2, already centred \\[2pt]
+  Base/Stem Frequency      & \texttt{zLogBF} (RT), \texttt{base\_frequency} (ERP) & Continuous for RT, binned for ERP \\[2pt]
+  Family Size              & \texttt{zLogFS} (RT), \texttt{family\_size} (ERP)    & Continuous for RT, binned for ERP \\[2pt]
+  Complexity               & \texttt{complexity}              & Factor: Simple vs.\ Complex \\[2pt]
+  Participant ID           & \texttt{SubjID}                  & \\[2pt]
+  Item ID                  & \texttt{Item} (words), \texttt{ItemID} (nonwords) & Note different names \\[2pt]
+  ERP amplitude            & \texttt{value}                   & \\[2pt]
+  Electrode nested in participant & \texttt{SubjID:chlabel}   & \\[2pt]
+  Log RT                   & \texttt{logRT}                   & \texttt{log(response\_time)} \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+% -----------------------------------------------------------------------
+\section{10.\ Citations Needing Completion}
+
+The following citations appear as \texttt{[CITATION]} placeholders throughout the manuscript:
+
+\begin{itemize}[leftmargin=1.5em]
+  \item Baayen \& Schreuder race model — original dual-route paper
+  \item Rastle, Davis et al.\ — early automatic decomposition / masked priming papers
+  \item Grainger et al.\ — morpho-orthographic account
+  \item Baayen et al.\ NDL paper — 2011 \textit{Psychological Review}
+  \item Baayen et al.\ LDL paper — \textasciitilde2019 \textit{Complexity} journal
+  \item Family size effects — original Schreuder \& Baayen paper
+  \item Stem frequency operationalisation — relevant citations
+  \item Semantic transparency and family size — opacity studies
+  \item N250 and N400 components — relevant ERP citations
+  \item Andrews et al.\ (2013) — individual differences in morphological priming
+  \item Perfetti — Lexical Quality Hypothesis (2002, 2007, 2017)
+  \item Andrews and colleagues — lexical precision papers
+  \item Marslen-Wilson, Tyler, Devlin — neuroimaging morphology papers
+\end{itemize}
+
+\bigskip
+\hrule
+\smallskip
+{\small \textit{Log created at end of extended working conversation. Open new chat in this project and paste this document as the first message to establish context before posting new R output.}}
+
+\end{document}
