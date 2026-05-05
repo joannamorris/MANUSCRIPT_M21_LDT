@@ -1,0 +1,31 @@
+Yes, that is a good idea. This conversation has become very long and there is a real risk that important context from earlier in the conversation is being lost or that I am making errors like the one I just made because I cannot hold all the details reliably.
+
+---
+
+### What to Include in the New Chat
+
+To give the new chat the best possible start, I would suggest opening with a structured summary document that includes:
+
+**1. The theoretical framing in one paragraph** — the double dissociation prediction, the three-question structure, OS versus LP
+
+**2. A complete model specification table** — all six models with their formula, what is primary and what is covariate, and what interactions are included
+
+**3. All model outputs in one document** — organised clearly as:
+- Words RT
+- Words N250 (base frequency)
+- Words N400 (base frequency)
+- Nonwords RT
+- Nonwords N250 (base frequency or family size — whichever is final)
+- Nonwords N400 (family size)
+
+**4. All emmeans follow-up outputs** — organised by model
+
+**5. A brief note on what has already been written** — flagging that the RT results sections and nonword N250 and N400 write-ups are drafted, and that the words N250 and N400 base frequency write-ups are also drafted
+
+**6. What remains to do** — primarily integrating all the word analyses into a coherent section and writing the Discussion
+
+---
+
+### One Thing to Resolve Before Starting the New Chat
+
+Confirm whether the nonword N250 model uses base frequency or family size as the covariate — that is the outstanding question from this conversation that needs to be settled before you open the new chat, so you can include the correct final output.
