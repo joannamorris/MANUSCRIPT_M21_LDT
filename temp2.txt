@@ -1,0 +1,33 @@
+The discriminative learning framework \citep[NDL/LDL;][]{chuangDiscriminativeLearningLexicon} 
+offers a more radical reinterpretation. On this account, lexical 
+processing is modelled as learned form-to-meaning mappings driven by 
+prediction error rather than by decompositional morpheme retrieval. 
+Base frequency reflects the accumulated strength of the n-gram cues 
+that spell out the base across all its surface forms, while family 
+size reflects the type diversity of the training signal; a larger 
+family causes shared cues to converge on a more robustly specified 
+semantic core. Crucially, both effects arise from the same learning 
+mechanism, rendering the dissociation between them a consequence of 
+different statistical properties of the input rather than evidence for 
+distinct representational levels or processing routes.
+
+Across these accounts, a recurring question is whether morphological 
+decomposition is driven primarily by affix recognition or by stem 
+activation. Affix-stripping accounts \citep{taft_lexical_1975, 
+rastleMorphologicalDecompositionBased2008} propose that the affix is 
+identified first and triggers decomposition, after which the stem is 
+looked up in the lexicon. However, \citet{beyersmannEmbeddedStemPriming2016} 
+found that high proficiency readers showed embedded stem priming 
+effects independent of affix status --- priming occurred even when the 
+stem was followed by a non-affixal ending, suggesting that stem 
+activation in skilled readers is not contingent on affix recognition. 
+This finding suggests that affix-stripping alone may be insufficient 
+to account for morphological processing in skilled readers, and raises 
+the possibility that stem- and affix-based mechanisms operate 
+concurrently, with their relative contributions varying as a function 
+of individual differences in reading proficiency. The present study 
+tests this possibility directly by examining whether Orthographic 
+Sensitivity and Language Proficiency --- two dissociable dimensions of 
+individual variation in reading skill --- differentially modulate early 
+morpho-orthographic parsing in ways consistent with affix-based and 
+stem-based mechanisms respectively.
