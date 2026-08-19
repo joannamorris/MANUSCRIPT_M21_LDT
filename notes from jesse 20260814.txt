@@ -1,0 +1,24 @@
+Hierarchical modelling procedure in which enter variables in preordained order starting with the simplest and then add variables. 
+
+WORDS
+Starting model: OS, LP, and BF.  Then include OS x BF and LP x  BF in separate models, then put them all together and see if they account for unique variance.
+
+Then do same with Family Size.
+
+Do figures for only the interactions that are positive.
+
+
+NONWORDS
+
+Do a similar hierarchical modelling procedure for nonwords.  Start with a model containing Complexity, OS, LP,  and BF or FS.  Then add complexity x OS and complexity x LP in separate models  Then add add OS x BF|FS, or LP x BF|FS, then do a model in which they all come together.
+
+Bin into quartiles to check if effect actually flips among highest and lowest participants.
+
+Advice on Introduction.  2 paragraphs that funnel down to research questions. Meant to bring in the reader who is not fully invested in the topic.  Theories of language comprehension invoke multiple stages by which orthography mapped to meaning ➛  How do individual differences inform our understanding of the representations involved and the neural processing that underlie it ➛  Then the study based on as example of this kind of research enterprise ➛ how do these map onto the neural components associated with morphological processing.
+
+Examples of how to frame:
+The present study seeks to link this finding to theories of the n250 and N400.  By simultaneously  looking at ind differences and lexical variables in words and nonwords.    the remainder of the introduction we will…lay out the 4 things that a readers needs to understand.  This approach is consistent with all the primary theories. Off load major discussion of theories currently in introduction to general discussion.   Also remove caveats about why we may not get the pattern predicted and put that explanation into the discussion. 
+
+
+
+

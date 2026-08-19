@@ -19,7 +19,7 @@
 
 \section*{Overview}
 
-This document reports the full model output for the word morphological family size analyses referenced in the main text. In the main manuscript, base frequency is treated as the primary morphological predictor for word ERP analyses, since the double dissociation central to the study's aims --- Orthographic Sensitivity (OS) modulating the N250 and Language Proficiency (LP) modulating the N400 --- is formally tested using base frequency as the morphological variable of interest. Family size analyses for words were conducted in parallel, using the same model structure, and are summarised briefly in the main text (see \emph{Words N250: Base Frequency} and \emph{Words N400: Base Frequency}). The full statistical output for these two family size models is reported below for transparency and to allow readers to evaluate the pattern in full.
+This document reports full model output for analyses summarised briefly in the main text. Sections S1--S2 report the word morphological family size analyses. In the main manuscript, base frequency is treated as the primary morphological predictor for word ERP analyses, since the study's central claim --- that Orthographic Sensitivity (OS) and Language Proficiency (LP) show distinct, component-specific patterns of modulation, with OS the primary modulator at the N250 and LP the primary modulator at the N400 --- is formally tested using base frequency as the morphological variable of interest. Family size analyses for words were conducted in parallel, using the same model structure, and are summarised briefly in the main text (see \emph{Words N250: Base Frequency} and \emph{Words N400: Base Frequency}). Sections S3--S4 report exploratory models that reverse the interaction structure at each time window, testing whether the non-predicted individual difference dimension --- Language Proficiency at the N250, Orthographic Sensitivity at the N400 --- also modulated processing of base frequency and family size, with the predicted dimension included as a covariate. The full statistical output for all four exploratory models, along with the two family size models, is reported below for transparency and to allow readers to evaluate each pattern in full.
 
 \section*{S1. Words N250: Family Size}
 
@@ -63,6 +63,94 @@ Mean N400 amplitudes for word stimuli were analyzed using a linear mixed-effects
 		Family Size $\times$ LP & $-0.071$ & 0.052 & 1618 & $-1.37$ & .172 \\
 		\bottomrule
 	\end{tabular}
+\end{table}
+
+\section*{S3. Words N250: Exploratory Language Proficiency Models}
+
+To assess whether Language Proficiency also modulated the N250 base frequency effect for words, an exploratory model was fit with fixed effects of Base Frequency, Language Proficiency (LP), Orthographic Sensitivity (OS), and the interaction between Base Frequency and LP; this reverses the structure of the primary model reported in the main text, in which OS rather than LP was the interacting term. The model included random intercepts for participants and for electrode site nested within participant. The main effect of Base Frequency was significant, $\beta = -0.329$, $SE = 0.100$, $t(1618) = -3.27$, $p = .001$, $\eta^2_p = .007$, consistent with the primary model. Neither Language Proficiency, $\beta = -0.536$, $SE = 0.378$, $t(57) = -1.42$, $p = .162$, nor Orthographic Sensitivity, $\beta = 0.534$, $SE = 0.520$, $t(57) = 1.03$, $p = .309$, yielded reliable main effects. Critically, the interaction between Base Frequency and Language Proficiency was significant, $\beta = 0.180$, $SE = 0.082$, $t(1618) = 2.20$, $p = .028$, $\eta^2_p = .003$. As reported in the main text, follow-up contrasts indicated that this modulation ran in the opposite direction to the Orthographic Sensitivity interaction in the primary model: the base frequency effect was largest at low LP and attenuated steadily as LP increased, becoming non-significant by LP $= +1$ SD ($\Delta = -0.15\,\mu$V, $t(1618) = -1.13$, $p = .259$) and reversing in direction, though not significantly, at the upper end of the observed range (LP $= +3$ SD: $\Delta = 0.21\,\mu$V, $t(1618) = 0.78$, $p = .433$). The model explained 1.8\% of variance via fixed effects ($R^2_{\mathrm{marginal}} = .018$) and 79.9\% overall ($R^2_{\mathrm{conditional}} = .799$).
+
+\begin{table}[h!]
+	\centering
+	\small
+	\caption{Words N250, Base Frequency $\times$ LP (exploratory), fixed effects.}
+	\label{tab:s3a}
+	\begin{tabular}{lccccc}
+		\toprule
+		\textbf{Term} & $\beta$ & \textbf{SE} & \textbf{df} & \textbf{t} & \textbf{p} \\
+		\midrule
+		Base Frequency & $-0.329$ & 0.100 & 1618 & $-3.27$ & .001 \\
+		Language Proficiency & $-0.536$ & 0.378 & 57 & $-1.42$ & .162 \\
+		Orthographic Sensitivity & 0.534 & 0.520 & 57 & 1.03 & .309 \\
+		Base Frequency $\times$ LP & 0.180 & 0.082 & 1618 & 2.20 & .028 \\
+		\bottomrule
+	\end{tabular}
+	\\[4pt]
+	\raggedright \footnotesize $R^2_{\mathrm{marginal}} = .018$; $R^2_{\mathrm{conditional}} = .799$. Random effects: participant, electrode nested within participant.
+\end{table}
+
+A parallel exploratory model tested the interaction between Family Size and Language Proficiency at the N250, with fixed effects of Family Size, Language Proficiency (LP), Orthographic Sensitivity (OS), and the interaction between Family Size and LP; Orthographic Sensitivity was again included as a covariate. The main effect of Family Size was significant, $\beta = 0.325$, $SE = 0.058$, $t(1618) = 5.56$, $p < .001$, $\eta^2_p = .02$, consistent with the primary family size model reported in Table~S1. Neither Language Proficiency, $\beta = -0.279$, $SE = 0.186$, $t(57) = -1.50$, $p = .140$, nor Orthographic Sensitivity, $\beta = 0.261$, $SE = 0.256$, $t(57) = 1.02$, $p = .313$, yielded reliable main effects. The interaction between Family Size and Language Proficiency was not significant, $\beta = -0.074$, $SE = 0.047$, $t(1618) = -1.56$, $p = .119$, indicating that, unlike base frequency, the family size effect at the N250 was not modulated by Language Proficiency. The model explained 1.9\% of variance via fixed effects ($R^2_{\mathrm{marginal}} = .019$) and 73.8\% overall ($R^2_{\mathrm{conditional}} = .738$).
+
+\begin{table}[h!]
+	\centering
+	\small
+	\caption{Words N250, Family Size $\times$ LP (exploratory), fixed effects.}
+	\label{tab:s3b}
+	\begin{tabular}{lccccc}
+		\toprule
+		\textbf{Term} & $\beta$ & \textbf{SE} & \textbf{df} & \textbf{t} & \textbf{p} \\
+		\midrule
+		Family Size & 0.325 & 0.058 & 1618 & 5.56 & $< .001$ \\
+		Language Proficiency & $-0.279$ & 0.186 & 57 & $-1.50$ & .140 \\
+		Orthographic Sensitivity & 0.261 & 0.256 & 57 & 1.02 & .313 \\
+		Family Size $\times$ LP & $-0.074$ & 0.047 & 1618 & $-1.56$ & .119 \\
+		\bottomrule
+	\end{tabular}
+	\\[4pt]
+	\raggedright \footnotesize $R^2_{\mathrm{marginal}} = .019$; $R^2_{\mathrm{conditional}} = .738$. Random effects: participant, electrode nested within participant.
+\end{table}
+
+\section*{S4. Words N400: Exploratory Orthographic Sensitivity Models}
+
+To assess whether Orthographic Sensitivity also modulated the N400 base frequency effect for words, an exploratory model was fit with fixed effects of Base Frequency, Orthographic Sensitivity (OS), Language Proficiency (LP), and the interaction between Base Frequency and OS; this reverses the structure of the primary model reported in the main text, in which LP rather than OS was the interacting term. The model included random intercepts for participants and for electrode site nested within participant. The main effect of Base Frequency showed a marginal trend, $\beta = 0.189$, $SE = 0.107$, $t(1618) = 1.77$, $p = .077$, $\eta^2_p = .002$. Orthographic Sensitivity showed a significant main effect, $\beta = 1.290$, $SE = 0.640$, $t(57) = 2.02$, $p = .049$, $\eta^2_p = .07$, consistent with the OS main effect reported in the primary model. Language Proficiency did not yield a reliable main effect, $\beta = 0.047$, $SE = 0.465$, $t(57) = 0.10$, $p = .920$. The interaction between Base Frequency and Orthographic Sensitivity was not significant, $\beta = 0.195$, $SE = 0.120$, $t(1618) = 1.63$, $p = .104$, indicating that Orthographic Sensitivity did not modulate the N400 base frequency effect. The model explained 2.6\% of variance via fixed effects ($R^2_{\mathrm{marginal}} = .026$) and 82.4\% overall ($R^2_{\mathrm{conditional}} = .824$).
+
+\begin{table}[h!]
+	\centering
+	\small
+	\caption{Words N400, Base Frequency $\times$ OS (exploratory), fixed effects.}
+	\label{tab:s4a}
+	\begin{tabular}{lccccc}
+		\toprule
+		\textbf{Term} & $\beta$ & \textbf{SE} & \textbf{df} & \textbf{t} & \textbf{p} \\
+		\midrule
+		Base Frequency & 0.189 & 0.107 & 1618 & 1.77 & .077 \\
+		Orthographic Sensitivity & 1.290 & 0.640 & 57 & 2.02 & .049 \\
+		Language Proficiency & 0.047 & 0.465 & 57 & 0.10 & .920 \\
+		Base Frequency $\times$ OS & 0.195 & 0.120 & 1618 & 1.63 & .104 \\
+		\bottomrule
+	\end{tabular}
+	\\[4pt]
+	\raggedright \footnotesize $R^2_{\mathrm{marginal}} = .026$; $R^2_{\mathrm{conditional}} = .824$. Random effects: participant, electrode nested within participant.
+\end{table}
+
+A parallel exploratory model tested the interaction between Family Size and Orthographic Sensitivity at the N400, with fixed effects of Family Size, Orthographic Sensitivity (OS), Language Proficiency (LP), and the interaction between Family Size and OS. The main effect of Family Size was significant, $\beta = 0.452$, $SE = 0.064$, $t(1618) = 7.07$, $p < .001$, $\eta^2_p = .03$, consistent with the primary family size model reported in Table~S2. Orthographic Sensitivity showed a significant main effect, $\beta = 0.677$, $SE = 0.318$, $t(57) = 2.13$, $p = .038$, $\eta^2_p = .07$, consistent with the OS main effect reported in Table~S2. Language Proficiency did not yield a reliable main effect, $\beta = 0.001$, $SE = 0.231$, $t(57) = 0.01$, $p = .996$. The interaction between Family Size and Orthographic Sensitivity was not significant, $\beta = 0.091$, $SE = 0.072$, $t(1618) = 1.27$, $p = .204$, indicating that, unlike Language Proficiency, Orthographic Sensitivity did not modulate the N400 family size effect. The model explained 3.1\% of variance via fixed effects ($R^2_{\mathrm{marginal}} = .031$) and 75.6\% overall ($R^2_{\mathrm{conditional}} = .756$).
+
+\begin{table}[h!]
+	\centering
+	\small
+	\caption{Words N400, Family Size $\times$ OS (exploratory), fixed effects.}
+	\label{tab:s4b}
+	\begin{tabular}{lccccc}
+		\toprule
+		\textbf{Term} & $\beta$ & \textbf{SE} & \textbf{df} & \textbf{t} & \textbf{p} \\
+		\midrule
+		Family Size & 0.452 & 0.064 & 1618 & 7.07 & $< .001$ \\
+		Orthographic Sensitivity & 0.677 & 0.318 & 57 & 2.13 & .038 \\
+		Language Proficiency & 0.001 & 0.231 & 57 & 0.01 & .996 \\
+		Family Size $\times$ OS & 0.091 & 0.072 & 1618 & 1.27 & .204 \\
+		\bottomrule
+	\end{tabular}
+	\\[4pt]
+	\raggedright \footnotesize $R^2_{\mathrm{marginal}} = .031$; $R^2_{\mathrm{conditional}} = .756$. Random effects: participant, electrode nested within participant.
 \end{table}
 
 \bibliographystyle{Frontiers-Harvard}
