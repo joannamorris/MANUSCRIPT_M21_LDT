@@ -1,0 +1,359 @@
+% =============================================================================
+% m21_ldt -- Statistical analysis (Methods) and Results
+% Draft for review. All statistics are taken from the R output of
+%   m21_ldt_single_trial.R        (trial-level data set, behavioural scoring)
+%   m21_ldt_single_trial_roi.R    (ROI models and ERP reliability)
+%   m21_ldt_behaviour.R           (accuracy, RT and behavioural reliability)
+%   m21_ldt_single_trial_scalp.R  (supplementary grid analyses)
+% Lines marked "% CHECK" need confirming before submission.
+% Requires: booktabs, amsmath (for \text in math mode)
+% =============================================================================
+
+\subsection{Statistical analysis}
+
+\paragraph{Task performance.}
+Behavioural responses were scored from the raw experiment logs. Sensitivity
+($d'$) was computed for each participant across all trials, with a log-linear
+correction for extreme rates. The three participants excluded for $d' < 0.5$
+(see Participants) had $d'$ of 0.10--0.35 and overall accuracy of 52--55\%. In
+the analysed sample of 56, $d'$ averaged 2.10 (range 0.73--3.08).
+
+\paragraph{Individual-difference measures.}
+Orthographic Sensitivity (OS) and Language Proficiency (LP) were derived from a
+principal components analysis of the vocabulary, spelling and author recognition
+test scores of the 56 analysed participants. Scores were standardised before the
+analysis. The first component (52.7\% of the variance) loaded positively on all
+three measures (vocabulary .65, spelling .45, author recognition .62) and was
+taken as LP. The second component (28.7\% of the variance) loaded positively on
+spelling (.89) and negatively on vocabulary ($-.23$) and author recognition
+($-.40$), and was taken as OS. The two scores are uncorrelated by construction
+and are centred on zero ($SD_{\text{LP}} = 1.26$, $SD_{\text{OS}} = 0.93$).
+
+\paragraph{Behavioural scoring.}
+A response was correct if the key pressed matched the required response.
+Responses were collected for 1,000\,ms from target onset; trials with no
+response in that window were scored as errors.
+Trials on which another key was pressed, or with a recorded RT of 0\,ms, were
+treated as missing (about 3 per participant). A capital Z was scored as z.
+
+\paragraph{ERP measures.}
+Single-trial ERPs were obtained by assigning each critical item to its own bin.
+Mean amplitude was measured in two windows, 200--300\,ms (N250) and
+300--500\,ms (N400), relative to a $-200$ to 0\,ms baseline. Analyses used a
+central--parietal region of interest (ROI): C3, Cz, C4, CP1, CP2, CP5, CP6, P3,
+Pz and P4. P7 and P8 were excluded as too lateral. Amplitude was averaged over
+the ROI electrodes on each trial.
+
+\paragraph{Trial and item inclusion.}
+ERP and RT analyses used correct trials only; trials rejected for artefacts were
+also excluded from the ERP analyses. Four nonwords were removed because they
+were presented incorrectly: \textit{trueness} and \textit{boil} are real English
+words, \textit{ime} was presented without its base, and \textit{adoptish} was
+presented in its complex form in both lists, so it had no simple counterpart.
+One word, \textit{design}, was removed because it is not suffixed.
+
+\paragraph{Mixed-effects models.}
+All analyses used mixed-effects models in R 4.3.3 with \texttt{lme4} 1.1.35.1
+\citep{batesFittingLinearMixedeffects2015}
+and \texttt{lmerTest} 3.1.3 \citep{kuznetsovaLmerTestPackageTests2017}, with
+Satterthwaite degrees of freedom for linear models. Item properties entered as
+continuous predictors: log base frequency, log family size, and, for words, log
+whole-word frequency and word length, each standardised across items. Two-level
+factors were coded $-0.5$/$+0.5$ (complexity: simple/complex; window: N250/N400).
+OS and LP entered as continuous predictors.
+
+\textit{Behaviour.} Accuracy was analysed with logistic models and RT on correct
+trials with linear models of log RT. Nonword models included complexity, log
+base frequency, log family size, OS and LP; word models included log family
+size, log base frequency, log whole-word frequency, length, OS and LP. OS and LP
+entered as main effects only, as indices of overall efficiency.
+
+\textit{ERPs.} Three models tested the hypotheses. For words, separate models
+were fitted to each window. The N250 model tested whether OS modulates the base
+frequency effect (Base Frequency $\times$ OS), with LP, family size, whole-word
+frequency and length as covariates. The N400 model tested whether LP modulates
+the family size effect (Family Size $\times$ LP), with OS, base frequency,
+whole-word frequency and length as covariates. For nonwords, both windows entered
+a single model, Complexity $\times$ Window $\times$ (OS $+$ LP), with log base
+frequency and log family size (each by window) as covariates. The Complexity
+$\times$ OS $\times$ Window interaction tests whether OS modulates the complexity
+effect more at the N250 than at the N400.
+
+All models included crossed random effects for participants and items. Each model
+began with by-participant and by-item random slopes for the predictors of
+interest; terms were removed when the model was singular or did not converge,
+until a model converged cleanly \citep{batesParsimoniousMixedModels2018a}.
+The final structures are given with each result. When a random slope was removed
+because its variance was estimated at zero, the corresponding fixed effect is
+tested against trial-level variability, which produces large degrees of freedom.
+Interactions were followed up with \texttt{emmeans} 1.10.0
+\citep{lenthEmmeansEstimatedMarginal2024}
+by estimating the item effect at the mean of the moderator and at $\pm 1\,SD$.
+Effect sizes ($\eta^2_p$) were computed from $t$ and its degrees of freedom and
+are reported for significant effects in linear models.
+
+Because the words were selected in small and large family size groups, and high
+and low base frequency groups, the word ERP models were also run with these
+groups in place of the continuous measures. Continuous measures were treated as
+primary because dichotomising a continuous variable discards information and
+reduces power \citep{maccallumPracticeDichotomizationQuantitative2002}.
+
+\paragraph{Reliability.}
+To assess whether participants' effects could be measured reliably enough to
+support individual-difference analyses, split-half reliability was estimated
+for each participant's experimental effects (complex $-$ simple for nonwords;
+large $-$ small family size and high $-$ low base frequency for words) in RT,
+accuracy and ERP amplitude, and for each participant's mean ERP amplitude, in
+each window \citep{parsonsPsychologicalScienceNeeds2019}.
+Each participant's trials were split at random into two halves within each
+condition, the effect was computed in each half, the two halves were correlated
+across participants and the correlation was corrected with the Spearman--Brown
+formula. This was repeated 2,000 times; the median and the 2.5th and 97.5th
+percentiles across splits are reported.
+
+\paragraph{Supplementary analyses.}
+To check that the ROI did not miss effects with a different scalp distribution,
+the ERP analyses were repeated over a $3 \times 3$ grid of electrodes (F3, Fz,
+F4, C3, Cz, C4, P3, Pz, P4) with Laterality and Anteriority as factors,
+following \citet{yumERPStudyInitial2014}.
+These analyses are reported in the Supplementary Material.
+
+% =============================================================================
+\section{Results}
+
+\subsection{Behaviour}
+
+\paragraph{Nonwords.}
+Complex nonwords were harder to reject than simple nonwords. Accuracy was lower
+for complex nonwords (model estimate 65.3\%, 95\% CI [60.0, 70.2]) than for
+simple nonwords (88.6\%, [85.4, 91.2]), odds ratio = 0.24, 95\% CI [0.20, 0.29],
+$z = -16.62$, $p < .001$, and correct responses were 5.3\% slower, 95\% CI
+[3.6, 7.0] (723 vs.\ 687\,ms), $t(79.8) = 6.38$, $p < .001$, $\eta^2_p = .34$
+(Table~\ref{tab:behaviour}). Nonwords with higher-frequency bases were also
+harder: accuracy was lower, odds ratio = 0.77 per $SD$, $z = -2.86$, $p = .004$,
+and RTs were longer, 2.3\% per $SD$, $t(99.6) = 3.81$, $p < .001$,
+$\eta^2_p = .13$. Family size had no reliable effect on either measure
+($ps \geq .07$).
+
+Participants with higher LP rejected nonwords more accurately, odds ratio = 1.31
+per unit, 95\% CI [1.12, 1.53], $z = 3.44$, $p < .001$. OS did not reliably
+predict nonword accuracy, odds ratio = 1.21, 95\% CI [0.97, 1.50], $z = 1.71$,
+$p = .086$. Neither measure predicted nonword RT (OS: $p = .143$; LP:
+$p = .201$).
+
+\paragraph{Words.}
+Words with larger families, higher-frequency bases and higher whole-word
+frequency were recognised faster (family size: $-1.5\%$ per $SD$, $t(89.9) =
+-3.22$, $p = .002$, $\eta^2_p = .10$; base frequency: $-1.3\%$, $t(96.9) = -2.50$,
+$p = .014$, $\eta^2_p = .06$; whole-word frequency: $-2.0\%$, $t(91.1) = -4.02$,
+$p < .001$, $\eta^2_p = .15$), and longer words more slowly ($+1.5\%$,
+$t(91.8) = 3.22$, $p = .002$, $\eta^2_p = .10$). Accuracy was higher for words
+with higher whole-word frequency, odds ratio = 1.34, $z = 3.04$, $p = .002$, and
+higher base frequency, odds ratio = 1.26, $z = 2.38$, $p = .017$. OS and LP did
+not predict word RT or accuracy ($ps \geq .14$).
+
+\begin{table}[htbp]
+\centering
+\caption{Behavioural models}
+\label{tab:behaviour}
+\begin{tabular}{lrrlrr}
+\toprule
+\multicolumn{3}{c}{Accuracy (logistic)} & \multicolumn{3}{c}{Log RT, correct trials} \\
+\cmidrule(lr){1-3}\cmidrule(lr){4-6}
+Term & OR & $p$ & Term & \% change & $p$ \\
+\midrule
+\multicolumn{6}{l}{\textit{Nonwords}} \\
+Complexity      & 0.24 & $<.001$ & Complexity      & 5.26    & $<.001$ \\
+Base frequency  & 0.77 & .004    & Base frequency  & 2.29    & $<.001$ \\
+Family size     & 1.02 & .798    & Family size     & $-$1.06 & .071 \\
+OS              & 1.21 & .086    & OS              & $-$2.28 & .143 \\
+LP              & 1.31 & $<.001$ & LP              & $-$1.47 & .201 \\
+\multicolumn{6}{l}{\textit{Words}} \\
+Family size     & 1.13 & .161    & Family size     & $-$1.46 & .002 \\
+Base frequency  & 1.26 & .017    & Base frequency  & $-$1.29 & .014 \\
+Word frequency  & 1.34 & .002    & Word frequency  & $-$1.99 & $<.001$ \\
+Length          & 0.95 & .538    & Length          & 1.50    & .002 \\
+OS              & 1.10 & .371    & OS              & $-$2.13 & .154 \\
+LP              & 1.12 & .146    & LP              & $-$0.58 & .595 \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\begin{minipage}{0.85\linewidth}\footnotesize
+\textit{Note.} OR = odds ratio. \% change = change in RT, from the exponentiated
+log-RT coefficient. Item predictors per $SD$ across items; OS and LP per unit
+($SD_{\text{OS}} = 0.93$, $SD_{\text{LP}} = 1.26$); complexity = complex vs.\
+simple. Random effects: nonword accuracy, correlated by-participant intercepts
+and complexity slopes and by-item intercepts; nonword RT, correlated
+by-participant and by-item intercepts and complexity slopes; word models,
+by-participant and by-word intercepts.
+\end{minipage}
+\end{table}
+
+\subsection{Data retained for the ERP analyses}
+Participants contributed on average 82.4 correct, artefact-free word trials per
+window (range 38--94) and 66.8 nonword trials (range 29--88), of which 28.7
+were complex (range 9--45) and 38.1 simple (range 20--48).
+
+\subsection{Reliability}
+Participants' mean ERP amplitudes were measured reliably in both windows
+(Table~\ref{tab:reliability}). Their ERP effects were not: split-half
+reliability was close to or below zero for the complexity, family size and base
+frequency effects in both windows. Negative values arise when the variation
+between participants' effects is smaller than the variation expected from
+measurement error alone, and indicate that the effects carry no reliable
+individual differences. The behavioural effects were more reliable than the ERP
+effects but still low: .33 for the RT complexity effect, and .12 to .20 for the
+others.
+
+\begin{table}[htbp]
+\centering
+\caption{Split-half reliability (Spearman--Brown corrected)}
+\label{tab:reliability}
+\begin{tabular}{llccc}
+\toprule
+Stimuli & Measure & N400 & N250 & Behaviour \\
+\midrule
+Words    & Mean amplitude        & .87 [.80, .92]          & .85 [.77, .90]          & \\
+         & Family size effect    & $-$.04 [$-$.64, .33]    & .08 [$-$.42, .40]       & RT: .15 [$-$.22, .44] \\
+         &                       &                         &                         & Acc.: .20 [$-$.16, .47] \\
+         & Base frequency effect & $-$.38 [$-$1.14, .12]   & $-$.65 [$-$1.51, $-$.04] & \\
+Nonwords & Mean amplitude        & .86 [.79, .91]          & .78 [.68, .86]          & \\
+         & Complexity effect     & $-$.70 [$-$1.57, $-$.06] & $-$.11 [$-$.66, .30]    & RT: .33 [.00, .58] \\
+         &                       &                         &                         & Acc.: .12 [$-$.28, .43] \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\begin{minipage}{0.9\linewidth}\footnotesize
+\textit{Note.} Values are medians across 2,000 random splits; brackets give the
+2.5th and 97.5th percentiles across splits. ERP values are for the ROI. RT
+reliability uses correct trials.
+\end{minipage}
+\end{table}
+
+\subsection{ERPs: words}
+
+\paragraph{N400: family size and Language Proficiency.}
+Words with larger families elicited more positive N400 amplitudes, $b = 0.32$\,$\mu$V
+per $SD$ of log family size, 95\% CI [0.03, 0.61], $t(91.9) = 2.20$, $p = .030$,
+$\eta^2_p = .05$. LP did not modulate this effect, $b = -0.02$, 95\% CI
+[$-0.22$, 0.18], $t(4480.1) = -0.24$, $p = .811$ (Table~\ref{tab:words}). The
+family size effect was similar at low LP ($-1\,SD$: 0.35\,$\mu$V, $p = .072$)
+and high LP ($+1\,SD$: 0.29\,$\mu$V, $p = .139$). Per $SD$ of LP, the 95\% CI
+for the interaction was $-0.28$ to $0.22$\,$\mu$V.
+
+Higher-frequency words also elicited more positive N400 amplitudes, $b = 0.45$,
+95\% CI [0.13, 0.76], $t(93.5) = 2.83$, $p = .006$, $\eta^2_p = .08$, and
+participants with higher OS showed more positive N400 amplitudes overall,
+$b = 1.13$ per unit OS, 95\% CI [0.38, 1.88], $t(53.4) = 3.01$, $p = .004$,
+$\eta^2_p = .14$. Base frequency, length and LP had no effect ($ps \geq .78$).
+The final random-effects structure comprised by-participant and by-word
+intercepts.
+
+With family size coded as small versus large, the family size effect was in the
+same direction but not significant, $b = 0.53$\,$\mu$V, 95\% CI [$-0.04$, 1.11],
+$t(93.2) = 1.84$, $p = .068$; the interaction with LP remained null, $p = .827$.
+
+\paragraph{N250: base frequency and Orthographic Sensitivity.}
+Base frequency had no effect at the N250, $b = 0.03$, 95\% CI [$-0.27$, 0.32],
+$t(4555.3) = 0.18$, $p = .857$, and OS did not modulate it, $b = -0.07$, 95\% CI
+[$-0.35$, 0.22], $t(4554.6) = -0.46$, $p = .647$ (Table~\ref{tab:words}). The
+base frequency effect was near zero at low OS ($0.09$\,$\mu$V, $p = .652$) and
+high OS ($-0.03$\,$\mu$V, $p = .868$). Per $SD$ of OS, the 95\% CI for the
+interaction was $-0.33$ to $0.20$\,$\mu$V. The high versus low coding gave the
+same result, interaction $p = .640$. The variance between words, and between
+participants' base frequency effects, was estimated at zero, so the final model
+included by-participant intercepts only.
+
+Family size, a covariate in this model, was associated with more positive N250
+amplitudes, $b = 0.32$, 95\% CI [0.07, 0.58], $t(4553.6) = 2.52$, $p = .012$,
+$\eta^2_p < .01$. No other predictor was significant ($ps \geq .09$).
+
+\begin{table}[htbp]
+\centering
+\caption{Single-trial ERP models for words (ROI)}
+\label{tab:words}
+\begin{tabular}{lrrrr@{\hspace{2em}}lrrrr}
+\toprule
+\multicolumn{5}{c}{N400} & \multicolumn{5}{c}{N250} \\
+\cmidrule(lr){1-5}\cmidrule(lr){6-10}
+Term & $b$ & $SE$ & $t$ & $p$ & Term & $b$ & $SE$ & $t$ & $p$ \\
+\midrule
+Family size (FS)  &  0.32 & 0.14 &  2.20 & .030 & Base frequency (BF) &  0.03 & 0.15 &  0.18 & .857 \\
+LP                & $-$0.01 & 0.28 & $-$0.04 & .969 & OS                  &  0.34 & 0.37 &  0.94 & .353 \\
+FS $\times$ LP    & $-$0.02 & 0.10 & $-$0.24 & .811 & BF $\times$ OS      & $-$0.07 & 0.14 & $-$0.46 & .647 \\
+OS                &  1.13 & 0.37 &  3.01 & .004 & LP                  & $-$0.12 & 0.27 & $-$0.43 & .668 \\
+Base frequency    &  0.05 & 0.17 &  0.27 & .784 & Family size         &  0.32 & 0.13 &  2.52 & .012 \\
+Word frequency    &  0.45 & 0.16 &  2.83 & .006 & Word frequency      &  0.09 & 0.14 &  0.65 & .513 \\
+Length            &  0.01 & 0.15 &  0.05 & .958 & Length              & $-$0.22 & 0.13 & $-$1.67 & .094 \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\begin{minipage}{0.95\linewidth}\footnotesize
+\textit{Note.} Estimates in $\mu$V. Item predictors are standardised across words;
+OS and LP are component scores ($SD_{\text{OS}} = 0.93$, $SD_{\text{LP}} = 1.26$).
+Degrees of freedom (Satterthwaite) are given in the text.
+\end{minipage}
+\end{table}
+
+\subsection{ERPs: nonwords}
+Complex and simple nonwords did not differ at the N250, $-0.10$\,$\mu$V, 95\% CI
+[$-0.83$, 0.63], $t(143) = -0.27$, $p = .788$, or at the N400, 0.14\,$\mu$V, 95\%
+CI [$-0.59$, 0.87], $t(143) = 0.37$, $p = .709$. OS did not modulate the
+complexity effect differently in the two windows, Complexity $\times$ OS $\times$
+Window, $b = 0.26$, 95\% CI [$-0.63$, 1.14], $t(7144.9) = 0.56$, $p = .573$
+(Table~\ref{tab:nonwords}), and did not modulate it in either window (N250:
+$b = -0.21$, 95\% CI [$-0.86$, 0.44], $t(173) = -0.63$, $p = .528$; N400:
+$b = 0.05$, 95\% CI [$-0.61$, 0.70], $t(173) = 0.14$, $p = .888$). LP did not
+modulate the complexity effect either ($ps \geq .76$). The final random-effects
+structure comprised uncorrelated by-participant intercepts and complexity and
+window slopes, and uncorrelated by-item intercepts and complexity slopes.
+
+No other term involving OS or LP was significant (Table~\ref{tab:nonwords}).
+
+\begin{table}[htbp]
+\centering
+\caption{Single-trial ERP model for nonwords (ROI)}
+\label{tab:nonwords}
+\begin{tabular}{lrrrrr}
+\toprule
+Term & $b$ & $SE$ & $df$ & $t$ & $p$ \\
+\midrule
+Complexity (C)                    &  0.02 & 0.31 &   67.6 &  0.06 & .950 \\
+Window (W)                        &  0.56 & 0.35 &   56.7 &  1.63 & .109 \\
+OS                                &  0.63 & 0.35 &   54.6 &  1.81 & .075 \\
+LP                                &  0.00 & 0.26 &   55.0 &  0.00 & .999 \\
+C $\times$ W                      &  0.22 & 0.42 & 7145.8 &  0.53 & .599 \\
+C $\times$ OS                     & $-$0.08 & 0.24 &   48.6 & $-$0.34 & .737 \\
+C $\times$ LP                     &  0.03 & 0.18 &   50.7 &  0.17 & .868 \\
+W $\times$ OS                     &  0.63 & 0.38 &   57.0 &  1.67 & .100 \\
+W $\times$ LP                     &  0.15 & 0.28 &   59.1 &  0.54 & .591 \\
+C $\times$ W $\times$ OS          &  0.26 & 0.45 & 7144.9 &  0.56 & .573 \\
+C $\times$ W $\times$ LP          &  0.09 & 0.34 & 7154.5 &  0.26 & .792 \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\begin{minipage}{0.75\linewidth}\footnotesize
+\textit{Note.} Estimates in $\mu$V. Complexity and Window coded $-0.5$/$+0.5$
+(simple/complex; N250/N400). Log base frequency and log family size (and their
+interactions with Window) were included as covariates and were not significant
+($ps \geq .64$).
+\end{minipage}
+\end{table}
+
+\subsection{Supplementary grid analyses}
+Over the $3 \times 3$ grid, no term combining complexity with OS was significant,
+alone or with Window, Laterality or Anteriority ($ps \geq .13$). Complexity
+interacted with Laterality, $F(2, 59053) = 3.76$, $p = .023$, but the complexity
+effect was not significant at any laterality ($ps \geq .55$). Family size
+interacted with Anteriority, $F(2, 72907) = 7.53$, $p < .001$: the family size
+effect increased from frontal (0.26\,$\mu$V, $p = .383$) to central
+(0.52\,$\mu$V, $p = .082$) and parietal sites (0.61\,$\mu$V, $p = .044$), and
+was significant only at parietal sites. These scalp interactions are tested against
+electrode-level variability within trials and should be interpreted cautiously.
+Full results are in the Supplementary Material.
+% CHECK: describe the supplementary models fully in the Supplement (nine grid
+% electrodes on each trial; small/large and high/low groups for words).
